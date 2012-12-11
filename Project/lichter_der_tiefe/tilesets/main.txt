@@ -32,6 +32,9 @@
 31 darkness-0001
 32 darkness-0002
 33 darkness-0003
+34 songspore-plant
+35 veil-skyplant-0002
+36 trillious-head
 34 darkness-0004
 35 dark-full
 36 dark-partial
@@ -43,3 +46,4 @@
 42 testMap_bg
 43 plant-0013
 44 plant-0014
+55 plant-0008
