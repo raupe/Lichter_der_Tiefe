@@ -1,0 +1,95 @@
+Aquaria
+
+Shortcuts:	http://www.bit-blot.com/aquaria/mods/leveleditor.html
+
+
+
+F2 - save
+
+Tiles: F5
+e/r = durchschalten
+leer = plazieren
+links = verschieben
+rechts = drehen
+shift + links = kopieren
+shift + rechts = skalieren
+
+F9 = kollision sichtbar
+o = kollision zu tile
+
+Layers:
+1 - hinter Entities
+2
+3
+4
+5
+6
+
+7 - vor Entities
+
+8 - Entities
+9
+
+n - Background
+m
+,
+.
+/
+
+j - darkness
+
+------
+
+effects mit number-block:
+0 - keiner
+1,2,3 - wabern
+4 - glühen / blinken
+5,6 - wabern (bei berührung)
+8 - transparent
+
+----------
+Entities F6:
+
+
+
+ctrl+e - place entity
+
+during selection
+
+	e/r - change
+	esc - confirm
+	space - place
+
+
+Nodes F7:
+
+n - edit/name
+
+ctrl+space - create
+
+
+
+http://aquariawiki.ryanballantyne.name/wiki/index.php/List_of_Nodes
+
+------------
+gfx's:
+ingredients
+
+
+------------
+
+
+Scripts:
+
+http://aquariawiki.ryanballantyne.name/wiki/index.php/Uncategorized_Functions
+
+http://aquariawiki.ryanballantyne.name/wiki/index.php/Callback_Functions
+
+
+
+
+LUA:
+
+
+ ~=			| not equals
+ ..			| string concatination

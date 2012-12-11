@@ -1,4 +1,4 @@
-lichter-der-tiefe
+Lichter der Tiefe
 =================
 
 Eine Aquaria Mod mit Heldenreise
