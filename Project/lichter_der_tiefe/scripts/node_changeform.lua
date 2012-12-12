@@ -22,7 +22,7 @@ function update(me, dt)
 	end
 
 	-- enter node
-	if ~v.inNode and node_isEntityIn(me, v.n) then
+	if not v.inNode and node_isEntityIn(me, v.n) then
 		v.inNode = true
 		if isForm(0) then
 			changeForm(1)
@@ -33,7 +33,7 @@ function update(me, dt)
 	end
 
 	-- leave node
-	if not v.inNode and ~node_isEntityIn(me, v.n) then
+	if not v.inNode and not node_isEntityIn(me, v.n) then
 		v.inNode = false
 	end
 
