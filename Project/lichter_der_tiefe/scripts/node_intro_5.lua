@@ -6,22 +6,15 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-	v.n = getNaija()
-	v.inNode = false
-
-	v.flag = 306
+    v.n = getNaija()
 end
 
 -- check trigger
 function update(me, dt)
 
-	if isFlag( v.flag, 0 ) and node_isEntityIn(me, v.n) then
+    if node_isEntityIn(me, v.n) then
 
-		setFlag( v.flag, 1 )
-
-		centerText( "....5...." )
-	end
+		centerText( "Aalbau" )
+    end
 
 end
-
-
