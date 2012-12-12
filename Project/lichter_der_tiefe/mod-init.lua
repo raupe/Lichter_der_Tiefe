@@ -21,5 +21,5 @@ if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 function init()
-	loadMap("schacht")
+	loadMap("1_riff_der_erleuchtung")
 end
