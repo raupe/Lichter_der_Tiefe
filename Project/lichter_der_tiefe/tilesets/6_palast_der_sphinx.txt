@@ -1,0 +1,9 @@
+1 ldt-6-tile-rock-0004 128 128
+2 ldt-6-tile-rock-0004 128 128
+3 ldt-6-tile-rock-0004 128 128
+4 ldt-6-tile-rock-0004 128 128
+5 ldt_6_tropfstein_1
+6 ldt_6_tropfstein_2
+7 ldt_6_tropfstein_3
+8 ldt_6_tropfstein_4
+49 black_fadeout
