@@ -1,0 +1,16 @@
+<Bones>
+    <Bone idx="4" gfx="Naija/Emily-BackArm1"  />
+    <Bone idx="5" gfx="Naija/Emily-BackArm2"  />
+    <Bone idx="10" gfx="Naija/Emily-BackArm3"/>
+    <Bone idx="6" gfx="Naija/Emily-BackLeg1" />
+    <Bone idx="7" gfx="Naija/Emily-BackLeg2"  />
+    <Bone idx="12" gfx="Naija/Emily-BackLeg3"  />
+    <Bone idx="0" gfx="Naija/Emily-Body"  />
+    <Bone idx="8" gfx="Naija/Emily-FrontLeg1"  />
+    <Bone idx="9" gfx="Naija/Emily-FrontLeg2"  />
+    <Bone idx="13" gfx="Naija/Emily-FrontLeg3"  />
+    <Bone idx="1" gfx="Naija/Emily-Head"  />
+    <Bone idx="2" gfx="Naija/Emily-FrontArm1"  />
+    <Bone idx="3" gfx="Naija/Emily-FrontArm2"  />
+    <Bone idx="11" gfx="Naija/Emily-FrontArm3"  />
+</Bones>

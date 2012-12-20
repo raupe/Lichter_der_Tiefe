@@ -1,0 +1,37 @@
+<AnimationLayers>
+    <AnimationLayer />
+    <AnimationLayer ignore="0 1 14 8 9 10 11 12 13 " />
+</AnimationLayers>
+<Bones>
+    <Bone idx="0" gfx="1_Mejais/Body" pidx="-1" name="Body" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="14" gfx="1_Mejais/Cape" pidx="0" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+    <Bone idx="1" gfx="1_Mejais/Head" pidx="0" name="Head" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="5" gfx="1_Mejais/Arm1" pidx="0" name="" fh="1" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+    <Bone idx="6" gfx="1_Mejais/Arm2" pidx="5" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="7" gfx="1_Mejais/Arm3" pidx="6" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+    <Bone idx="8" gfx="1_Mejais/Leg1" pidx="0" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="9" gfx="1_Mejais/Leg2" pidx="8" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+    <Bone idx="10" gfx="1_Mejais/Leg3" pidx="9" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+    <Bone idx="11" gfx="1_Mejais/Leg1" pidx="0" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+    <Bone idx="12" gfx="1_Mejais/Leg2" pidx="11" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+    <Bone idx="13" gfx="1_Mejais/Leg3" pidx="12" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+    <Bone idx="2" gfx="1_Mejais/Arm1" pidx="0" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" pass="3" />
+    <Bone idx="3" gfx="1_Mejais/Arm2" pidx="2" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" pass="3" />
+    <Bone idx="4" gfx="1_Mejais/Arm3" pidx="3" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1" pass="3" />
+</Bones>
+<Animations>
+    <Animation name="idle">
+        <Key e="0.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 -2 -63 0 0 2 20 -8 13 0 3 14 32 -14 0 4 5 30 -12 0 5 -13 -6 -15 0 6 16 32 -18 0 7 3 32 0 0 8 10 52 0 0 9 1 48 0 0 10 2 46 -18 0 11 -2 52 0 0 12 1 48 0 0 13 3 44 -21 0 14 4 44 0 0 " />
+        <Key lerp="1" e="1.1 0 0 5 0 0 0 0 0 0 0 0 0 0 0 0 1 -2 -63 0 0 2 26 -10 -7 0 3 10 35 0 0 4 -2 29 20 0 5 -20 -14 11 0 6 10 34 0 0 7 -1 29 17 0 8 13 52 -6 0 9 1 48 0 0 10 -5 45 0 0 11 -5 52 -1 0 12 1 48 0 0 13 -9 39 13 0 14 4 44 0 0 " />
+        <Key e="1.9 0 0 -5 0 0 0 0 0 0 0 0 0 0 0 0 1 -2 -63 0 0 2 18 -7 13 0 3 17 32 -21 0 4 10 28 -31 0 5 -16 -8 -10 0 6 15 32 -19 0 7 8 29 -27 0 8 10 52 0 0 9 1 48 0 0 10 -5 45 0 0 11 -2 52 1 0 12 1 48 0 0 13 -5 44 0 0 14 4 44 0 0 " />
+        <Key e="2.6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 -2 -63 0 0 2 20 -8 13 0 3 14 32 -14 0 4 5 30 -12 0 5 -13 -6 -15 0 6 16 32 -18 0 7 3 32 0 0 8 10 52 0 0 9 1 48 0 0 10 2 46 -18 0 11 -2 52 0 0 12 1 48 0 0 13 3 44 -21 0 14 4 44 0 0 " />
+    </Animation>
+    <Animation name="lie">
+        <Key e="0 0 26 36 80 0 0 0 0 0 0 0 0 0 0 0 1 -2 -63 0 0 2 20 -8 13 0 3 14 32 -14 0 4 5 30 -12 0 5 -8 -9 -24 0 6 14 25 -18 0 7 3 32 0 0 8 10 52 0 0 9 1 48 0 0 10 2 46 -18 0 11 -2 52 0 0 12 1 48 0 0 13 3 44 -21 0 14 4 44 0 0 " />
+        <Key e="1.6 0 26 34 80 0 0 0 0 0 0 0 0 0 0 0 1 -4 -62 -5 0 2 20 -11 7 0 3 11 33 -3 0 4 5 30 -12 0 5 -10 -8 -24 0 6 14 25 -18 0 7 3 32 0 0 8 10 52 5 0 9 3 47 -7 0 10 2 46 -18 0 11 -2 52 4 0 12 1 48 0 0 13 3 44 -21 0 14 4 44 0 0 " />
+        <Key e="3.4 0 26 36 80 0 0 0 0 0 0 0 0 0 0 0 1 -2 -63 0 0 2 20 -8 13 0 3 14 32 -14 0 4 5 30 -12 0 5 -8 -9 -24 0 6 14 25 -18 0 7 3 32 0 0 8 10 52 0 0 9 1 48 0 0 10 2 46 -18 0 11 -2 52 0 0 12 1 48 0 0 13 3 44 -21 0 14 4 44 0 0 " />
+    </Animation>
+    <Animation name="dead">
+        <Key e="0 0 26 36 80 0 0 0 0 0 0 0 0 0 0 0 1 -1 -61 14 0 2 26 -10 -11 0 3 8 34 10 0 4 6 30 -18 0 5 -8 -9 -24 0 6 14 25 -18 0 7 3 32 0 0 8 10 52 -4 0 9 -1 49 9 0 10 3 47 -24 0 11 -2 52 -3 0 12 -2 48 7 0 13 6 44 -34 0 14 4 44 0 0 " />
+    </Animation>
+</Animations>

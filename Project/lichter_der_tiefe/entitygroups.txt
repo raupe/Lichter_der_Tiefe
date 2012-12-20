@@ -1,3 +1,12 @@
+GROUP:LichterDerTiefe
+emily
+vater
+1_mejais
+cerajt
+nejl
+aal
+sphinx
+
 GROUP:OpenWaters
 Nautilus
 RedNautilus
@@ -415,13 +424,3 @@ otter
 fishcaveglow
 timerock
 arnassi-spirit
-
-
-GROUP:LichterDerTiefe
-emily
-vater
-mejais
-cerajt
-nejl
-aal
-sphinx
