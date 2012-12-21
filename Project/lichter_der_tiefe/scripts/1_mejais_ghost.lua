@@ -23,7 +23,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time > 5 then
 			v.time = 0
-			
+
 			rand = randRange(0, 3)
 			if rand == 1 then
 				pos = getNode("1_mejais_1")
@@ -35,7 +35,7 @@ function update(me, dt)
 				pos = getNode("1_mejais_3")
 				entity_swimToNode(me, pos, 4)
 			end
-			
+
 		end
 	end
 end

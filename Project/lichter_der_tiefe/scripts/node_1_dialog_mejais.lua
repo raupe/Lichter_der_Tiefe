@@ -14,14 +14,14 @@ end
 
 -- check trigger
 function update(me, dt)
-	
-	
+
+
 	if isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
 		-- disableInput()
 		setControlHint("Mejais: ...", 0, 0, 0, 3)
 		setFlag(v.flag, 1)
 	end
-	
+
 	if isFlag(v.flag, 1) then
 		v.time = v.time + dt
 		if v.time >= 4 then
