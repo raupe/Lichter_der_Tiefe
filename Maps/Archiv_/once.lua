@@ -9,7 +9,7 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 
-	v.flag = 403
+	v.flag = 302
 end
 
 -- check trigger
@@ -19,7 +19,7 @@ function update(me, dt)
 
 		setFlag( v.flag, 1 )
 
-		setControlHint("Soviele Blumen habe ich schon lange nicht mehr gesehen...", 0, 0, 0, 4 )
+		centerText( "Der Schacht" )
 	end
 
 end
