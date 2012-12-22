@@ -13,25 +13,39 @@ function init(me)
 end
 
 -- check trigger
-function update(me, dt)
-	
+function update(me, dt)	
 	
 	if isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
-		-- disableInput()
+		disableInput()
 		setControlHint("Mejais: ...", 0, 0, 0, 3)
 		setFlag(v.flag, 1)
-	end
 	
-	if isFlag(v.flag, 1) then
+	
+	elseif isFlag(v.flag, 1) then
 		v.time = v.time + dt
 		if v.time >= 4 then
 			entity_setState(v.mejais, STATE_DEATHSCENE)
 			ghost = createEntity("1_mejais_ghost", "", entity_getPosition(v.mejais))
+			setFlag(v.flag, 2)
+			v.time = 0
+		end
+	
+	
+	elseif isFlag(v.flag, 2) then
+		v.time = v.time + dt
+		if v.time >= 2
+			setControlHint("Mejais: erklärt die Welt", 0, 0, 0, 4)
+			setFlag(v.flag, 3)
+			v.time = 0
+		end
+		
+	elseif isFlag(v.flag, 3) then
+		v.time = v.time + dt
+		if v.time >= 4
 			mejaisStart = getNode("1_mejais_1")
 			entity_swimToNode(ghost, mejaisStart, 4)
-			setFlag(v.flag, 2)
-			setFlag(100, 2)
-			-- enableInput()
+			enableInput()
+			setFlag(100, 4)
 		end
 	end
 
