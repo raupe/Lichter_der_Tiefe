@@ -27,8 +27,10 @@ function postInit(me)
 	-- first entering the cave
 	-- setFlag(v.flag, 1)
 
-	-- change on mejas 3.dialog
-	setFlag(v.flag, 2)
+	if isFlag(303, 1 ) then
+		-- change on mejas 3.dialog
+		setFlag(v.flag, 2)
+	end
 
 	if not isFlag(v.flag, 1) then
 		entity_setTexture (me, "hint-bubble")
