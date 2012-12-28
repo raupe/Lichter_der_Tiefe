@@ -7,8 +7,8 @@ if not v then v = {} end
 function init(me)
 
     -- v.n = getNaija()
-    centerText("Neijls Hoehle")
-    -- v.flag = 300
+    centerText("Nejls Hoehle")
+    v.flag = 300
 end
 
 -- check trigger
