@@ -6,9 +6,10 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-    -- v.n = getNaija()
-    centerText("Hoehle der Entschlossenheit")
-    -- v.flag = 1000
+	v.n = getNaija()
+	v.flag = 1000
+
+	centerText("Hoehle der Entschlossenheit")
 end
 
 -- check trigger
