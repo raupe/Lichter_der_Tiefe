@@ -1,0 +1,112 @@
+
+ID		Entity/Node/Intro/Banter	Values
+_______________________________________________________________________
+
+
+100		Riff der Erleuchtung (I)	0	- default
+									1	- zeige Namen
+									>0	- platziere Geist
+
+101		Schacht (B)					0 	- (verhindert am Anfang)
+									1 	- Emily beschwert sich
+
+102		Los (B)						0	- default
+									1	- Emily fragt sich selbst
+
+103		Triff Mejais (N)			0	- default
+									1	- enable input
+									2	-
+
+104		Dialog Mejais (N)			0	- default
+
+_______________________________________________________________________
+
+
+200		Heimische Gewaesser (I)		0	- default
+									1	- zeige Namen
+
+201		Weg (B)						0	- default
+									1	- Emily fragt sich selbst
+
+202		Strom (B)					0	- default
+									1	- Emily beschwert sich
+
+203		Quest (B)					0	- default
+									1	- Emily fragt wie es Nejl geht
+
+_______________________________________________________________________
+
+
+300		Nejls Hoehle (I)			0	- default
+									1	- zeige Namen
+
+301		Warm (B)					0	- default
+									1	- Emily bewundert die Hoehle
+
+302		Rock (E)					0 	- default
+									1 	- normaler Fels
+									2 	- zeigt Loch
+									3	- kann zu den "Untiefen"
+									4	- kommt aus den "Untiefen"
+
+303		Nejl (E)					0 	- default
+									1 	- getroffen, folgt einem
+
+304		Wap Untiefen (N)			0	- default
+									3	- kann zur "Hoehle"
+									4	- kommt aus der "Hoehle"
+
+305		Dialog Nejl					0	- default
+									1	- Nejl folgt einem (303 -> 1)
+_______________________________________________________________________
+
+400		Riskante Stroemung (I)		0	- default
+									1	- zeige Namen
+
+401		Weg (B)						0	- default
+									1	- Nejl hat Angst vorm Böse sein
+
+402		Schleichen (B)				0	- default
+									1	- Nejl lobt dich
+
+_______________________________________________________________________
+
+500		Aaalbau (I)					0	- default
+									1	- zeige Namen
+
+_______________________________________________________________________
+
+600		Palast der Sphinx (I)		0	- default
+									1	- zeige Namen
+
+601		Hinweis (B)					0	- default
+									1	- Nejl empfiehlt zurückzukommen
+
+_______________________________________________________________________
+
+700		Untiefen (I)				0	- default
+									1	- zeige Namen
+
+_______________________________________________________________________
+
+800		A - Hoehle der Ruhe (I)		0	- default
+									1	- zeige namen
+
+801		A - Lichterqualle (N)		0	- default
+
+_______________________________________________________________________
+
+
+900		B - Hoehle der Stroemung (I)0	- default
+									1	- zeige namen
+
+901		B - Lichterqualle (N)		0	- default
+_______________________________________________________________________
+
+
+1000	C - Hoehle der Entschlossenheit (I)	0	- default
+											1	- zeige namen
+
+1001	C - Lichterqualle (N)		0	- default
+
+
