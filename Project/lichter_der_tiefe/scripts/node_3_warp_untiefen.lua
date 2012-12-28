@@ -7,7 +7,7 @@ if not v then v = {} end
 function init(me)
 
 	v.n = getNaija()
-	v.flag = 306
+	v.flag = 304
 
 	v.inNode = false
 
