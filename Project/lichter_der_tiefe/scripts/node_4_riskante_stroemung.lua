@@ -6,10 +6,10 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-    v.n = getNaija()
-    v.flag = 400
+	v.n = getNaija()
+	v.flag = 400
 
-    centerText("Riskante Stroemung")
+	centerText("Riskante Stroemung")
 end
 
 -- check trigger
