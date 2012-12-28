@@ -1,6 +1,7 @@
 GROUP:LichterDerTiefe
 1_mejais
 1_mejais_ghost
+2_healthcontainer
 3_nejl
 3_rock
 5_aal
