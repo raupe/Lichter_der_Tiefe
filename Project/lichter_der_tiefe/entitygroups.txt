@@ -1,7 +1,11 @@
 GROUP:LichterDerTiefe
-emily
 1_mejais
+1_mejais_ghost
+3_nejl
 3_rock
+5_aal
+6_sphinx
+7_ceraijt
 
 GROUP:OpenWaters
 Nautilus

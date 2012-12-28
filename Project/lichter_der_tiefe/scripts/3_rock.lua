@@ -17,8 +17,8 @@ end
 function postInit(me)
 
 	v.n = getNaija()
-
 	v.flag = 302
+
 	v.time = 0
 	v.duration = 4
 	v.inNode = false
