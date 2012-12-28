@@ -56,23 +56,40 @@ _______________________________________________________________________
 									3	- kann zur "Hoehle"
 									4	- kommt aus der "Hoehle"
 
-305		Dialog Nejl					0	- default
+305		Dialog Nejl	(N)				0	- default
 									1	- Nejl folgt einem (303 -> 1)
+
+306		Dialog Nejl / Path			3	- default, gut
+									2
+									1	- schlechtes ende
+									0
+
+
 _______________________________________________________________________
 
 400		Riskante Stroemung (I)		0	- default
 									1	- zeige Namen
 
-401		Weg (B)						0	- default
-									1	- Nejl hat Angst vorm Böse sein
+401		Kampf (B)					0	- default
+									1	- Nejl hat Angst vor der Energie
 
 402		Schleichen (B)				0	- default
 									1	- Nejl lobt dich
+
+403		Warnung (B)					0	- default
+									1	- Nejl warnt nochmal vorm kaempfen
+
+404		Entscheidung (N)			0	- default
+									1	- Emily hat gekaempft
 
 _______________________________________________________________________
 
 500		Aaalbau (I)					0	- default
 									1	- zeige Namen
+
+501		Entscheidung (N)			0	- default
+									1	- Emily hat gekaempft
+
 
 _______________________________________________________________________
 
@@ -80,7 +97,10 @@ _______________________________________________________________________
 									1	- zeige Namen
 
 601		Hinweis (B)					0	- default
-									1	- Nejl empfiehlt zurückzukommen
+									1	- Nejl empfiehlt zurueckzukommen
+
+602		Entscheidung (N)			0	- default
+									1	- Emily hat gekaempft
 
 _______________________________________________________________________
 
