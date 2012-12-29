@@ -9,7 +9,7 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 
-	v.crystal = entity_getNearestNode(v.n, "save")
+	v.crystal = node_getNearestNode(me, "save")
 end
 
 -- check trigger
