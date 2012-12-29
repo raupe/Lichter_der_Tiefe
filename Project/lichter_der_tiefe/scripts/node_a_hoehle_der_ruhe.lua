@@ -6,47 +6,49 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-    v.n = getNaija()
-    v.flag = 800
+	v.n = getNaija()
+	v.flag = 800
 
-    centerText("Hoehle der Ruhe")
+	centerText("Hoehle der Ruhe")
 
-    v.song = 801
-    v.learn = false
+	v.nejl = 303
+	v.song = 801
+	v.learn = false
+	v.songs = 307
 
 
-    if isFlag(v.song, 0) then
+	if isFlag(v.nejl, 1) and isFlag(v.song, 0) then
 
-        node_setCursorActivation(me, true)
+		node_setCursorActivation(me, true)
 
-        v.x,v.y = node_getPosition(me)
-        v.e = createEntity("a_lichterqualle", "", v.x, v.y)
-    end
+		v.x,v.y = node_getPosition(me)
+		v.e = createEntity("a_lichterqualle", "", v.x, v.y)
+	end
 
 end
 
 -- trigger
 function activate(me)
 
-    if isFlag(v.song, 0) then
+	if isFlag(v.song, 0) then
 
-        setFlag(v.song, 1)
-        entity_alpha(v.e, 0, 3)
+		setFlag(v.song, 1)
 
-        learnSong(101)
-        v.learn = true
-    end
+		entity_alpha(v.e, 0, 3)
 
+		learnSong(101)
+		setFlag(v.songs, getFlag(v.songs)+1 )
+		v.learn = true
+	end
 end
 
 -- check
 function update(me, dt)
 
-    if v.learn then
+	if v.learn then
 
-        v.learn = false
-        setControlHint("Nagut, ich bringe dir den Klang der Stroemung bei. Moeges du immer einen Weg finden.. ", 0, 0, 0, 3)
-    end
-
+		v.learn = false
+		setControlHint("Lichterqualle: Wie du willst, ich bringe dir den \"Klang der Ruhe\". Auf das du immer wachsam bleibst...", 0, 0, 0, 3)
+	end
 end
 

@@ -9,20 +9,29 @@ function init(me)
     v.n = getNaija()
     v.flag = 305
 
+    v.songs = 307
     v.path = 306
+    v.nejl = 303
 
-    node_setCursorActivation(me, true)
+    if isFlag(v.flag, 0) then
+
+        node_setCursorActivation(me, true)
+    end
 end
 
-
+-- trigger
 function activate(me)
 
-    -- 3 gute Punkte
-    setFlag(v.path, 3)
+    setFlag(v.flag, 1)
 
     -- activate following nejl
-    setFlag(303,1)
+    setFlag(v.nejl, 1)
+
+    -- 3 points
+    setFlag(v.path, 3)
+
+    -- known songs
+    setFlag(v.songs, 0)
+
+    setControlHint("Nejl: Danke fuer die Hilfe. Geh voran, ich folge dir Flosse auf Flosse !", 0, 0, 0, 4)
 end
-
-
--- setting the "gessingungsbarotmer auf 3", wenn eine böse tat, dann -1 !
