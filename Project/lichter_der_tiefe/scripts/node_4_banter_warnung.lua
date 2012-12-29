@@ -9,19 +9,19 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 
-	v.flag = 403
+	v.flag = 401
+
+	v.nejl = 303
 end
 
--- check trigger
+-- check
 function update(me, dt)
 
-
-    if isFlag(401, 1) and isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
+	if isFlag(v.nejl, 1) and isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
 
 		setFlag(v.flag, 1)
 
-		setControlHint("Nejl: Hoere bitte auf, du machst mir Angst...", 0, 0, 0, 4 )
+		setControlHint("Nejl: O nein, die Energiekristalle...Das gefaellt mir nicht, wir sollten umkehren!", 0, 0, 0, 4 )
 	end
-
 end
 
