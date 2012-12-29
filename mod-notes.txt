@@ -88,8 +88,75 @@ http://aquariawiki.ryanballantyne.name/wiki/index.php/Callback_Functions
 
 
 
-LUA:
+LUA specific:
 
 
  ~=			| not equals
  ..			| string concatination
+
+
+
+
+http://www.lua.org/pil/5.1.html
+
+v.x,v.y = entity_getPosition(v.n) // really returns 2 values Oo
+(no array, but returns/assigns them just right away)
+
+http://aquariawiki.ryanballantyne.name/wiki/index.php/Learn_Lua
+
+
+-------------
+
+
+
+Snippets:
+
+
+----------  text  ----------
+
+-- define variables
+local function setupRead()
+
+    v.rd_dt = 0
+    v.rd_done = 0
+    v.rd_time = 0
+    v.rd_length = 0
+    v.rd_current = 0
+end
+
+-- show text
+local function read(dt, duration, text)
+
+    if v.rd_done == v.rd_length+1 then return   end
+
+    -- get length + define current
+    if v.rd_dt ~= dt then
+        v.rd_dt = dt
+
+        -- calculating time once per dt
+        v.rd_time = v.rd_time + dt
+
+        v.rd_length = v.rd_current
+        v.rd_current = 0
+    end
+
+    v.rd_current = v.rd_current+1
+
+    if v.rd_current-1 == v.rd_done then
+
+        if v.rd_time == dt then
+
+            -- duration + consider iteration loop + smoothing fading animation
+            setControlHint(text, 0, 0, 0, duration + v.rd_current + 2)
+
+        elseif v.rd_time >= duration then
+
+            v.rd_done = v.rd_done+1
+            v.rd_time = 0
+        end
+
+    end
+
+end
+
+---------- /text  ----------
