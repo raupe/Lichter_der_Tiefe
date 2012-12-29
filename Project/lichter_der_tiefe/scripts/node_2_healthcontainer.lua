@@ -19,18 +19,18 @@ function init(me)
 end
 
 
--- check trigger
+-- check
 function activate(me)
 
     if isFlag(v.flag, 0 ) then
 
         setFlag(v.flag, 1)
-        upgradeHealth()
 
+        upgradeHealth()
+        entity_alpha(v.e, 0, 2)
         playSfx("HealthUpgrade-Collect")
         spawnParticleEffect("HealthUpgradeReceived", node_getPosition(me))
 
-        entity_delete(v.e)
+        setControlHint("Emily: Ich fuehle mich auf einmal so stark....", 0, 0, 0, 4)
     end
-
 end
