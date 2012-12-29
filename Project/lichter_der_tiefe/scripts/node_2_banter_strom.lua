@@ -12,15 +12,14 @@ function init(me)
 	v.flag = 202
 end
 
--- check trigger
+-- check
 function update(me, dt)
 
 	if isFlag( v.flag, 0 ) and node_isEntityIn(me, v.n) then
 
 		setFlag( v.flag, 1 )
 
-		setControlHint("Emily: Die Stroemung ist zu stark!", 0, 0, 0, 4 )
+		setControlHint("Emily: Die Stroemung ist so stark!", 0, 0, 0, 4 )
 	end
-
 end
 

@@ -14,13 +14,13 @@ function init(me)
 	v.path = 306
 end
 
--- check trigger
+-- check
 function update(me, dt)
 
 	if isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
 
 		setFlag(v.flag, 1)
+
 		setFlag(v.path, getFlag(v.path)-1 )
 	end
-
 end

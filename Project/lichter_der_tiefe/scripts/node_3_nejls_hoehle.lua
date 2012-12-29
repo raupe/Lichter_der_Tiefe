@@ -12,7 +12,7 @@ function init(me)
     centerText("Nejls Hoehle")
 end
 
--- check trigger
+-- check
 function update(me, dt)
 
 end

@@ -12,7 +12,7 @@ function init(me)
     centerText("Heimische Gewaesser")
 end
 
--- check trigger
+-- check
 function update(me, dt)
 
 end

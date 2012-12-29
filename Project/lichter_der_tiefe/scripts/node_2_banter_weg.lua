@@ -12,7 +12,7 @@ function init(me)
 	v.flag = 201
 end
 
--- check trigger
+-- check
 function update(me, dt)
 
 	if isFlag( v.flag, 0 ) and node_isEntityIn(me, v.n) then
@@ -21,6 +21,5 @@ function update(me, dt)
 
 		setControlHint("Emily: Wann kommt denn diese Hoehle?", 0, 0, 0, 4 )
 	end
-
 end
 
