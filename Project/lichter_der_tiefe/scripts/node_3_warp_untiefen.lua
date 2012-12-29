@@ -14,6 +14,10 @@ function init(me)
 	v.time = 0
 	v.duration = 4
 
+
+	v.path = 306
+
+
 	setFlag(v.flag, 4)
 end
 
@@ -42,6 +46,14 @@ function update(me, dt)
 		if isFlag(v.flag, 4) then
 
 			centerText("Untiefen")
+
+			if getFlag(v.path) <= 1 then
+				v.msg = "Schlechtes Ende :("
+			else
+				v.msg = "Gutes Ende :)"
+			end
+
+			setControlHint(v.msg, 0, 0, 0, 10)
 		end
 
 	end
