@@ -23,22 +23,23 @@ function postInit(me)
 	v.duration = 4
 	v.inNode = false
 
+	v.nejl = 303
 
-	-- first entering the cave
-	-- setFlag(v.flag, 1)
 
-	if isFlag(303, 1 ) then
-		-- change on mejas 3.dialog
+	-- change on lied der lichter
+	if isFlag(v.nejl, 2 ) then
 		setFlag(v.flag, 2)
 	end
 
-	if not isFlag(v.flag, 1) then
+	--
+	if not isFlag(v.flag, 0) then
 		entity_setTexture (me, "hint-bubble")
 	end
 
 	-- focus first time
 	if isFlag(v.flag, 2) then
 
+		setControlHint("Emily: Wo ist nur Nejl...", 0, 0, 0, 4 )
 		setCameraLerpDelay(v.duration)
 		disableInput()
 		cam_toEntity(me)
@@ -48,7 +49,7 @@ function postInit(me)
 end
 
 
-
+-- check
 function update(me, dt)
 
 	-- loose focus first time
