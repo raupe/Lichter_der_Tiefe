@@ -1,22 +1,25 @@
 -- declarations -> prevent globals
 if not v then v = {} end
--- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
+if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 
--- on creation
 function init(me)
 
-    node_setCursorActivation(me, true)
+    setupEntity(me)
+    entity_setEntityType(me, ET_NEUTRAL)
+    entity_setTexture (me, "blazer")
+
+    entity_color(me, 0, 0, 20)
 end
 
--- check trigger
-function activate(me)
+-- after nodes have inited
+function postInit(me)
 
+    v.n = getNaija()
+    v.flag = 1001
+end
 
-    if confirm ("Willst du was cooles lernen ?") then
-
-        learnSong(19)
-    end
+function update(me, dt)
 
 end
 

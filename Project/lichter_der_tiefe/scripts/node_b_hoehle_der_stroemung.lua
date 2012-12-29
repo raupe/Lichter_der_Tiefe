@@ -10,9 +10,44 @@ function init(me)
 	v.flag = 900
 
 	centerText("Hoehle der Stroemung")
+
+	v.song = 901
+	v.learn = false
+
+
+	if isFlag(v.song, 0) then
+
+		node_setCursorActivation(me, true)
+
+		v.x,v.y = node_getPosition(me)
+		v.e = createEntity("b_lichterqualle", "", v.x, v.y)
+	end
+
 end
 
--- check trigger
+-- trigger
+function activate(me)
+
+	if isFlag(v.song, 0) then
+
+		setFlag(v.song, 1)
+
+		entity_alpha(v.e, 0, 3)
+		learnSong(101)
+
+		v.learn = true
+	end
+
+end
+
+
+-- check
 function update(me, dt)
+
+	if v.learn then
+
+		v.learn = false
+		setControlHint("Nagut, ich bringe dir den Klang der Stroemung bei. Moeges du immer einen Weg finden.. ", 0, 0, 0, 3)
+	end
 
 end

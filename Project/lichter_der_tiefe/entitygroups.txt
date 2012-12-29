@@ -7,6 +7,9 @@ GROUP:LichterDerTiefe
 5_aal
 6_sphinx
 7_ceraijt
+a_lichterqualle
+b_lichterqualle
+c_lichterqualle
 
 GROUP:OpenWaters
 Nautilus
