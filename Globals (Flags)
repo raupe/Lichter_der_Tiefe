@@ -60,27 +60,31 @@ _______________________________________________________________________
 									4	- kommt aus der "Hoehle"
 
 305		Dialog Nejl	(N)				0	- default
-									1	- Nejl folgt einem (303 -> 1)
+									1	- disable + Nejl folgt einem (303 -> 1)
 
 306		Dialog Nejl / Path			3	- default, gut
 									2
 									1	- schlechtes ende
 									0
 
+307		Dialog Nejls / Songs		0	- default
+									1
+									2
+									3	- trigger for 'd - Lied der Lichter'
 
 _______________________________________________________________________
 
 400		Riskante Stroemung (I)		0	- default
 									1	- zeige Namen
 
-401		Kampf (B)					0	- default
-									1	- Nejl hat Angst vor der Energie
+401		Warnung (B)					0	- default
+									1	- Nejl warnt nochmal vorm kaempfen
 
 402		Schleichen (B)				0	- default
 									1	- Nejl lobt dich
 
-403		Warnung (B)					0	- default
-									1	- Nejl warnt nochmal vorm kaempfen
+403		Kampf (B)					0	- default
+									1	- Nejl hat Angst vor der Energie
 
 404		Entscheidung (N)			0	- default
 									1	- Emily hat gekaempft
@@ -137,4 +141,10 @@ _______________________________________________________________________
 
 1001	C - Lichterqualle (E)		0	- default
 									1	- Klang der Entschlossenheit gelernt
+
+_______________________________________________________________________
+
+
+1100	D - Lied der Lichter		0	- default
+									1	- Lied der Lichter gelernt
 
