@@ -9,7 +9,7 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 
-	v.flag = 414
+	v.flag = 301
 end
 
 -- check trigger
@@ -19,7 +19,7 @@ function update(me, dt)
 
 		setFlag( v.flag, 1 )
 
-		setControlHint("Neijl: Toll, nun kann ich die erste Strophe.", 0, 0, 0, 4 )
+		setControlHint("Emily: Sieht ganz schoen gemuetlich aus...", 0, 0, 0, 4 )
 	end
 
 end

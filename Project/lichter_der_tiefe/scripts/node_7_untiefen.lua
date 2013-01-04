@@ -6,15 +6,12 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-    v.n = getNaija()
+    -- v.n = getNaija()
+    centerText("Untiefen")
+    -- v.flag = 700
 end
 
 -- check trigger
 function update(me, dt)
-
-    if node_isEntityIn(me, v.n) then
-
-		centerText( "Heimische Gewaesser" )
-    end
 
 end

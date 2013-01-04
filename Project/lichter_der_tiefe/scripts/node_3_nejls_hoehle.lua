@@ -6,21 +6,12 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-	v.n = getNaija()
-	v.inNode = false
-
-	v.flag = 413
+    -- v.n = getNaija()
+    centerText("Neijls Hoehle")
+    -- v.flag = 300
 end
 
 -- check trigger
 function update(me, dt)
 
-	if isFlag( v.flag, 0 ) and node_isEntityIn(me, v.n) then
-
-		setFlag( v.flag, 1 )
-
-		setControlHint("Es geht nicht !", 0, 0, 0, 4 )
-	end
-
 end
-

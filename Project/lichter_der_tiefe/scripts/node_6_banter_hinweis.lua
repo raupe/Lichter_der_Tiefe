@@ -9,7 +9,7 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 
-	v.flag = 302
+	v.flag = 501
 end
 
 -- check trigger
@@ -19,9 +19,8 @@ function update(me, dt)
 
 		setFlag( v.flag, 1 )
 
-		centerText( "Der Schacht" )
+		setControlHint("Hier gehs wohl gerade nicht weiter....", 0, 0, 0, 4 )
 	end
 
 end
-
 

@@ -9,7 +9,7 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 
-	v.flag = 410
+	v.flag = 401
 end
 
 -- check trigger
@@ -19,7 +19,7 @@ function update(me, dt)
 
 		setFlag( v.flag, 1 )
 
-		setControlHint("Man sieht das gemuetlich aus...", 0, 0, 0, 4 )
+		setControlHint("Nejl: Bitte tu das nicht, du verschreckst sonst das Licht!", 0, 0, 0, 4 )
 	end
 
 end

@@ -9,7 +9,7 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 
-	v.flag = 412
+	v.flag = 402
 end
 
 -- check trigger
@@ -19,7 +19,7 @@ function update(me, dt)
 
 		setFlag( v.flag, 1 )
 
-		setControlHint("Die Stroemung ist zu stark.", 0, 0, 0, 4 )
+		setControlHint("Nejl: Toll hast du das gemacht.", 0, 0, 0, 4 )
 	end
 
 end
