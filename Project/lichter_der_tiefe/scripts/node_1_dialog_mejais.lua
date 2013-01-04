@@ -16,8 +16,8 @@ end
 function update(me, dt)	
 
 	if isFlag(v.flag, 0) then
-		triffMejaisNode = getNode("1_triff_mejais")
-		if node_isEntityIn(triffMejaisNode, v.n) then
+		v.triffMejaisNode = getNode("1_triff_mejais")
+		if node_isEntityIn(v.triffMejaisNode, v.n) then
 			disableInput()
 			entity_swimToNode(v.n, me, 4)
 			setFlag(v.flag, 1)
@@ -48,8 +48,8 @@ function update(me, dt)
 	elseif isFlag(v.flag, 4) then
 		v.time = v.time + dt
 		if v.time >= 4 then
-			mejaisStart = getNode("1_mejais_1")
-			entity_swimToNode(ghost, mejaisStart, 4)
+			v.mejaisStart = getNode("1_mejais_1")
+			entity_swimToNode(ghost, v.mejaisStart, 4)
 			enableInput()
 			setFlag(100, 5)
 		end
