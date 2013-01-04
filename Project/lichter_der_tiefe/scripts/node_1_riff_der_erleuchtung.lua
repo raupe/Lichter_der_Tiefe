@@ -21,10 +21,15 @@ function init(me)
     centerText("Riff der Erleuchtung")
 
     if getFlag(v.flag) > 0 then
-    	mejais = getEntity("1_mejais")
-		entity_setState(mejais, STATE_DEATHSCENE)
-    	mejaisStart = getNode("1_mejais_1")
-		createEntity("1_mejais_ghost", "", node_getPosition(mejaisStart))
+    	local mejais = getEntity("1_mejais")
+		entity_setState(v.mejais, STATE_DEATHSCENE)
+    	local mejaisStart = getNode("1_mejais_1")
+		createEntity("1_mejais_ghost", "", node_getPosition(v.mejaisStart))
+    end
+    
+    -- turn off glowing
+    if getFlag(v.flag) == 2 then
+    	setFlag(v.flag, 1)
     end
 
 end

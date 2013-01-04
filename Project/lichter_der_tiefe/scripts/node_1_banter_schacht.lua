@@ -34,7 +34,7 @@ function update(me, dt)
 		v.time = 0
 	end
 
-	if v.inNode and isFlag(v.flag, 1) then
+	if v.inNode and isFlag(v.flag, 1) and getFlag(100) <= 1 then
 		v.time = v.time + dt
 
 		if v.time >= 3 then

@@ -5,40 +5,36 @@ if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 function init(me)
 	setupEntity(me)
 	entity_setEntityType(me, ET_NEUTRAL)
-	entity_initSkeletal(me, "1_mejais_ghost")
+	entity_initSkeletal(me, "1_lichterblume")
 	entity_setState(me, STATE_IDLE)
-	entity_setCollideRadius(me, 32)
-	entity_setHealth(me, 5)
-	entity_setDeathParticleEffect(me, "TinyRedExplode")
 	
-	entity_setActivation(me, AT_CLICK, 32, 500)
+	v.glow = false
+	v.r = randRange(50, 100) / 100
+	v.g = randRange(50, 100) / 100
+	v.b = randRange(50, 100) / 100
 end
 
 -- after nodes have inited
 function postInit(me)
-	v.n = getNaija()
-	v.time = 0
 end
 
 function update(me, dt)
-	if entity_isState(me, STATE_IDLE) then
-		v.time = v.time + dt
-		if v.time > 5 then
-			v.time = 0
-
-			v.rand = randRange(0, 3)
-			if v.rand == 1 then
-				v.pos = getNode("1_mejais_1")
-				entity_swimToNode(me, v.pos, 4)
-			elseif v.rand == 2 then
-				v.pos = getNode("1_mejais_2")
-				entity_swimToNode(me, v.pos, 4)
-			elseif v.rand == 3 then
-				v.pos = getNode("1_mejais_3")
-				entity_swimToNode(me, v.pos, 4)
-			end
-
-		end
+	if not v.glow and getFlag(100) > 1 then
+		v.glow = true
+		
+		local current = entity_getNearestNode(me, "current")
+        node_setActive(current, false)
+	end
+	
+	if v.glow then
+		local l = createQuad("Naija/LightFormGlow", 13)
+		quad_setPosition(l, entity_getPosition(me))
+		quad_scale(l, 2, 2)
+		-- quad_alpha(l, 0)
+		-- quad_alpha(l, 1, 0.5)
+		quad_color(l, v.r, v.g, v.b)		
+		quad_delete(l, 4)
+		quad_color(v.glow, r, g, b, 0.5)
 	end
 end
 
@@ -68,8 +64,10 @@ function songNoteDone(me, note)
 end
 
 function song(me, song)
+	if song == 104 then
+		setFlag(100, 2)
+	end
 end
 
 function activate(me)
-	setControlHint("Mejais: Hallo Emily.", 0, 0, 0, 2)
 end
