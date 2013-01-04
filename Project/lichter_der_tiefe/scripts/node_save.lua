@@ -9,33 +9,37 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 
-	setStringFlag("message", node_getName(me))
+	v.saved = false
 end
 
 -- check trigger
 function update(me, dt)
 
-	-- reset
-	if getStringFlag("message") ~= node_getName(me) then
-		v.started = false
-		return
-	end
-
 	-- enter node
 	if not v.inNode and node_isEntityIn(me, v.n) then
+
 		v.inNode = true
+
 		if isForm(0) then
+
+			if not v.saved then
+
+				v.saved = true
+
+				pause()
+				savePoint( me )
+				unpause()
+			end
+
 			changeForm(1)
-		else
-			changeForm(0)
 		end
 
 	end
 
 	-- leave node
-	if not v.inNode and not node_isEntityIn(me, v.n) then
+	if v.inNode and not node_isEntityIn(me, v.n) then
+
 		v.inNode = false
 	end
 
 end
-

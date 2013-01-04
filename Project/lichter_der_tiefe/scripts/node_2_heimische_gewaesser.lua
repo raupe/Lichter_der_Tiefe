@@ -6,12 +6,13 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-    -- v.n = getNaija()
+    v.n = getNaija()
+    v.flag = 200
+
     centerText("Heimische Gewaesser")
-    -- v.flag = 200
 end
 
--- check trigger
+-- check
 function update(me, dt)
 
 end

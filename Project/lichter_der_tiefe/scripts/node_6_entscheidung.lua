@@ -9,18 +9,18 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 
-	v.flag = 403
+	v.flag = 602
+
+	v.path = 306
 end
 
 -- check trigger
 function update(me, dt)
 
-	if isFlag( v.flag, 0 ) and node_isEntityIn(me, v.n) then
+	if isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
 
-		setFlag( v.flag, 1 )
-
-		setControlHint("Neijl: Toll, nun kann ich die erste Strophe.", 0, 0, 0, 4 )
+		setFlag(v.flag, 1)
+		setFlag(v.path, getFlag(v.path)-1 )
 	end
 
 end
-

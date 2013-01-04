@@ -10,17 +10,18 @@ function init(me)
 	v.inNode = false
 
 	v.flag = 203
+
+	v.nejl = 303
 end
 
--- check trigger
+-- check
 function update(me, dt)
 
-	if isFlag( v.flag, 0 ) and node_isEntityIn(me, v.n) then
+	if isFlag(v.nejl, 1) and isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
 
-		setFlag( v.flag, 1 )
+		setFlag(v.flag, 1)
 
-		setControlHint("Emily: Geht's dir gut Nejl ?", 0, 0, 0, 4 )
+		setControlHint("Emily: Wir schaffen das schon Nejl...", 0, 0, 0, 3)
+		-- setControlHint("Nejl: Ja, ich vermisse nur Mama....", 0, 0, 0, 3)
 	end
-
 end
-

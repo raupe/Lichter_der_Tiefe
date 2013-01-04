@@ -1,11 +1,15 @@
 GROUP:LichterDerTiefe
-emily
-vater
 1_mejais
-cerajt
-nejl
-aal
-sphinx
+1_mejais_ghost
+2_healthcontainer
+3_nejl
+3_rock
+5_aal
+6_sphinx
+7_ceraijt
+a_lichterqualle
+b_lichterqualle
+c_lichterqualle
 
 GROUP:OpenWaters
 Nautilus

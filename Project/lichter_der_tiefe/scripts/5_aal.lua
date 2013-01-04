@@ -5,7 +5,7 @@ if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 function init(me)
 	setupEntity(me)
 	entity_setEntityType(me, ET_ENEMY)
-	entity_initSkeletal(me, "00_starter")
+	entity_initSkeletal(me, "leopardshark")
 	entity_setState(me, STATE_IDLE)
 end
 
@@ -48,8 +48,8 @@ function activate(me)
 end
 
 
-
-
-function sleep()
+local function sleep()
 
 end
+
+

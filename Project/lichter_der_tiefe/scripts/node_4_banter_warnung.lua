@@ -10,17 +10,18 @@ function init(me)
 	v.inNode = false
 
 	v.flag = 401
+
+	v.nejl = 303
 end
 
--- check trigger
+-- check
 function update(me, dt)
 
-	if isFlag( v.flag, 0 ) and node_isEntityIn(me, v.n) then
+	if isFlag(v.nejl, 1) and isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
 
-		setFlag( v.flag, 1 )
+		setFlag(v.flag, 1)
 
-		setControlHint("Nejl: Bitte tu das nicht, du verschreckst sonst das Licht!", 0, 0, 0, 4 )
+		setControlHint("Nejl: O nein, die Energiekristalle...Das gefaellt mir nicht, wir sollten umkehren!", 0, 0, 0, 4 )
 	end
-
 end
 

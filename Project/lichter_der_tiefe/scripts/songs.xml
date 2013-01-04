@@ -1,6 +1,5 @@
-<Song idx="17" vox="Klang_der_Ruhe" slot="1" name="Klang der Ruhe" notes="1 5 3 7"/>
-<Song idx="18" vox="Klang_der_Stroemung" slot="2" name="Klang der Stroemung" notes="1 5 3 7"/>
-<Song idx="19" vox="Klang_der_Entschlossenheit" slot="3" name="Klang der Entschlossenheit" notes="1 5 3 7"/>
-<Song idx="20" vox="Lied_der_Lichter" slot="4" name="Lied der Lichter" notes="1 5 3 7"/>
-
-<!-- http://aquariawiki.ryanballantyne.name/wiki/index.php/Song_Tutorial -->
+<!-- song definitions -->
+<Song idx="101" vox="Klang_der_Ruhe"			slot="1" name="Ruhe" 				notes="1 2 3" script="1"/>
+<Song idx="102" vox="Klang_der_Stroemung"		slot="3" name="Stroemung"			notes="2 3 4" script="1"/>
+<Song idx="103" vox="Klang_der_Entschlossenheit"slot="5" name="Entschlossenheit" 	notes="3 4 5" script="1"/>
+<Song idx="104" vox="Lied_der_Lichter" 			slot="7" name="Lied der Lichter" 	notes="4 5 6" script="1"/>

@@ -5,8 +5,8 @@ if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 function init(me)
     setupEntity(me)
     entity_setEntityType(me, ET_ENEMY)
-    entity_initSkeletal(me, "00_starter")
-    entity_setState(me, STATE_IDLE)
+    -- entity_initSkeletal(me, "anglerfish")
+    -- entity_setState(me, STATE_IDLE)
 end
 
 -- after nodes have inited

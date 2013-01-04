@@ -6,12 +6,14 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-    -- v.n = getNaija()
-    centerText("Palast der Sphinx")
-    -- v.flag = 600
+	v.n = getNaija()
+	v.flag = 600
+
+	centerText("Palast der Sphinx")
 end
 
 -- check trigger
 function update(me, dt)
+
 
 end

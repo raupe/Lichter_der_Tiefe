@@ -1,0 +1,150 @@
+
+ID		Entity/Node/Intro/Banter	Values
+_______________________________________________________________________
+
+
+100		Riff der Erleuchtung (I)	0	- default
+									1	- zeige Namen
+									>0	- platziere Geist
+
+101		Schacht (B)					0 	- (verhindert am Anfang)
+									1 	- Emily beschwert sich
+
+102		Los (B)						0	- default
+									1	- Emily fragt sich selbst
+
+103		Triff Mejais (N)			0	- default
+									1	- enable input
+									2	-
+
+104		Dialog Mejais (N)			0	- default
+
+_______________________________________________________________________
+
+
+200		Heimische Gewaesser (I)		0	- default
+									1	- zeige Namen
+
+201		Weg (B)						0	- default
+									1	- Emily fragt sich selbst
+
+202		Strom (B)					0	- default
+									1	- Emily beschwert sich
+
+203		Quest (B)					0	- default
+									1	- Emily fragt wie es Nejl geht
+
+204		Healthcontainer (N)			0	- default
+									1	- eingesammelt
+
+_______________________________________________________________________
+
+
+300		Nejls Hoehle (I)			0	- default
+									1	- zeige Namen
+
+301		Warm (B)					0	- default
+									1	- Emily bewundert die Hoehle
+
+302		Rock (E)					0 	- default
+									1 	- normaler Fels
+									2 	- zeigt Loch
+									3	- kann zu den "Untiefen"
+									4	- kommt aus den "Untiefen"
+
+303		Nejl (E)					0 	- default
+									1 	- getroffen, folgt einem
+
+304		Wap Untiefen (N)			0	- default
+									3	- kann zur "Hoehle"
+									4	- kommt aus der "Hoehle"
+
+305		Dialog Nejl	(N)				0	- default
+									1	- disable + Nejl folgt einem (303 -> 1)
+
+306		Dialog Nejl / Path			3	- default, gut
+									2
+									1	- schlechtes ende
+									0
+
+307		Dialog Nejls / Songs		0	- default
+									1
+									2
+									3	- trigger for 'd - Lied der Lichter'
+
+_______________________________________________________________________
+
+400		Riskante Stroemung (I)		0	- default
+									1	- zeige Namen
+
+401		Warnung (B)					0	- default
+									1	- Nejl warnt nochmal vorm kaempfen
+
+402		Schleichen (B)				0	- default
+									1	- Nejl lobt dich
+
+403		Kampf (B)					0	- default
+									1	- Nejl hat Angst vor der Energie
+
+404		Entscheidung (N)			0	- default
+									1	- Emily hat gekaempft
+
+_______________________________________________________________________
+
+500		Aaalbau (I)					0	- default
+									1	- zeige Namen
+
+501		Entscheidung (N)			0	- default
+									1	- Emily hat gekaempft
+
+502		Healthcontainer (N)			0	- default
+									1	- eingesammelt
+
+_______________________________________________________________________
+
+600		Palast der Sphinx (I)		0	- default
+									1	- zeige Namen
+
+601		Hinweis (B)					0	- default
+									1	- Nejl empfiehlt zurueckzukommen
+
+602		Entscheidung (N)			0	- default
+									1	- Emily hat gekaempft
+
+_______________________________________________________________________
+
+700		Untiefen (I)				0	- default
+									1	- zeige Namen
+
+_______________________________________________________________________
+
+800		A - Hoehle der Ruhe (I)		0	- default
+									1	- zeige namen
+
+801		A - Lichterqualle (E)		0	- default
+									1	- Klang der Ruhe gelernt
+
+_______________________________________________________________________
+
+
+900		B - Hoehle der Stroemung (I)0	- default
+									1	- zeige namen
+
+901		B - Lichterqualle (E)		0	- default
+									1	- Klang der Stroemung gelernt
+
+_______________________________________________________________________
+
+
+1000	C - Hoehle der Entschlossenheit (I)	0	- default
+											1	- zeige namen
+
+1001	C - Lichterqualle (E)		0	- default
+									1	- Klang der Entschlossenheit gelernt
+
+_______________________________________________________________________
+
+
+1100	D - Lied der Lichter		0	- default
+									1	- Lied der Lichter gelernt
+

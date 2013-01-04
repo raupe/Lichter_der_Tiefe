@@ -6,12 +6,13 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-    -- v.n = getNaija()
-    centerText("Neijls Hoehle")
-    -- v.flag = 300
+    v.n = getNaija()
+    v.flag = 300
+
+    centerText("Nejls Hoehle")
 end
 
--- check trigger
+-- check
 function update(me, dt)
 
 end

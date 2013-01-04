@@ -1,8 +1,22 @@
+-- song setup
 function castSong(songIdx)
-    if songIdx == 100 then
-        -- Script for song 100
-    elseif songIdx == 101 then
-        -- Script for song 101
-    end
-    -- If song 102 is played, nothing happens
+
+	if songIdx == 101 then
+
+		setControlHint("Klang der Ruhe", 0, 0, 0, 2)
+
+	elseif songIdx == 102 then
+
+		setControlHint("Klang der Stroemung", 0, 0, 0, 2)
+
+	elseif songIdx == 103 then
+
+		setControlHint("Klang der Entschlossenheit", 0, 0, 0, 2)
+
+	elseif songIdx == 104 then
+
+		setControlHint("Lied der Lichter", 0, 0, 0, 2)
+
+	end
+
 end
