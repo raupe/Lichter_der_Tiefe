@@ -9,12 +9,12 @@ function init(me)
 	entity_setState(me, STATE_IDLE)
 	
 	
-	v.dark = createQuad("lichtblume_darkness", 13)
-	quad_setPosition(v.dark, entity_getPosition(me))
-	quad_scale(v.dark, 32, 32)
-	quad_alpha(v.dark, 0)
-	quad_alpha(v.dark, 1, 0.5)
-	quad_color(v.dark, 0, 0, 0)
+	-- v.dark = createQuad("lichtblume_darkness", 13)
+	-- quad_setPosition(v.dark, entity_getPosition(me))
+	-- quad_scale(v.dark, 32, 32)
+	-- quad_alpha(v.dark, 0)
+	-- quad_alpha(v.dark, 1, 0.5)
+	-- quad_color(v.dark, 0, 0, 0)
 end
 
 -- after nodes have inited

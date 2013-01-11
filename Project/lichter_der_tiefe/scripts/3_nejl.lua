@@ -2,40 +2,128 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
-
 function init(me)
 	setupEntity(me)
 	entity_setEntityType(me, ET_NEUTRAL)
 	entity_initSkeletal(me, "cc_kid")
 	entity_setState(me, STATE_IDLE)
 
+	v.gvel = false
 end
 
 -- after nodes have inited
 function postInit(me)
 
+	-- states:
+	-- STATE_FOLLOW: follows emily
+	-- STATE_IDLE: starts following as soon as emily is in range
+	-- STATE_WAIT: won't follow emily
+	-- STATE_DISABLED: won't follow emily until flag 303 is set to 1
+
     v.n = getNaija()
     v.flag = 303
+	v.followDelay = 0.2
 
     if isFlag(v.flag, 1) then
-
         v.x,v.y = entity_getPosition( v.n )
         entity_setPosition(me, v.x, v.y)
+        entity_setState(me, STATE_FOLLOW)
+
+    else
+        entity_setState(me, STATE_DISABLED)
     end
 end
 
-function update(me, dt)
-
-    if isFlag(v.flag, 1) then
-
-	   entity_followEntity(me, v.n)
-    end
+function update(me, dt)    
+    
+	entity_updateCurrents(me, dt)
+    
+    if entity_isState(me, STATE_DISABLED) then
+    	if isFlag(v.flag, 1) then
+        	v.x,v.y = entity_getPosition( v.n )
+        	entity_setPosition(me, v.x, v.y)
+        	entity_setState(me, STATE_FOLLOW)
+    	end
+    elseif entity_isState(me, STATE_IDLE) then
+		entity_setTarget(me, v.n)
+		v.followDelay = v.followDelay - dt
+		if v.followDelay < 0 then
+			v.followDelay = 0
+		end
+		if entity_isEntityInRange(me, v.n, 1024) and not entity_isEntityInRange(me, v.n, 256) and not avatar_isOnWall() then
+			if v.followDelay <= 0 then
+				entity_setState(me, STATE_FOLLOW)
+			end
+		end 
+		entity_doSpellAvoidance(me, dt, 128, 0.1)
+		if entity_isEntityInRange(me, v.n, 20) then
+			entity_moveTowardsTarget(me, dt, -150)
+		end
+	elseif entity_isState(me, STATE_FOLLOW) then
+		local amt = 800
+		entity_doCollisionAvoidance(me, dt, 4, 1, 100, 1, true)
+		
+		entity_setTarget(me, v.n)
+		
+		if entity_isEntityInRange(me, v.n, 180) then
+			entity_setMaxSpeedLerp(me, 0.2, 1)
+		else
+			entity_setMaxSpeedLerp(me, 1, 0.2)
+		end
+		
+		if entity_isEntityInRange(me, v.n, 180) then
+			entity_doFriction(me, dt, 200)
+			if ((math.abs(entity_velx(v.n)) < 10 and math.abs(entity_vely(v.n)) < 10) or avatar_isOnWall()) then
+				entity_setState(me, STATE_IDLE)
+			end
+		elseif entity_isEntityInRange(me, v.n, 250) then
+			entity_moveTowardsTarget(me, dt, amt)
+		elseif entity_isEntityInRange(me, v.n, 512) then
+			entity_moveTowardsTarget(me, dt, amt*2)
+		elseif not entity_isEntityInRange(me, v.n, 1024) then
+			entity_moveTowardsTarget(me, dt, amt)
+		else
+			entity_moveTowardsTarget(me, dt, amt)
+		end
+	
+		if math.abs(entity_velx(me)) < 1 and math.abs(entity_vely(me)) < 1 then
+			entity_setMaxSpeedLerp(me, 1)
+			entity_moveTowardsTarget(me, 1, 500)
+		end
+	end
+	
+	if (math.abs(entity_velx(me))) > 10 then
+		entity_flipToVel(me)
+	end
+	if not entity_isState(me, STATE_IDLE) then
+		entity_rotateToVel(me, 0.1)
+	end
+	if math.abs(entity_velx(me)) > 20 or math.abs(entity_vely(me)) > 20 then
+		entity_doFriction(me, dt, 150)
+		v.gvel = true
+	else
+		if v.gvel then
+			entity_clearVel(me)
+		v.gvel = false
+	else
+			entity_doFriction(me, dt, 40)
+		end
+	end
+	entity_updateMovement(me, dt)
 
 end
 
 function enterState(me)
 	if entity_isState(me, STATE_IDLE) then
 		entity_animate(me, "idle", -1)
+	elseif entity_isState(me, STATE_WAIT) then
+		entity_animate(me, "idle", -1)
+	elseif entity_isState(me, STATE_FOLLOW) then
+		v.followDelay = 0.2
+		entity_animate(me, "idle", LOOP_INF)
+		entity_setMaxSpeed(me, 600)
+		
+		entity_setMaxSpeedLerp(me, 1, 0.1)
 	end
 end
 
