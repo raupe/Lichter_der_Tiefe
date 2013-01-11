@@ -22,9 +22,9 @@ function init(me)
 
     if getFlag(v.flag) > 0 then
     	local mejais = getEntity("1_mejais")
-		entity_setState(v.mejais, STATE_DEATHSCENE)
+		entity_setState(mejais, STATE_DEATHSCENE)
     	local mejaisStart = getNode("1_mejais_1")
-		createEntity("1_mejais_ghost", "", node_getPosition(v.mejaisStart))
+		createEntity("1_mejais_ghost", "", node_getPosition(mejaisStart))
     end
     
     -- turn off glowing

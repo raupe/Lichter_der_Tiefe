@@ -8,34 +8,20 @@ function init(me)
 	entity_initSkeletal(me, "1_lichterblume")
 	entity_setState(me, STATE_IDLE)
 	
-	v.glowing = false
-	v.r = randRange(50, 100) / 100
-	v.g = randRange(50, 100) / 100
-	v.b = randRange(50, 100) / 100
+	
+	v.dark = createQuad("lichtblume_darkness", 13)
+	quad_setPosition(v.dark, entity_getPosition(me))
+	quad_scale(v.dark, 32, 32)
+	quad_alpha(v.dark, 0)
+	quad_alpha(v.dark, 1, 0.5)
+	quad_color(v.dark, 0, 0, 0)
 end
 
 -- after nodes have inited
 function postInit(me)
 end
 
-function update(me, dt)
-	if not v.glowing and getFlag(100) > 1 then
-		v.glowing = true
-		
-		local r = randRange(50, 100) / 100
-		local g = randRange(50, 100) / 100
-		local b = randRange(50, 100) / 100
-		
-		v.glow = createQuad("Naija/LightFormGlow", 13)
-		quad_setPosition(v.glow, entity_getPosition(me))
-		quad_scale(v.glow, 4, 4)
-		quad_alpha(v.glow, 0)
-		quad_alpha(v.glow, 1, 0.5)
-		quad_color(v.glow, r, g, b)	
-			
-		local current = entity_getNearestNode(me, "current")
-        node_setActive(current, false)
-	end
+function update(me, dt)	
 end
 
 function enterState(me)
@@ -64,9 +50,16 @@ function songNoteDone(me, note)
 end
 
 function song(me, song)
-	if song == 104 then
-		setFlag(100, 2)
-	end
+	local r = randRange(50, 100) / 100
+	local g = randRange(50, 100) / 100
+	local b = randRange(50, 100) / 100
+	
+	v.glow = createQuad("Naija/LightFormGlow", 13)
+	quad_setPosition(v.glow, entity_getPosition(me))
+	quad_scale(v.glow, 8, 8)
+	quad_alpha(v.glow, 0)
+	quad_alpha(v.glow, 1, 0.5)
+	quad_color(v.glow, r, g, b)
 end
 
 function activate(me)

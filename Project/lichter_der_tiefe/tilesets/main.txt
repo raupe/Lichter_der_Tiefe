@@ -43,7 +43,7 @@
 39 hint-bubble
 40 memory-crystal-0001
 41 ldt-bg-rock-001
-42 testMap_bg
+42 0_hafen
 43 plant-0013
 44 plant-0014
 55 plant-0008

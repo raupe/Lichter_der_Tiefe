@@ -1,4 +1,5 @@
 GROUP:LichterDerTiefe
+lichtblume
 1_mejais
 1_mejais_ghost
 1_lichtblume
