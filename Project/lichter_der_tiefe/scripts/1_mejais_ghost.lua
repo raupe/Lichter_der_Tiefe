@@ -43,7 +43,10 @@ function update(me, dt)
 end
 
 function enterState(me)
-	if entity_isState(me, STATE_IDLE) then
+	if entity_isState(me, STATE_WAIT) then
+		entity_animate(me, "idle", -1)
+
+	elseif entity_isState(me, STATE_IDLE) then
 		entity_animate(me, "idle", -1)
 	end
 end

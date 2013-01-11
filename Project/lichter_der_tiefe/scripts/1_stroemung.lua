@@ -14,7 +14,7 @@ end
 
 function update(me, dt)
 	if not v.deaktivated and getFlag(100) > 1 then
-        current = entity_getNearestNode(me, "current")
+        local current = entity_getNearestNode(me, "current")
         node_setActive(current, false)
         v.deaktivated = true
 	end

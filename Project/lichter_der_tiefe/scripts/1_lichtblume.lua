@@ -34,7 +34,7 @@ function update(me, dt)
 		-- quad_alpha(l, 1, 0.5)
 		quad_color(l, v.r, v.g, v.b)		
 		quad_delete(l, 4)
-		quad_color(v.glow, r, g, b, 0.5)
+		quad_color(v.glow, v.r, v.g, v.b, 0.5)
 	end
 end
 
