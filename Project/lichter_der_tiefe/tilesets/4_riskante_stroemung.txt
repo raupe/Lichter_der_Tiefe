@@ -20,6 +20,8 @@
 19 hanging-moss-0001
 20 growth-heavy
 21 growth-medium
+22 plant-0011
+23 dead-walker
 
 28 bg-light-0001
 
