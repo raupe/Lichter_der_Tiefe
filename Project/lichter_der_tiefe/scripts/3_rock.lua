@@ -9,7 +9,8 @@ function init(me)
 	entity_setEntityType(me, ET_NEUTRAL)
 	entity_setTexture (me, "grass-tile-0002")
 
-	v.range = 32
+	v.range = 100
+	entity_setCollideRadius(me, v.range)
 end
 
 
@@ -21,9 +22,9 @@ function postInit(me)
 
 	v.time = 0
 	v.duration = 4
-	v.inNode = false
 
 	v.nejl = 303
+	v.path = 306
 
 
 	-- change on lied der lichter
@@ -39,13 +40,24 @@ function postInit(me)
 	-- focus first time
 	if isFlag(v.flag, 2) then
 
+		disableInput()
+
 		setControlHint("Emily: Wo ist nur Nejl...", 0, 0, 0, 4 )
 		setCameraLerpDelay(v.duration)
-		disableInput()
+
 		cam_toEntity(me)
+
+		-- testing
+		if getFlag(v.path) <= 1 then
+			v.msg = "Schlechtes Ende :("
+		else
+			v.msg = "Gutes Ende :)"
+		end
+
+		setControlHint(v.msg, 0, 0, 0, 10)
 	end
 
-	-- 3, already focus
+	-- 3, already focused
 end
 
 
@@ -68,61 +80,10 @@ function update(me, dt)
 		end
 	end
 
+	-- hit node
+	if not isFlag(v.flag, 3) and entity_isEntityInRange(me, v.n, v.range) then
 
-
-	-- enter node
-	if not v.inNode and entity_isEntityInRange(me, v.n, v.range) then
-
-		v.inNode = true
-
-		-- leave
-		if isFlag(v.flag, 3) then
-
-			fadeOut(v.duration/2)
-			fadeOutMusic(v.duration/2)
-
-			v.trg = getNode("3_warp_untiefen")
-			v.x,v.y = node_getPosition( v.trg )
-			entity_setPosition (v.n, v.x, v.y )
-		end
-
-		-- arrive
-		if isFlag(v.flag, 4) then
-
-			centerText("Nejls Hoehle")
-		end
-
-	end
-
-
-
-	-- leave node
-	if v.inNode and not entity_isEntityInRange(me, v.n, v.range) then
-
-
-		if isFlag(v.flag, 3) then
-
-			v.time = v.time + dt
-
-			if v.time >= v.duration then
-
-				fadeIn(v.duration)
-				cam_toEntity(v.n)
-
-				v.time = 0
-				setFlag(v.flag, 4)
-				v.inNode = false
-			end
-
-		end
-
-
-		if isFlag(v.flag, 4) then
-
-			setFlag(v.flag, 3 )
-			v.inNode = false
-		end
-
+		entity_doCollisionAvoidance(v.n, dt, 12, 0.5)
 	end
 
 end

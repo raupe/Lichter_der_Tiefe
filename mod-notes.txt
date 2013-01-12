@@ -16,6 +16,7 @@ shift + rechts = skalieren
 
 F9 = kollision sichtbar
 o = kollision zu tile
+i = schalte schaden an/aus
 
 Layers:
 1 - hinter Entities

@@ -2,6 +2,12 @@
 2 tile-rock-0002 128 128
 3 tile-rock-0003 128 128
 4 tile-rock-0004 128 128
+5 healthplant-bush
 6 bg-rock-rep-0003
+7 abyss-spikes-row
+8 basket-starfish-0001
+9 darkness-0002
+10 darkness-0003
+11 plant-0012
 31 darkness-0001
 49 black_fadeout

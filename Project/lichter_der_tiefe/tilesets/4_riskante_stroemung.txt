@@ -1,0 +1,34 @@
+1 tile-rock-0001 128 128
+2 tile-rock-0002 128 128
+3 tile-rock-0003 128 128
+4 tile-rock-0004 128 128
+5 city-plant-0001
+6 coral-0005
+7 coral-0007
+8 coral-0008
+9 kelp-0001
+10 kelp-bg-0001
+11 kelp-bg-0002
+12 plant-0002
+13 plant-0003
+14 plant-0007
+15 plant-0008
+16 black_bg
+17 coral-0003
+18 plant-0014
+
+19 hanging-moss-0001
+20 growth-heavy
+21 growth-medium
+22 plant-0011
+23 dead-walker
+
+28 bg-light-0001
+
+30 bg-light-0003
+31 darkness-0001
+32 darkness-0002
+33 darkness-0003
+40 memory-crystal-0001
+
+49 black_fadeout

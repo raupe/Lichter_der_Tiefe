@@ -10,6 +10,8 @@ function init(me)
 	entity_setCollideRadius(me, 32)
 	entity_setHealth(me, 5)
 	entity_setDeathParticleEffect(me, "TinyRedExplode")
+	
+	entity_setActivation(me, AT_CLICK, 32, 500)
 end
 
 -- after nodes have inited
@@ -24,16 +26,16 @@ function update(me, dt)
 		if v.time > 5 then
 			v.time = 0
 
-			rand = randRange(0, 3)
-			if rand == 1 then
-				pos = getNode("1_mejais_1")
-				entity_swimToNode(me, pos, 4)
-			elseif rand == 2 then
-				pos = getNode("1_mejais_2")
-				entity_swimToNode(me, pos, 4)
-			elseif rand == 3 then
-				pos = getNode("1_mejais_3")
-				entity_swimToNode(me, pos, 4)
+			v.rand = randRange(0, 3)
+			if v.rand == 1 then
+				v.pos = getNode("1_mejais_1")
+				entity_swimToNode(me, v.pos, 4)
+			elseif v.rand == 2 then
+				v.pos = getNode("1_mejais_2")
+				entity_swimToNode(me, v.pos, 4)
+			elseif v.rand == 3 then
+				v.pos = getNode("1_mejais_3")
+				entity_swimToNode(me, v.pos, 4)
 			end
 
 		end
@@ -41,7 +43,10 @@ function update(me, dt)
 end
 
 function enterState(me)
-	if entity_isState(me, STATE_IDLE) then
+	if entity_isState(me, STATE_WAIT) then
+		entity_animate(me, "idle", -1)
+
+	elseif entity_isState(me, STATE_IDLE) then
 		entity_animate(me, "idle", -1)
 	end
 end
@@ -69,4 +74,5 @@ function song(me, song)
 end
 
 function activate(me)
+	setControlHint("Mejais: Hallo Emily.", 0, 0, 0, 2)
 end

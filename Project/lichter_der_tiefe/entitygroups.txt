@@ -1,11 +1,16 @@
 GROUP:LichterDerTiefe
+lichtblume
 1_mejais
 1_mejais_ghost
+1_lichtblume
+1_stroemung
 2_healthcontainer
 3_nejl
 3_rock
 5_aal
 6_sphinx
+6_stroemung
+6_item
 7_ceraijt
 a_lichterqualle
 b_lichterqualle
