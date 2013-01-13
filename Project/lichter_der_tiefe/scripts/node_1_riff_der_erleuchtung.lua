@@ -16,11 +16,12 @@ function init(me)
 
     v.n = getNaija()
     v.flag = 100
+    v.flagLichtblume = 105
 
     setCostume("emily")
     centerText("Riff der Erleuchtung")
 
-    if getFlag(v.flag) > 0 then
+    if getFlag(v.flag) == 1 then
     	local mejais = getEntity("1_mejais")
 		entity_setState(mejais, STATE_DEATHSCENE)
     	local mejaisStart = getNode("1_mejais_1")
@@ -28,9 +29,12 @@ function init(me)
     end
     
     -- turn off glowing
-    if getFlag(v.flag) == 2 then
-    	setFlag(v.flag, 1)
+    if getFlag(v.flagLichtblume) == 2 then
+    	setFlag(v.flagLichtblume, 1)
     end
+    
+    
+    -- learnSong(104)
 
 end
 
