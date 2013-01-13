@@ -5,8 +5,11 @@ if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 function init(me)
 	setupEntity(me)
 	entity_setEntityType(me, ET_NEUTRAL)
-	entity_initSkeletal(me, "lichtblume")
 	entity_setState(me, STATE_IDLE)
+	
+	v.flagLiedDerLichter = 1100
+	
+	entity_initSkeletal(me, "lichtblume")
 	
 	v.flag = 105
 	
@@ -14,10 +17,15 @@ function init(me)
 	v.r = randRange(50, 100) / 100
 	v.g = randRange(50, 100) / 100
 	v.b = randRange(50, 100) / 100
+	
 end
 
 -- after nodes have inited
 function postInit(me)
+	if getFlag(v.flag) == 0 then
+		local current = entity_getNearestNode(me, "current")
+    	node_setActive(current, true)
+    end
 end
 
 function update(me, dt)
@@ -41,7 +49,9 @@ function update(me, dt)
 end
 
 function enterState(me)
-	if entity_isState(me, STATE_IDLE) then
+	if getFlag(v.flagLiedDerLichter) == 1 then
+		entity_animate(me, "welken", -1)
+	else
 		entity_animate(me, "idle", -1)
 	end
 end

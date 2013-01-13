@@ -114,17 +114,15 @@ function update(me, dt)
 end
 
 function enterState(me)
-	if entity_isState(me, STATE_IDLE) then
-		entity_animate(me, "idle", -1)
-	elseif entity_isState(me, STATE_WAIT) then
-		entity_animate(me, "idle", -1)
-	elseif entity_isState(me, STATE_FOLLOW) then
+	if entity_isState(me, STATE_FOLLOW) then
 		v.followDelay = 0.2
 		entity_animate(me, "idle", LOOP_INF)
 		entity_setMaxSpeed(me, 600)
 		
 		entity_setMaxSpeedLerp(me, 1, 0.1)
 	end
+	
+	entity_animate(me, "idle", -1)
 end
 
 function exitState(me)

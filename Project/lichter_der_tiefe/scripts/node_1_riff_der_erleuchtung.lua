@@ -2,15 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
---[[
-flag 100:
-0 - start
-1 - mejais dead
-
-
-
-]]
-
 -- on creation
 function init(me)
 
@@ -29,12 +20,13 @@ function init(me)
     end
     
     -- turn off glowing
-    if getFlag(v.flagLichtblume) == 2 then
-    	setFlag(v.flagLichtblume, 1)
+    if getFlag(v.flagLichtblume) == 1 then
+    	setFlag(v.flagLichtblume, 0)
     end
     
-    
+    -- debug:
     -- learnSong(104)
+    -- setFlag(1100, 1)
 
 end
 
