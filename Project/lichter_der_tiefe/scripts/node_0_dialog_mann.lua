@@ -95,7 +95,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 8)
 			
-			setControlHint("Emily: Mein Vater lieﬂ es zurueck... Ich war noch ein Baby, als er von uns fortging.", 0, 0, 0, 6)
+			setControlHint("Emily: Mein Vater liess es zurueck... Ich war noch ein Baby, als er von uns fortging.", 0, 0, 0, 6)
 		end
 		
 	elseif isFlag(v.flag, 8) then
@@ -115,7 +115,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 10)
 			
-			setControlHint("Emily: Ich weiﬂ es nicht, aber letzten Monat erhielt ich diesen Brief.", 0, 0, 0, 4)
+			setControlHint("Emily: Ich weiss es nicht, aber letzten Monat erhielt ich diesen Brief.", 0, 0, 0, 4)
 		end
 		
 	elseif isFlag(v.flag, 10) then
