@@ -6,8 +6,9 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-    -- v.n = getNaija()
+    v.n = getNaija()
     centerText("Hafen")
+    entity_alpha(v.n, 0)
     -- v.flag = 000
 end
 
