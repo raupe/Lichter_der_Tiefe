@@ -7,7 +7,7 @@ if not v then v = {} end
 function init(me)
 
     v.n = getNaija()
-    centerText("Hafen")
+    centerText("Hafen von Winumsund")
     entity_alpha(v.n, 0)
     -- v.flag = 000
 end
