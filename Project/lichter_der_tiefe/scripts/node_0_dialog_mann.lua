@@ -75,7 +75,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 6)
 			
-			setControlHint("Fremder: Junges Fräulein, ihr Amulett... ", 0, 0, 0, 4)
+			setControlHint("Fremder: Junges Fraeulein, ihr Amulett... ", 0, 0, 0, 4)
 		end
 		
 	elseif isFlag(v.flag, 6) then
@@ -95,7 +95,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 8)
 			
-			setControlHint("Emily: Mein Vater ließ es zurück... Ich war noch ein Baby, als er von uns fortging.", 0, 0, 0, 6)
+			setControlHint("Emily: Mein Vater ließ es zurueck... Ich war noch ein Baby, als er von uns fortging.", 0, 0, 0, 6)
 		end
 		
 	elseif isFlag(v.flag, 8) then
@@ -147,7 +147,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 13)
 			
-			setControlHint("Fremder: Ein wichtiger Grund... Ein Mann verlässt seine Familie nicht grundlos... Er wird einen Grund gehabt haben.", 0, 0, 0, 8)
+			setControlHint("Fremder: Ein wichtiger Grund... Ein Mann verlaesst seine Familie nicht grundlos... Er wird einen Grund gehabt haben.", 0, 0, 0, 8)
 		end
 		
 	elseif isFlag(v.flag, 13) then
@@ -167,7 +167,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 15)
 			
-			setControlHint("Fremder: Junges Fräulein... so hören sie ihn doch erst einmal an...", 0, 0, 0, 4)
+			setControlHint("Fremder: Junges Fraeulein... so hoeren sie ihn doch erst einmal an...", 0, 0, 0, 4)
 		end
 		
 	elseif isFlag(v.flag, 15) then
