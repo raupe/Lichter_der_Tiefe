@@ -6,6 +6,11 @@ function init(me)
 	setupEntity(me)
 	entity_setEntityType(me, ET_NEUTRAL)
 	
+end
+
+-- after nodes have inited
+function postInit(me)
+
 	v.flagLiedDerLichter = 1100
 	
 	if getFlag(v.flagLiedDerLichter) == 1 then
@@ -19,10 +24,6 @@ function init(me)
 	quad_alpha(v.dark, 0)
 	quad_alpha(v.dark, 1, 0.5)
 	quad_color(v.dark, 0, 0, 0)
-end
-
--- after nodes have inited
-function postInit(me)
 end
 
 function update(me, dt)	

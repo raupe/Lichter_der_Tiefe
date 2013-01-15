@@ -8,7 +8,7 @@ function init(me)
     entity_initSkeletal(me, "6_sphinx")
     entity_setState(me, STATE_IDLE)
     entity_setCollideRadius(me, 100)
-    entity_setCollideWithAvatar(me)
+    -- entity_setCollideWithAvatar(me)
 end
 
 -- after nodes have inited

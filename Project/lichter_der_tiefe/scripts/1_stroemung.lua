@@ -6,6 +6,7 @@ function init(me)
     setupEntity(me)
     entity_setEntityType(me, ET_NEUTRAL)
     v.deaktivated = false
+    v.flag = 105
 end
 
 -- after nodes have inited
@@ -13,7 +14,7 @@ function postInit(me)
 end
 
 function update(me, dt)
-	if not v.deaktivated and getFlag(100) > 1 then
+	if not v.deaktivated and getFlag(v.flag) == 1 then
         local current = entity_getNearestNode(me, "current")
         node_setActive(current, false)
         v.deaktivated = true
@@ -44,7 +45,7 @@ end
 
 function song(me, song)
 	if song == 104 then
-		setFlag(100, 2)
+		setFlag(v.flag, 1)
 		local banterSchacht = getNode("1_banter_schacht")
 		node_setActive(banterSchacht, false)
 	end
