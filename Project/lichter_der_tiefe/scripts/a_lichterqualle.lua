@@ -7,14 +7,15 @@ function init(me)
 
     setupEntity(me)
     entity_setEntityType(me, ET_NEUTRAL)
-    entity_setTexture (me, "blazer")
+    entity_initSkeletal(me, "a_lichtqualle")
+    entity_generateCollisionMask(me)
+    entity_setCollideRadius(me, 32)
 
-    entity_color(me, 20, 0, 0)
+    -- entity_color(me, 20, 0, 0)
 end
 
 -- after nodes have inited
 function postInit(me)
-
     v.n = getNaija()
 	v.song = 801
 	v.songs = 307
@@ -26,6 +27,7 @@ function postInit(me)
 end
 
 function update(me, dt)
+	
 	if v.step == 0 then
 		-- nothing
 	elseif v.step == 1 then
