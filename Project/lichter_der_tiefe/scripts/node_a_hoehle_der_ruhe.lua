@@ -7,22 +7,21 @@ if not v then v = {} end
 function init(me)
 
 	v.n = getNaija()
+	v.nejl = getEntity("3_nejl")
 	v.flag = 800
+	v.flagWake = 803
 
 	centerText("Hoehle der Ruhe")
-
-	v.nejl = 303
-	v.song = 801
-	v.learn = false
-	v.songs = 307
-
-
-	if isFlag(v.nejl, 1) and isFlag(v.song, 0) then
-
-		node_setCursorActivation(me, true)
-
-		v.x,v.y = node_getPosition(me)
-		v.e = createEntity("a_lichterqualle", "", v.x, v.y)
+	
+	-- debug:
+	setFlag(303, 1)
+	learnSong(101)
+	setFlag(v.flagWake, 0)
+	
+	if isFlag(v.flagWake, 1) then
+		v.step = 3
+	else
+		v.step = 0
 	end
 
 end
@@ -30,25 +29,42 @@ end
 -- trigger
 function activate(me)
 
-	if isFlag(v.song, 0) then
-
-		setFlag(v.song, 1)
-
-		entity_alpha(v.e, 0, 3)
-
-		learnSong(101)
-		setFlag(v.songs, getFlag(v.songs)+1 )
-		v.learn = true
-	end
 end
 
 -- check
 function update(me, dt)
-
-	if v.learn then
-
-		v.learn = false
-		setControlHint("Lichterqualle: Wie du willst, ich bringe dir den \"Klang der Ruhe\". Auf das du immer wachsam bleibst...", 0, 0, 0, 3)
+	
+	if v.step == 0 then
+		if isFlag(v.flagWake, 1) then
+			v.step = v.step + 1
+			v.time = 0
+			v.dt = 4
+			
+			disableInput()
+			entity_swimToPosition(v.n, entity_getPosition(v.nejl))
+		end
+	
+	elseif v.step == 1 then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			v.step = v.step + 1
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily: Nejl, wach auf!", 0, 0, 0, 4)
+		end
+		
+	elseif v.step == 2 then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			v.step = v.step + 1
+			v.time = 0
+			v.dt = 4
+			
+			entity_setState(v.nejl, STATE_FOLLOW)
+			setControlHint("Nejl: Oh, der Klang hat mich eingeschlaefert. Das passiert mir nicht nochmal!", 0, 0, 0, 4)
+			enableInput()
+		end
 	end
 end
 
