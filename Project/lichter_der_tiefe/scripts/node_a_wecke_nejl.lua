@@ -12,11 +12,6 @@ function init(me)
 	v.inNode = false
 
 	centerText("Hoehle der Ruhe")
-	
-	-- debug:
-	setFlag(303, 1)
-	v.step = 0
-
 end
 
 -- trigger
