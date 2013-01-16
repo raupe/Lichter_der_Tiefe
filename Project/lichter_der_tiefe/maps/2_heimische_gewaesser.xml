@@ -61,9 +61,6 @@
 <Path name="d_lied_der_lichter">
     <Node pos="3608 5518" rect="718 624" shape="0" />
 </Path>
-<Path name="c_hoehle_der_entschlossenheit">
-    <Node pos="2904 6027" rect="64 64" shape="0" />
-</Path>
 <Path name="2_banter_strom">
     <Node pos="5154 9219" rect="568 428" shape="0" />
 </Path>
