@@ -1,0 +1,13 @@
+1 tile-rock-0001 128 128
+2 tile-rock-0002 128 128
+3 tile-rock-0003 128 128
+4 tile-rock-0004 128 128
+
+5 black_bg
+6 shadow_arc
+
+28 bg-light-0001
+29 bg-light-0002
+
+40 memory-crystal-0001
+49 black_fadeout
