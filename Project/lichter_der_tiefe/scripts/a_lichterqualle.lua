@@ -10,6 +10,9 @@ function init(me)
     entity_initSkeletal(me, "a_lichtqualle")
     entity_generateCollisionMask(me)
     entity_setCollideRadius(me, 32)
+    entity_scale(me, 2, 2)
+    
+    entity_setEntityLayer(me, 1)
 
     -- entity_color(me, 20, 0, 0)
 end
