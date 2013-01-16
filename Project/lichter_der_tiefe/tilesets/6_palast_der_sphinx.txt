@@ -23,4 +23,8 @@
 23 songdoor-glow
 24 sunstatue-0002
 25 pillar-0001
+
+26 black_bg
+27 shadow_arc
+
 49 black_fadeout
