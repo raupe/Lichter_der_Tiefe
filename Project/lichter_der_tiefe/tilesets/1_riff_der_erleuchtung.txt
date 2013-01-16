@@ -49,3 +49,6 @@
 55 plant-0008
 56 black_fadeout
 57 testMap_bg_00
+
+58 black_bg
+59 shadow_arc
