@@ -33,7 +33,7 @@ function postInit(me)
         v.x,v.y = entity_getPosition( v.n )
         entity_setPosition(me, v.x, v.y)
         entity_setState(me, STATE_FOLLOW)
-
+        
     else
         entity_setState(me, STATE_DISABLED)
     end
@@ -134,6 +134,8 @@ function enterState(me)
 		entity_setMaxSpeed(me, 600)
 		
 		entity_setMaxSpeedLerp(me, 1, 0.1)
+	elseif entity_isState(me, STATE_WAIT) then
+		entity_clearVel(me)
 	end
 	
 	entity_animate(me, "idle", -1)

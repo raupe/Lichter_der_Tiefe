@@ -41,7 +41,7 @@ function init(me)
 	v.dir = 1
 	v.n = getNaija()
 	v.pos = 1
-	
+	v.flagNejl = 504
 	
 end
 
@@ -94,7 +94,7 @@ function update(me, dt)
 		
 		-- collide with naija
 		if entity_collideHairVsCircle(me, v.n, v.collisionSegs) then
-			entity_touchAvatarDamage(me, 0, 2, 800)
+			entity_touchAvatarDamage(me, 0, 1, 800)
 		end
 		
 	end
@@ -117,6 +117,10 @@ function exitState(me)
 end
 
 function damage(me, attacker, bone, damageType, dmg)
+	if getFlag(v.flagNejl) ~= 1 then
+		setControlHint("Nejl: Nicht Emily! Es muss einen anderen Weg geben.", 0,0,0, 4)
+		setFlag(v.flagNejl, 1)
+	end
 	return true
 end
 
