@@ -14,9 +14,9 @@ function init(me)
 	centerText("Hoehle der Ruhe")
 	
 	-- debug:
-	setFlag(303, 1)
-	learnSong(101)
-	setFlag(v.flagWake, 0)
+	-- setFlag(303, 1)
+	-- learnSong(101)
+	-- setFlag(v.flagWake, 0)
 	
 	if isFlag(v.flagWake, 1) then
 		v.step = 3

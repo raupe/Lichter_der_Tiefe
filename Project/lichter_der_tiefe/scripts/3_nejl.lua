@@ -39,7 +39,7 @@ function postInit(me)
     end
 	
 	-- debug:
-	setFlag(v.flagSleep, 0)
+	-- setFlag(v.flagSleep, 0)
 end
 
 function update(me, dt)    
@@ -160,10 +160,13 @@ end
 
 function song(me, song)
 	if song == 101 and getFlag(v.flagSleep) ~= 1 then
-		entity_setState(me, STATE_SING)
 		setFlag(v.flagSleep, 1)
-		
-		setControlHint("Emily: Nejl? ... Er ist eingeschlafen.", 0, 0, 0, 4)
+		if getNode("a_hoehle_der_ruhe") ~= 0 then
+			entity_setState(me, STATE_SING)
+			setControlHint("Emily: Nejl? ... Er ist eingeschlafen.", 0, 0, 0, 4)
+		else
+			setControlHint("Nejl: Auaaa ... fast haette mich das Lied eingeschlaefert!", 0, 0, 0, 4)
+		end
 	end
 end
 
