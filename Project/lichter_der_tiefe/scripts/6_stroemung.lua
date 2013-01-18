@@ -38,7 +38,7 @@ end
 
 function song(me, song)
 	if song == 102 then
-        current = entity_getNearestNode(me, "current")
+        local current = entity_getNearestNode(me, "current")
         node_setActive(current, false)
 	end
 end

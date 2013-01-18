@@ -7,59 +7,68 @@ function init(me)
 
     setupEntity(me)
     entity_setEntityType(me, ET_NEUTRAL)
-    entity_setTexture (me, "blazer")
-
-    entity_color(me, 0, 0, 20)
+    entity_initSkeletal(me, "c_lichtqualle")
+    entity_generateCollisionMask(me)
+    entity_setCollideRadius(me, 32)
+    entity_scale(me, 2, 2)
+    
+    entity_setEntityLayer(me, 1)
 end
 
 -- after nodes have inited
 function postInit(me)
-
     v.n = getNaija()
-    v.flag = 1001
+	v.song = 1001
+	v.songs = 307
+    
+    if getFlag(v.song) ~= 1 then
+		entity_setActivation(me, AT_CLICK, 32, 500)
+	end
 end
 
 function update(me, dt)
 
 end
 
+function update(me, dt)
+end
+
+ function enterState(me)
+	if entity_isState(me, STATE_IDLE) then
+		entity_animate(me, "idle", -1)
+	end
+end
+
+function exitState(me)
+end
+
+function damage(me, attacker, bone, damageType, dmg)
+	return false
+end
+
+function animationKey(me, key)
+end
+
+function hitSurface(me)
+end
+
+function songNote(me, note)
+end
+
+function songNoteDone(me, note)
+end
+
+function song(me, song)
+end
 
 
 
--- function update(me, dt)
--- end
+function activate(me)
 
--- function enterState(me)
---     -- if entity_isState(me, STATE_IDLE) then
---     --     entity_animate(me, "idle", -1)
---     -- end
--- end
-
--- function exitState(me)
--- end
-
--- function damage(me, attacker, bone, damageType, dmg)
---     return false
--- end
-
--- function animationKey(me, key)
--- end
-
--- function hitSurface(me)
--- end
-
--- function songNote(me, note)
--- end
-
--- function songNoteDone(me, note)
--- end
-
--- function song(me, song)
--- end
-
-
-
--- function activate(me)
-
---     learnSong(1)--
--- end
+	setFlag(v.song, 1)
+	learnSong(103)
+	setFlag(v.songs, getFlag(v.songs)+1 )
+		
+	entity_setActivation(me, AT_NONE , 32, 500)
+	setControlHint("Lichterqualle: Also gut, ich bringe dir den \"Klang der Entschlossenheit\" bei. Sei dir stest bewusst was du tust...", 0, 0, 0, 3)
+end

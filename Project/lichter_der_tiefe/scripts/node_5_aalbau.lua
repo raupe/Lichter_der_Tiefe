@@ -10,6 +10,9 @@ function init(me)
 	v.flag = 500
 
 	centerText("Aalbau")
+	
+	-- debug:
+	learnSong(101)
 end
 
 -- check trigger

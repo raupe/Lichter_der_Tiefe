@@ -2,7 +2,7 @@
 2 tile-rock-0002 128 128
 3 tile-rock-0003 128 128
 4 tile-rock-0004 128 128
-49 black_fadeout
+
 5 coral-0003
 6 coral-0004
 7 plant-0004
@@ -13,3 +13,10 @@
 13 grass-bed-0001
 14 coral-0009
 18 bg-rock-0002
+
+19 black_bg
+20 shadow_arc
+21 bg-light-0001
+22 bg-light-0002
+
+49 black_fadeout

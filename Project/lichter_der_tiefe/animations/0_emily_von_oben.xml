@@ -1,0 +1,19 @@
+<AnimationLayers>
+    <AnimationLayer />
+</AnimationLayers>
+<Bones>
+    <Bone idx="0" gfx="0_emily_von_oben/emily_body" pidx="-1" name="Body" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="1" gfx="0_emily_von_oben/emily_shadow" pidx="0" name="Shadow" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+    <Bone idx="2" gfx="0_emily_von_oben/leg_left" pidx="0" name="LegLeft" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+    <Bone idx="3" gfx="0_emily_von_oben/leg_right" pidx="0" name="LegRight" fh="1" fv="0" gc="1" cr="0" cp="0 0" rbp="1" />
+</Bones>
+<Animations>
+    <Animation name="idle">
+        <Key e="0.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 2 -13 0 0 0 3 8 0 0 0 " />
+    </Animation>
+    <Animation name="swim">
+        <Key e="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 2 -13 -8 0 0 3 6 11 0 0 " />
+        <Key e="0.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 2 -12 11 0 0 3 7 -9 0 0 " />
+        <Key e="1.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 2 -13 -8 0 0 3 6 11 0 0 " />
+    </Animation>
+</Animations>

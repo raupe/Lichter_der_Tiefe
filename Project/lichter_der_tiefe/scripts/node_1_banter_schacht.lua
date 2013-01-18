@@ -12,6 +12,7 @@ function init(me)
 	v.time = 0
 
 	v.flag = 101
+	v.flagLichtblume = 105
 
 	if node_isEntityIn(me, v.n) then
 		setFlag(v.flag, 0)
@@ -30,14 +31,17 @@ function update(me, dt)
 	-- leave node
 	if v.inNode and not node_isEntityIn(me, v.n) then
 		v.inNode = false
-		setFlag(v.flag, 1)
 		v.time = 0
+		if getFlag(v.flag) ~= 1 then
+			setFlag(v.flag, 1)
+	    	centerText("Riff der Erleuchtung")
+		end
 	end
 
 	if v.inNode and isFlag(v.flag, 1) and getFlag(100) <= 1 then
 		v.time = v.time + dt
 
-		if v.time >= 3 then
+		if v.time >= 3 and getFlag(v.flagLichtblume) ~= 1 then
 			setControlHint("Emily: Es geht nicht!", 0, 0, 0, 3)
 			v.time = 0
 			setFlag(v.flag, 0)

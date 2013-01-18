@@ -4,14 +4,20 @@ if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 function init(me)
 	setupEntity(me)
+	entity_initSkeletal(me, "lichtblume")
+	
+	v.flagLiedDerLichter = 1100
+	
 	entity_setEntityType(me, ET_NEUTRAL)
-	entity_initSkeletal(me, "1_lichterblume")
 	entity_setState(me, STATE_IDLE)
+	
+	v.flag = 105
 	
 	v.glowing = false
 	v.r = randRange(50, 100) / 100
 	v.g = randRange(50, 100) / 100
 	v.b = randRange(50, 100) / 100
+	
 end
 
 -- after nodes have inited
@@ -19,7 +25,8 @@ function postInit(me)
 end
 
 function update(me, dt)
-	if not v.glowing and getFlag(100) > 1 then
+	
+	if v.glowing == false and getFlag(v.flag) == 1 then
 		v.glowing = true
 		
 		local r = randRange(50, 100) / 100
@@ -32,14 +39,13 @@ function update(me, dt)
 		quad_alpha(v.glow, 0)
 		quad_alpha(v.glow, 1, 0.5)
 		quad_color(v.glow, r, g, b)	
-			
-		local current = entity_getNearestNode(me, "current")
-        node_setActive(current, false)
 	end
 end
 
 function enterState(me)
-	if entity_isState(me, STATE_IDLE) then
+	if getFlag(v.flagLiedDerLichter) == 1 then
+		entity_animate(me, "welken", -1)
+	else
 		entity_animate(me, "idle", -1)
 	end
 end
@@ -65,7 +71,7 @@ end
 
 function song(me, song)
 	if song == 104 then
-		setFlag(100, 2)
+		setFlag(v.flag, 1)
 	end
 end
 

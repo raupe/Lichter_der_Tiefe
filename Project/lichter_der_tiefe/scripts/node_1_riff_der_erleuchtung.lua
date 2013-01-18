@@ -2,25 +2,21 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
---[[
-flag 100:
-0 - start
-1 - mejais dead
-
-
-
-]]
-
 -- on creation
 function init(me)
 
     v.n = getNaija()
     v.flag = 100
+    v.flagLichtblume = 105
+    v.flagSchacht = 101
 
     setCostume("emily")
-    centerText("Riff der Erleuchtung")
+    
+    if getFlag(v.flagSchacht) == 1 then
+	    centerText("Riff der Erleuchtung")
+	end
 
-    if getFlag(v.flag) > 0 then
+    if getFlag(v.flag) == 1 then
     	local mejais = getEntity("1_mejais")
 		entity_setState(mejais, STATE_DEATHSCENE)
     	local mejaisStart = getNode("1_mejais_1")
@@ -28,9 +24,13 @@ function init(me)
     end
     
     -- turn off glowing
-    if getFlag(v.flag) == 2 then
-    	setFlag(v.flag, 1)
+    if getFlag(v.flagLichtblume) == 1 then
+    	setFlag(v.flagLichtblume, 0)
     end
+    
+    -- debug:
+    learnSong(104)
+    -- setFlag(1100, 1)
 
 end
 

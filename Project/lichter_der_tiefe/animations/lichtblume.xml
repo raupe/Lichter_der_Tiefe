@@ -1,0 +1,21 @@
+<AnimationLayers>
+    <AnimationLayer />
+</AnimationLayers>
+<Bones>
+    <Bone idx="0" gfx="lichtblume/lichtblume" pidx="-1" name="Body" fh="0" fv="0" gc="1" cr="0" cp="0 0" >
+    	<Frame gfx="lichtblume/lichtblume_1" />
+    	<Frame gfx="lichtblume/lichtblume_2" />
+    	<Frame gfx="lichtblume/lichtblume_3" />
+    </Bone>
+</Bones>
+<Animations>
+    <Animation name="idle">
+        <Key cmd="0 AC_FRM_SHOW 0" e="0.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
+    </Animation>
+    <Animation name="welken">
+        <Key cmd="0 AC_FRM_SHOW 1" e="0.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
+    </Animation>
+    <Animation name="tot">
+        <Key cmd="0 AC_FRM_SHOW 2" e="0.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
+    </Animation>
+</Animations>
