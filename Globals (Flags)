@@ -75,10 +75,12 @@ _______________________________________________________________________
 _______________________________________________________________________
 
 400		Riskante Stroemung (I)		0	- default
-									1	- zeige Namen
+		(store decision)			1	- zeige Namen
 
-401		Warnung (B)					0	- default
-									1	- Nejl warnt nochmal vorm kaempfen
+401		Kills (E)					0	- default
+									1	- Nejl warnt vor dem kaempfen
+									3++	- Gesinnung boese
+
 
 402		Schleichen (B)				0	- default
 									1	- Nejl lobt dich
@@ -86,8 +88,13 @@ _______________________________________________________________________
 403		Kampf (B)					0	- default
 									1	- Nejl hat Angst vor der Energie
 
-404		Entscheidung (N)			0	- default
+404		Entscheidung (E)			0	- default
 									1	- Emily hat gekaempft
+
+Fisch: 401							0	- default
+									1-2 - kills, warnung
+									3++	- kills -> boese
+
 
 _______________________________________________________________________
 
