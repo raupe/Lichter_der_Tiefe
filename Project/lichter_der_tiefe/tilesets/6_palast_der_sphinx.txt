@@ -27,4 +27,5 @@
 26 black_bg
 27 shadow_arc
 
+40 memory-crystal-0001
 49 black_fadeout

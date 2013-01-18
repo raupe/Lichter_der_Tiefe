@@ -1,9 +1,20 @@
 <AnimationLayers>
     <AnimationLayer />
-    <AnimationLayer ignore="0 1 14 8 9 10 11 12 13 " />
 </AnimationLayers>
 <Bones>
-    <Bone idx="0" gfx="6_sphinx/whole" pidx="-1" name="Body" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="0" gfx="6_sphinx/body" pidx="-1" name="Body" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="1" gfx="6_sphinx/fin1" pidx="0" name="Fin1" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="2" gfx="6_sphinx/fin2" pidx="0" name="Fin2" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="4" gfx="6_sphinx/head" pidx="0" name="Head" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="3" gfx="6_sphinx/armor" pidx="0" name="Armor" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
+    <Bone idx="6" gfx="6_sphinx/hair1" pidx="0" name="Hair1" fh="0" fv="0" gc="1" cr="0" cp="0 0" strip="1 8" />
+    <Bone idx="7" gfx="6_sphinx/hair2" pidx="0" name="Hair2" fh="0" fv="0" gc="1" cr="0" cp="0 0" strip="1 8" />
+    <Bone idx="5" gfx="6_sphinx/helmet" pidx="0" name="Helmet" fh="0" fv="0" gc="1" cr="0" cp="0 0" />
 </Bones>
 <Animations>
+    <Animation name="idle">
+        <Key e="0 0 36 113 0 0 1 -250 11 0 0 2 -52 28 0 0 3 -151 -116 0 0 4 -166 -201 0 0 5 -164 -240 0 0 6 -201 -186 0 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 -135 -177 0 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
+        <Key e="1.4 0 36 113 0 0 1 -251 8 2 0 2 -50 19 -10 0 3 -151 -120 0 0 4 -166 -203 0 0 5 -164 -242 0 0 6 -200 -189 0 8 0 0 0 0 -0.0018274 0 0.0018994 0 0.0038088 0 -0.0047388 0 -0.0109086 0 0 0 7 -135 -179 0 8 0 0 0 0 -0.0015186 0 0.000311001 0 0.0041452 0 0.0055862 0 0.011649 0 0.0037674 0 " />
+        <Key e="3.2 0 36 113 0 0 1 -250 11 0 0 2 -52 28 0 0 3 -151 -116 0 0 4 -166 -201 0 0 5 -164 -240 0 0 6 -201 -186 0 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 -135 -177 0 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
+    </Animation>
 </Animations>

@@ -10,6 +10,10 @@ Status:
 ]]--
 
 function init(me)
+	if entity_isFlag(me, 1) then
+		entity_delete(me)
+	end
+	
 	v.collisionSegs = 50
 
 	setupBasicEntity(
@@ -39,14 +43,15 @@ function init(me)
 	entity_setMaxSpeed (me, 2000)
 	
 	v.dir = 1
-	v.n = getNaija()
 	v.pos = 1
 	v.flagNejl = 504
+	v.flagGutBoese = 501
 	
 end
 
 -- after nodes have inited
 function postInit(me)
+	v.n = getNaija()
 	v.posNode1 = getNode("5_aal_pos_1")
 	v.posNode2 = getNode("5_aal_pos_2")
 	v.posNode3 = getNode("5_aal_pos_3")
@@ -122,6 +127,11 @@ function damage(me, attacker, bone, damageType, dmg)
 		setFlag(v.flagNejl, 1)
 	end
 	return true
+end
+
+function dieNormal(me)
+	entity_setFlag(me, 1)
+	setFlag(v.flagGutBoese, 1)
 end
 
 function animationKey(me, key)

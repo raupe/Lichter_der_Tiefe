@@ -1,0 +1,11 @@
+Texture = Shots/EnergyBoss
+BlendType = BLEND_ADD
+HitPrt = energybosshit
+TrailPrt = EnergyBossTrail
+HitSfx = EnergyBlastHit
+FireSfx = EnergyBlastFire
+Damage = 2
+MaxSpeed = 1000
+Homing = 700
+Scale = 0.7 0.7
+Spin = 1234
