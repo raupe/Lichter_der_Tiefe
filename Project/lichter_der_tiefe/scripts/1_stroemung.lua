@@ -44,11 +44,6 @@ function songNoteDone(me, note)
 end
 
 function song(me, song)
-	if song == 104 then
-		setFlag(v.flag, 1)
-		local banterSchacht = getNode("1_banter_schacht")
-		node_setActive(banterSchacht, false)
-	end
 end
 
 function activate(me)

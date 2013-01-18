@@ -8,9 +8,13 @@ function init(me)
     v.n = getNaija()
     v.flag = 100
     v.flagLichtblume = 105
+    v.flagSchacht = 101
 
     setCostume("emily")
-    centerText("Riff der Erleuchtung")
+    
+    if getFlag(v.flagSchacht) == 1 then
+	    centerText("Riff der Erleuchtung")
+	end
 
     if getFlag(v.flag) == 1 then
     	local mejais = getEntity("1_mejais")
@@ -25,7 +29,7 @@ function init(me)
     end
     
     -- debug:
-    -- learnSong(104)
+    learnSong(104)
     -- setFlag(1100, 1)
 
 end
