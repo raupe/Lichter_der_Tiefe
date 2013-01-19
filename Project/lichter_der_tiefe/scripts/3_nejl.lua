@@ -5,7 +5,7 @@ if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 function init(me)
 	setupEntity(me)
 	entity_setEntityType(me, ET_NEUTRAL)
-	entity_initSkeletal(me, "cc_kid")
+	entity_initSkeletal(me, "nejl")
 	entity_setState(me, STATE_IDLE)
 
 	v.gvel = false
@@ -22,6 +22,7 @@ function postInit(me)
 	-- STATE_WAIT: won't follow emily
 	-- STATE_DISABLED: won't follow emily until flag 303 is set to 1
 	-- STATE_SING: falls asleep because of 'klang der ruhe'
+	-- STATE_DELAY: lied-der-lichter dialog after 4 sec
 
     v.n = getNaija()
     v.flag = 303
@@ -37,6 +38,8 @@ function postInit(me)
     else
         entity_setState(me, STATE_DISABLED)
     end
+    
+    entity_scale(me, 0.4, 0.4)
 	
 	-- debug:
 	-- setFlag(v.flagSleep, 0)
@@ -48,9 +51,13 @@ function update(me, dt)
 	
 	if entity_isState(me, STATE_DISABLED) then
     	if isFlag(v.flag, 1) then
-        	v.x,v.y = entity_getPosition( v.n )
-        	entity_setPosition(me, v.x, v.y)
         	entity_setState(me, STATE_FOLLOW)
+    	end
+    elseif entity_isState(me, STATE_DELAY) then
+    	v.time = v.time + dt
+    	if v.time > 4 then
+    		setControlHint("Nejl: Jetzt haben wir alle Klaenge gelernt. Lass uns in meine Hoehle schwimmen um das Lied der Lichter zu lernen.", 0,0,0, 6)
+    		entity_setState(me, STATE_FOLLOW)
     	end
     elseif entity_isState(me, STATE_IDLE) then
 		entity_setTarget(me, v.n)
@@ -134,11 +141,16 @@ function enterState(me)
 		entity_setMaxSpeed(me, 600)
 		
 		entity_setMaxSpeedLerp(me, 1, 0.1)
-	elseif entity_isState(me, STATE_WAIT) then
-		entity_clearVel(me)
+		entity_animate(me, "swim", -1)
+	else
+		entity_animate(me, "idle", -1)
 	end
 	
-	entity_animate(me, "idle", -1)
+	if entity_isState(me, STATE_WAIT) or entity_isState(me, STATE_DISABLED) then
+		entity_clearVel(me)
+	elseif entity_isState(me, STATE_DELAY) then
+		v.time = 0
+	end
 end
 
 function exitState(me)
@@ -167,7 +179,7 @@ function song(me, song)
 			entity_setState(me, STATE_SING)
 			setControlHint("Emily: Nejl? ... Er ist eingeschlafen.", 0, 0, 0, 4)
 		else
-			setControlHint("Nejl: Auaaa ... fast haette mich das Lied eingeschlaefert!", 0, 0, 0, 4)
+			setControlHint("Nejl: Uhaaa ... fast haette mich das Lied eingeschlaefert!", 0, 0, 0, 4)
 		end
 	end
 end
@@ -175,7 +187,7 @@ end
 function activate(me)
 	if entity_isState(me, STATE_SING) then
 		setFlag(v.flagWake, 1)
-	else
+	elseif entity_isState(me, STATE_FOLLOW) or entity_isState(me, STATE_IDLE) then
 		setControlHint("Nejl: Schwimm vor, ich folge dir.", 0, 0, 0, 2)
 	end
 

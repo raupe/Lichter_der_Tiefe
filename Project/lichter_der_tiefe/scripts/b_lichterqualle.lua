@@ -71,4 +71,9 @@ function activate(me)
 		
 	entity_setActivation(me, AT_NONE , 32, 500)
 	setControlHint("Lichterqualle: Nagut, ich bringe dir den \"Klang der Stroemung\" bei. Moeges du immer einen Weg finden...", 0, 0, 0, 3)
+	
+	if isFlag(801, 1) and isFlag(1001, 1) then
+		local nejl = getEntity("3_nejl")
+		entity_setState(nejl, STATE_DELAY)
+	end
 end

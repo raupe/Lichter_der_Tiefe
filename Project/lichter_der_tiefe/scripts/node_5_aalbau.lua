@@ -12,7 +12,7 @@ function init(me)
 	centerText("Aalbau")
 	
 	-- debug:
-	learnSong(101)
+	-- learnSong(101)
 end
 
 -- check trigger

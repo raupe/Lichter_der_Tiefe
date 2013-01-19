@@ -40,6 +40,14 @@ function update(me, dt)
 	
 		setControlHint("Lichterqualle: Wie du willst, ich bringe dir den \"Klang der Ruhe\". Auf das du immer wachsam bleibst...", 0, 0, 0, 3)
 		
+		
+		if isFlag(901, 1) and isFlag(1001, 1) then
+			local nejl = getEntity("3_nejl")
+			entity_setState(nejl, STATE_DELAY)
+			
+			v.step = 4
+		end
+		
 	elseif v.step == 2 then
 		v.time = v.time + dt
 		if v.time >= v.dt then

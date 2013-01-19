@@ -7,19 +7,25 @@
     <Node pos="7083 6326" rect="102 282" shape="0" />
 </Path>
 <Path name="3_banter_warm">
-    <Node pos="5977 7023" rect="326 302" shape="0" />
+    <Node pos="4739 6909" rect="1192 64" shape="0" />
 </Path>
 <Path name="3_nejls_hoehle">
-    <Node pos="5921 7766" rect="64 64" shape="0" />
+    <Node pos="5921 7766" rect="124 150" shape="0" />
 </Path>
 <Path name="naijastart">
-    <Node pos="4633 7092" rect="64 64" shape="0" />
+    <Node pos="4792 6776" rect="64 64" shape="0" />
 </Path>
 <Path name="3_dialog_nejl">
-    <Node pos="6651 7075" rect="296 244" shape="0" />
+    <Node pos="6545 7117" rect="484 560" shape="0" />
 </Path>
 <Path name="warp 7_untiefen d">
     <Node pos="4575 8048" rect="64 64" shape="0" />
+</Path>
+<Path name="3_lied_der_lichter">
+    <Node pos="6867 6961" rect="1438 236" shape="0" />
+</Path>
+<Path name="3_lied_der_lichter">
+    <Node pos="4660 7166" rect="1392 236" shape="0" />
 </Path>
 <Entities j="-1 3_rock 4583 8047 0 0 1 -1 3_nejl 6679 7082 -5 0 2 " />
 <SE k="41 3282 3467 0 3.39022 3.39022 0 0 0 -1 0 4 1352 7042 29 9.59949 9.59949 0 0 0 -1 0 4 792 6588 0 5.41 5.41 0 0 0 -1 0 " l="0" />

@@ -71,4 +71,9 @@ function activate(me)
 		
 	entity_setActivation(me, AT_NONE , 32, 500)
 	setControlHint("Lichterqualle: Also gut, ich bringe dir den \"Klang der Entschlossenheit\" bei. Sei dir stest bewusst was du tust...", 0, 0, 0, 3)
+	
+	if isFlag(801, 1) and isFlag(901, 1) then
+		local nejl = getEntity("3_nejl")
+		entity_setState(nejl, STATE_DELAY)
+	end
 end

@@ -9,6 +9,9 @@ function init(me)
     -- v.n = getNaija()
     centerText("Palast der Sphinx")
     -- v.flag = 600
+    
+    --debug:
+    --learnSong(102)
 end
 
 -- check trigger

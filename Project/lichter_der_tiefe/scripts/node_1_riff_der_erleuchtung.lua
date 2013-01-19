@@ -29,7 +29,7 @@ function init(me)
     end
     
     -- debug:
-    learnSong(104)
+    -- learnSong(104)
     -- setFlag(1100, 1)
 
 end
