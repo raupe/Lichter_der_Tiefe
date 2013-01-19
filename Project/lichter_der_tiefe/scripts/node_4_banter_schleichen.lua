@@ -12,16 +12,17 @@ function init(me)
 	v.flag = 402
 
     v.nejl = 303
+    v.kills = 401
 end
 
 -- check
 function update(me, dt)
 
-    if isFlag(v.nejl, 1) and isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
+    if isFlag(v.nejl, 1) and isFlag(v.flag, 0) and getFlag(v.kills) < 3 and node_isEntityIn(me, v.n) then
 
 		setFlag(v.flag, 1 )
 
-		setControlHint("Nejl: Wow bist du geschickt, allein hätte ich das nicht geschaft.", 0, 0, 0, 4 )
+		setControlHint("Nejl: Wow bist du geschickt, ohne dich haette ich das nicht geschaft.", 0, 0, 0, 4 )
     end
 end
 

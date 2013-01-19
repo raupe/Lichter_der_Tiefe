@@ -10,6 +10,9 @@ darkness
 2_healthcontainer
 3_nejl
 3_rock
+4_fisch
+4_hinderniss_lr
+4_hinderniss_ou
 5_aal
 6_sphinx
 6_stroemung

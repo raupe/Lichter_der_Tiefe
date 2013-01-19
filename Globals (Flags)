@@ -81,6 +81,12 @@ _______________________________________________________________________
 									1	- Nejl warnt vor dem kaempfen
 									3++	- Gesinnung boese
 
+Fisch: 401							0	- default
+									1-2 - kills, warnung
+									3++	- kills -> boese
+
+404		Entscheidung (E)			0	- default
+									1	- Emily hat gekaempft
 
 402		Schleichen (B)				0	- default
 									1	- Nejl lobt dich
@@ -88,13 +94,9 @@ _______________________________________________________________________
 403		Kampf (B)					0	- default
 									1	- Nejl hat Angst vor der Energie
 
-404		Entscheidung (E)			0	- default
-									1	- Emily hat gekaempft
 
-Fisch: 401							0	- default
-									1-2 - kills, warnung
-									3++	- kills -> boese
-
+405		Healthcontainer (N)			0	- default
+									1	- eingesammelt
 
 _______________________________________________________________________
 

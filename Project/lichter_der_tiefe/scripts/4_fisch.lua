@@ -15,6 +15,10 @@ v.dir = 0
 
 function init(me)
 
+	if entity_isFlag(me, 1) then
+		entity_delete(me)
+	end
+
 	v.kills = 401
 	v.flag = 404
 	v.path = 306
@@ -28,9 +32,9 @@ function init(me)
 
 	entity_setState( me, STATE_IDLE )
 	entity_setWidth( me, 128 )
-	entity_setHeight( me, 128 ) -- sprite
+	entity_setHeight( me, 128 )
 
-	entity_setCollideRadius( me, 64 ) -- sprite/2
+	entity_setCollideRadius( me, 64 )
 	entity_setHealth( me, 3 )
 end
 
@@ -64,7 +68,6 @@ function enterState(me)
 	end
 
 	if entity_isState(me, STATE_DEAD) then
-
 		entity_animate( me, "dead", -1 )
 	end
 
@@ -106,6 +109,8 @@ end
 
 function dieNormal(me)
 
+	entity_setFlag(me, 1)
+
 	setFlag(v.kills, getFlag(v.kills)+1 )
 
 	if isFlag(v.flag, 0) then
@@ -114,12 +119,11 @@ function dieNormal(me)
 
 			setControlHint( "Nejls: Bitte hoere damit auf, du tust ihnen weh....", 0, 0, 0, 3 )
 
-			else if getFlag(v.kills) == 3 then
+		elseif getFlag(v.kills) == 3 then
 
-				setFlag(v.flag, 1)
+			setFlag(v.flag, 1)
 
-				setFlag(v.path, getFlag(v.path)-1 )
-			end
+			setFlag(v.path, getFlag(v.path)-1 )
 		end
 	end
 

@@ -15,17 +15,16 @@ v.dir = 0
 
 function init(me)
 
-
     setupEntity( me )
-    entity_setTexture( me, "spikeyegg" )
-    entity_setHealth ( me, 3 )
+    entity_setTexture(me, "spikeyegg")
+    entity_setHealth (me, 3)
     entity_setCollideRadius( me, 64 ) -- sprite/2
 
-    entity_setState( me, STATE_IDLE )
-    entity_setWidth( me, 128 )
-    entity_setHeight( me, 128 ) -- sprite
+    entity_setState(me, STATE_IDLE )
+    entity_setWidth(me, 128)
+    entity_setHeight(me, 128) -- sprite
 
-    entity_setEntityType(me, ET_ENEMY )
+    entity_setEntityType(me, ET_ENEMY)
 
     entity_setDeathParticleEffect( me, "TinyRedExplode" )
 
@@ -63,8 +62,6 @@ function enterState(me)
 
     if entity_isState(me, STATE_IDLE) then
         entity_animate(me, "dead", -1)
-
-        setControlHint(text, 0, 0, 0, "dead")
     end
 
 end
@@ -81,26 +78,6 @@ function hitSurface(me)
     end
 end
 
-function activate(me)
-end
-
-
 function damage(me, attacker, bone, damageType, dmg)
     return false
-end
-
-
-function animationKey(me, key)
-end
-
-function songNote(me, note)
-end
-
-function songNoteDone(me, note)
-end
-
-function song(me, song)
-end
-
-function activate(me)
 end
