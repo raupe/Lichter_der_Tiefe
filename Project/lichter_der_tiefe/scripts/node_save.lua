@@ -8,8 +8,13 @@ function init(me)
 
 	v.n = getNaija()
 	v.inNode = false
-
-	v.saved = false
+	
+	if node_isFlag(me, 1) then
+		v.saved = true
+		node_setFlag(me, 0)	
+	else
+		v.saved = false
+	end
 end
 
 -- check trigger
@@ -27,7 +32,9 @@ function update(me, dt)
 				v.saved = true
 
 				pause()
+				node_setFlag(me, 1)
 				savePoint( me )
+				node_setFlag(me, 0)
 				unpause()
 			end
 
