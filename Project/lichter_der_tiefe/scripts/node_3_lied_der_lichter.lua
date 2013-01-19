@@ -8,12 +8,9 @@ function init(me)
 
 	v.n = getNaija()
 	v.inNode = false
-	
-	v.flagKlang1 = 801
-	v.flagKlang2 = 901
-	v.flagKlang3 = 1001
 	v.flagLiedDerLichter = 1100
 	v.flagNejl = 303
+	v.flagSongs = 307
 	
 	v.song = 104
 	
@@ -34,6 +31,7 @@ function update(me, dt)
 		setControlHint("Nejl: Fuer das Lied der Lichter muessen wir nur die Klaenge aneinander reihen." ,0,0,0, 4)
 		learnSong(v.song)
 		setFlag(v.flagLiedDerLichter, 1)
+		setFlag(v.flagSongs, 4)
 		setFlag(v.flagNejl, 0)
 		local nejl = getEntity("3_nejl")
 		entity_setState(nejl, STATE_DISABLED)
@@ -55,10 +53,8 @@ function update(me, dt)
 	if not v.inNode and node_isEntityIn(me, v.n) then
 		v.inNode = true
 		
-		if isFlag(v.flagKlang1, 1) and isFlag(v.flagKlang2, 1) and isFlag(v.flagKlang3, 1) then
-			if not isFlag(v.flagLiedDerLichter, 1) then
-				v.step = 1
-			end
+		if getFlag(v.flagSongs) == 3 then
+			v.step = 1
 		end
 	end
 	

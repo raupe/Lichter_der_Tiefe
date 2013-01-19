@@ -9,8 +9,6 @@ function init(me)
     v.n = getNaija()
 	v.flag = 003
 	v.time = 0
-	v.warp = node_getNearestNode(me, "warp")
-	node_setPosition(v.warp, 0, 0)
 	
 end
 
@@ -59,6 +57,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 4)
 			
+			entity_setPosition(v.n, node_getPosition(me))
 			hideImage()
 		end
 		
@@ -69,8 +68,8 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 5)
 			
-			node_setPosition(v.warp, node_getPosition(me))
 			enableInput()
+			loadMap("1_riff_der_erleuchtung")
 		end
 		
 	end

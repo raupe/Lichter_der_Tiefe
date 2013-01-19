@@ -6,7 +6,7 @@ function init(me)
 	setupEntity(me)
 	entity_setEntityType(me, ET_NEUTRAL)
 	
-	v.flagLiedDerLichter = 1100
+	v.flagSongs = 307
 	
 	entity_initSkeletal(me, "lichtblume")
 end
@@ -19,7 +19,7 @@ function update(me, dt)
 end
 
 function enterState(me)
-	if getFlag(v.flagLiedDerLichter) == 1 then
+	if getFlag(v.flagSongs) >= 3 then
 		entity_animate(me, "welken", -1)
 	else
 		entity_animate(me, "idle", -1)

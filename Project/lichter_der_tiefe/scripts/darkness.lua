@@ -7,13 +7,14 @@ function init(me)
 	entity_setEntityType(me, ET_NEUTRAL)
 	
 	v.flagLiedDerLichter = 1100
+	v.flagSongs = 307
 	
 end
 
 -- after nodes have inited
 function postInit(me)
 
-	if getFlag(v.flagLiedDerLichter) == 1 then
+	if getFlag(v.flagSongs) >= 3 then
 		v.dark = createQuad("lichtblume/lichtblume_darkness", 13)
 		quad_setPosition(v.dark, entity_getPosition(me))
 		quad_scale(v.dark, 32, 32)
