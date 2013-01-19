@@ -13,6 +13,7 @@ function init(me)
 	
 	v.flag = 105
 	v.flagSongs = 307
+	v.flagUntiefen = 701
 	
 	v.glowing = false
 	v.r = randRange(50, 100) / 100
@@ -44,7 +45,9 @@ function update(me, dt)
 end
 
 function enterState(me)
-	if getFlag(v.flagSongs) >= 3 then
+	if getFlag(v.flagUntiefen) >= 2 then
+		entity_animate(me, "tot", -1)
+	elseif getFlag(v.flagSongs) >= 3 then
 		entity_animate(me, "welken", -1)
 	else
 		entity_animate(me, "idle", -1)
@@ -71,7 +74,7 @@ function songNoteDone(me, note)
 end
 
 function song(me, song)
-	if song == 104 then
+	if song == 104 and getFlag(v.flagUntiefen) < 2 then
 		setFlag(v.flag, 1)
 	end
 end

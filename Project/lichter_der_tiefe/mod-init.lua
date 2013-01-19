@@ -21,6 +21,7 @@ if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 function init()
+	setFlag(901, 0)
 	setFlag(1100, 0)
 	loadMap("0_hafen")
 end

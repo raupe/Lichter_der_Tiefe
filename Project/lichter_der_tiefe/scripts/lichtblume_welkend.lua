@@ -7,6 +7,7 @@ function init(me)
 	entity_setEntityType(me, ET_NEUTRAL)
 	
 	v.flagSongs = 307
+	v.flagUntiefen = 701
 	
 	entity_initSkeletal(me, "lichtblume")
 end
@@ -19,7 +20,9 @@ function update(me, dt)
 end
 
 function enterState(me)
-	if getFlag(v.flagSongs) >= 3 then
+	if getFlag(v.flagUntiefen) >= 2 then
+		entity_animate(me, "tot", -1)
+	elseif getFlag(v.flagSongs) >= 3 then
 		entity_animate(me, "welken", -1)
 	else
 		entity_animate(me, "idle", -1)
@@ -46,7 +49,7 @@ function songNoteDone(me, note)
 end
 
 function song(me, song)
-	if song == 104 then -- and not verwelkt
+	if song == 104 and getFlag(v.flagUntiefen) < 2 then
 		local r = randRange(50, 100) / 100
 		local g = randRange(50, 100) / 100
 		local b = randRange(50, 100) / 100

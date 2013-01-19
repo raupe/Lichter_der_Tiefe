@@ -7,9 +7,10 @@ if not v then v = {} end
 function init(me)
 
     v.n = getNaija()
-    v.flag = 700
-
+    v.flag = 701
+    
     centerText("Untiefen")
+    setFlag(v.flag, 2)
 end
 
 -- check trigger

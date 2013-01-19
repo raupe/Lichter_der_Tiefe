@@ -26,6 +26,7 @@ function enterState(me)
 	end
 	if entity_isState(me, STATE_DEATHSCENE) then
 		entity_animate(me, "dead", -1)
+		entity_color(me, 0.3, 0.3, 0.3, 3)
 	end
 end
 

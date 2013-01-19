@@ -10,6 +10,7 @@ function init(me)
 	v.mejais = getEntity("1_mejais_ghost")
 	v.flag = 106
 	v.time = 0
+	v.flagUntiefen = 701
 	
 	--debug:
 	--setFlag(v.flag, 0)
@@ -115,6 +116,7 @@ function update(me, dt)
 			v.dt = 4
 			
 			setControlHint("Emily: Dann beeil ich mich lieber.", 0, 0, 0, v.dt)
+			setFlag(v.flagUntiefen, 1)
 			enableInput()
 			entity_setState(v.mejais, STATE_IDLE)
 		end
