@@ -77,6 +77,9 @@
     <Node pos="4891 236" rect="666 518" shape="0" />
     <Node pos="4517 637" rect="666 518" shape="0" />
 </Path>
+<Path name="1_mejais_lied_der_lichter">
+    <Node pos="4180 5635" rect="1298 64" shape="0" />
+</Path>
 <Entities j="335 1611 5270 27 0 1 -1 1_mejais 3418 7278 0 0 2 -1 1_lichtblume 4652 2106 -110 0 3 -1 1_lichtblume 4617 1971 -266 0 4 -1 1_lichtblume 4560 1762 58 0 5 -1 1_lichtblume 4531 1601 -119 0 6 -1 1_lichtblume 4464 1437 50 0 7 -1 1_lichtblume 4464 1310 -91 0 8 -1 1_lichtblume 4483 1158 98 0 9 -1 3_nejl 9206 4713 0 0 10 -1 1_stroemung 4672 2595 -14 0 11 -1 1_stroemung 4663 2170 0 0 12 -1 1_stroemung 4553 1498 0 0 13 -1 1_stroemung 4574 675 0 0 14 -1 1_stroemung 4417 249 0 0 15 -1 1_lichtblume 4524 998 77 0 17 -1 1_lichtblume 4475 819 281 0 18 -1 1_lichtblume 4532 671 69 0 19 -1 1_lichtblume 4500 536 70 0 20 -1 darkness 5357 6684 -68 0 16 -1 lichtblume 5448 6132 -139 0 21 -1 lichtblume 5533 6238 -121 0 22 -1 lichtblume 5652 6409 -95 0 23 -1 lichtblume 5750 6827 -53 0 24 -1 lichtblume 5636 7004 -64 0 25 -1 lichtblume_welkend 5704 6924 -62 0 26 -1 lichtblume_welkend 5700 6507 229 0 27 -1 1_lichtblume 4702 2513 -100 0 28 -1 1_lichtblume 4791 2589 -151 0 29 -1 lichtblume_welkend 4211 2836 -194 0 30 -1 lichtblume_welkend 4069 2825 -154 0 31 -1 lichtblume_welkend 4311 2767 132 0 32 -1 darkness 4507 2793 0 0 33 " />
 <SE k="41 5059 8561 0 3.39022 3.39022 0 0 0 -1 0 4 1352 7042 29 9.59949 9.59949 0 0 0 -1 0 4 792 6588 0 5.41 5.41 0 0 0 -1 0 " l="0" />
 <SE k="1 1702 7676 25 5.49907 5.49907 0 0 0 -1 0 4 1915 7829 -48 3.48062 3.48062 0 0 0 -1 0 4 1501 7690 0 2.87425 2.87425 0 0 0 7 0 " l="1" />

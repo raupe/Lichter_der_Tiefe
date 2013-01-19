@@ -46,16 +46,18 @@ function songNoteDone(me, note)
 end
 
 function song(me, song)
-	local r = randRange(50, 100) / 100
-	local g = randRange(50, 100) / 100
-	local b = randRange(50, 100) / 100
-	
-	v.glow = createQuad("Naija/LightFormGlow", 13)
-	quad_setPosition(v.glow, entity_getPosition(me))
-	quad_scale(v.glow, 8, 8)
-	quad_alpha(v.glow, 0)
-	quad_alpha(v.glow, 1, 0.5)
-	quad_color(v.glow, r, g, b)
+	if song == 104 then -- and not verwelkt
+		local r = randRange(50, 100) / 100
+		local g = randRange(50, 100) / 100
+		local b = randRange(50, 100) / 100
+		
+		v.glow = createQuad("Naija/LightFormGlow", 13)
+		quad_setPosition(v.glow, entity_getPosition(me))
+		quad_scale(v.glow, 8, 8)
+		quad_alpha(v.glow, 0)
+		quad_alpha(v.glow, 1, 0.5)
+		quad_color(v.glow, r, g, b)
+	end
 end
 
 function activate(me)
