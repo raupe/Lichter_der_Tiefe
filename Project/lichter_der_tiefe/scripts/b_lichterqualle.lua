@@ -22,7 +22,7 @@ function postInit(me)
 	v.songs = 307
     
     if getFlag(v.song) ~= 1 then
-		entity_setActivation(me, AT_CLICK, 32, 500)
+		entity_setActivation(me, AT_CLICK, 128, 500)
 	end
 end
 
@@ -69,7 +69,7 @@ function activate(me)
 	learnSong(102)
 	setFlag(v.songs, getFlag(v.songs)+1 )
 		
-	entity_setActivation(me, AT_NONE , 32, 500)
+	entity_setActivation(me, AT_NONE , 128, 500)
 	setControlHint("Lichterqualle: Nagut, ich bringe dir den \"Klang der Stroemung\" bei. Moeges du immer einen Weg finden...", 0, 0, 0, 3)
 	
 	if isFlag(801, 1) and isFlag(1001, 1) then

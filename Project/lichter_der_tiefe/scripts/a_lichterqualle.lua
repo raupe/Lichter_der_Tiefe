@@ -25,7 +25,7 @@ function postInit(me)
 	v.step = 0
     
     if getFlag(v.song) ~= 1 then
-		entity_setActivation(me, AT_CLICK, 32, 500)
+		entity_setActivation(me, AT_CLICK, 128, 500)
 	end
 end
 
@@ -119,5 +119,5 @@ function activate(me)
 	v.step = 1
 	disableInput()
 	
-	entity_setActivation(me, AT_NONE , 32, 500)
+	entity_setActivation(me, AT_NONE , 128, 500)
 end
