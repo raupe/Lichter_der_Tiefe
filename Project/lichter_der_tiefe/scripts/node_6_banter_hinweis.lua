@@ -9,7 +9,7 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 
-	v.flag = 501
+	v.flag = 606
 end
 
 -- check
@@ -19,7 +19,7 @@ function update(me, dt)
 
 		setFlag( v.flag, 1 )
 
-		setControlHint("Hier gehs wohl gerade nicht weiter....", 0, 0, 0, 4)
+		setControlHint("Nejl: Die Stroemung ist wieder launisch, hier gehts wohl gerade nicht weiter...", 0, 0, 0, 4)
 	end
 end
 
