@@ -46,7 +46,7 @@ function init(me)
 	v.pos = 1
 	v.flagNejl = 504
 	v.flagGutBoese = 501
-	
+	v.path = 306
 end
 
 -- after nodes have inited
@@ -131,7 +131,9 @@ end
 
 function dieNormal(me)
 	entity_setFlag(me, 1)
-	setFlag(v.flagGutBoese, 1)
+	setFlag(v.flagGutBoese, 1) -- ?
+    setFlag(v.path, getFlag(v.path)-1 )
+    setControlHint("Nejl: Hoffentlich vermisst ihn keiner...", 0,0,0, 3)
 end
 
 function animationKey(me, key)
