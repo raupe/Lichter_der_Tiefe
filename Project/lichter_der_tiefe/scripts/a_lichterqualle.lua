@@ -13,8 +13,6 @@ function init(me)
     entity_scale(me, 2, 2)
     
     entity_setEntityLayer(me, 1)
-
-    -- entity_color(me, 20, 0, 0)
 end
 
 -- after nodes have inited
@@ -24,9 +22,15 @@ function postInit(me)
 	v.songs = 307
 	v.step = 0
     
-    if getFlag(v.song) ~= 1 then
-		entity_setActivation(me, AT_CLICK, 128, 500)
-	end
+	v.songB = 901
+    v.songC = 1001
+    
+    if getFlag(v.song) == 1 then
+        entity_delete(me);
+    else
+        entity_setActivation(me, AT_CLICK, 200, 500)
+    end
+	
 end
 
 function update(me, dt)
@@ -41,7 +45,7 @@ function update(me, dt)
 		setControlHint("Lichterqualle: Wie du willst, ich bringe dir den \"Klang der Ruhe\". Auf das du immer wachsam bleibst...", 0, 0, 0, 3)
 		
 		
-		if isFlag(901, 1) and isFlag(1001, 1) then
+		if isFlag(v.songB, 1) and isFlag(v.songC, 1) then
 			local nejl = getEntity("3_nejl")
 			entity_setState(nejl, STATE_DELAY)
 			
@@ -119,5 +123,6 @@ function activate(me)
 	v.step = 1
 	disableInput()
 	
-	entity_setActivation(me, AT_NONE , 128, 500)
+	entity_setActivation(me, AT_NONE , 200, 500)
+	entity_alpha(me, 0, 4)
 end

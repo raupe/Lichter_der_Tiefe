@@ -21,9 +21,14 @@ function postInit(me)
 	v.song = 901
 	v.songs = 307
     
-    if getFlag(v.song) ~= 1 then
-		entity_setActivation(me, AT_CLICK, 128, 500)
-	end
+    v.songA = 801
+    v.songC = 1001
+    
+    if getFlag(v.song) == 1 then
+        entity_delete(me);
+    else
+        entity_setActivation(me, AT_CLICK, 200, 500)
+    end
 end
 
 function update(me, dt)
@@ -65,15 +70,18 @@ end
 
 function activate(me)
 
-	setFlag(v.song, 1)
-	learnSong(102)
-	setFlag(v.songs, getFlag(v.songs)+1 )
-		
-	entity_setActivation(me, AT_NONE , 128, 500)
-	setControlHint("Lichterqualle: Nagut, ich bringe dir den \"Klang der Stroemung\" bei. Moeges du immer einen Weg finden...", 0, 0, 0, 3)
-	
-	if isFlag(801, 1) and isFlag(1001, 1) then
-		local nejl = getEntity("3_nejl")
-		entity_setState(nejl, STATE_DELAY)
-	end
+    setFlag(v.song, 1)
+
+    learnSong(102)
+    setFlag(v.songs, getFlag(v.songs)+1 )
+    setControlHint("Lichterqualle: Nagut, ich bringe dir den \"Klang der Stroemung\" bei. Moeges du immer einen Weg finden...", 0, 0, 0, 5)
+
+    entity_setActivation(me, AT_NONE , 200, 500)
+    entity_alpha(me, 0, 4)
+
+    if isFlag(v.songA, 1) and isFlag(v.songC, 1) then
+        local nejl = getEntity("3_nejl")
+        entity_setState(nejl, STATE_DELAY)
+    end
+
 end
