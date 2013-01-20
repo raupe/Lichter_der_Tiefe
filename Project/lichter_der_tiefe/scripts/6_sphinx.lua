@@ -22,7 +22,7 @@ function init(me)
     entity_scale(me, 2, 2)
     entity_setState(me, STATE_IDLE)
     
-    entity_setHealth(me, 10)
+    -- entity_setHealth(me, 30)
     v.flagComment = 603
     v.flagPass = 604
     v.quest = false
@@ -30,6 +30,9 @@ function init(me)
     v.shotDt = 1
     v.time = 0
     v.flagGutBoese = 602
+    v.flagNejl = 605
+    
+    v.path = 306
 	
 end
 
@@ -61,7 +64,7 @@ function update(me, dt)
 		end
 		
 		if getFlag(v.flagComment) ~= 1 and isForm(1) then
-			setControlHint("Sphinx: Bist du sicher, dass du das tuen willst?", 0,0,0, 4)
+			setControlHint("Nejl: Diese Energie der Kristalle.... \tBist du sicher, dass du das tuen willst?", 0,0,0, 4)
 			setFlag(v.flagComment, 1)
 		end
 		
@@ -92,7 +95,7 @@ function enterState(me)
     	entity_setTarget(me, v.n)
     	v.time = 0
     else
-    	entity_setHealth(me, 10)
+    	entity_setHealth(me, 50)
     end
     entity_animate(me, "idle", -1)
 end
@@ -101,6 +104,10 @@ function exitState(me)
 end
 
 function damage(me, attacker, bone, damageType, dmg)
+    if getFlag(v.flagNejl) ~= 1 then
+        setControlHint("Sphinx: War das schon alles ? An mir kommst du nicht so einfach vorbei!", 0,0,0, 4)
+        setFlag(v.flagNejl, 1)
+    end
 	if entity_isState(me, STATE_IDLE) then
 		entity_setState(me, STATE_ATTACK)
 	end
@@ -109,7 +116,9 @@ end
 
 function dieNormal(me)
 	entity_setFlag(me, 1)
-	setFlag(v.flagGutBoese, 1)
+	setFlag(v.flagGutBoese, 1) -- ?
+    setFlag(v.path, getFlag(v.path)-1 )
+    setControlHint("Nejl: Was haette Mama nur dazu gesagt...", 0,0,0, 3)
 end
 
 function animationKey(me, key)
