@@ -6,7 +6,7 @@
 <Path name="warp 2_heimische_gewaesser r">
     <Node pos="8054 8056" rect="64 610" shape="0" />
 </Path>
-<Path name="current 500 0.5">
+<Path name="current 600 0.5">
     <Node pos="4524 677" rect="164 82" shape="0" />
     <Node pos="4477 1445" rect="164 82" shape="0" />
 </Path>
