@@ -7,7 +7,7 @@
     <Node pos="7347 7614" rect="248 194" shape="0" />
 </Path>
 <Path name="5_aalbau">
-    <Node pos="4183 4929" rect="64 64" shape="0" />
+    <Node pos="4548 4779" rect="64 64" shape="0" />
 </Path>
 <Path name="naijastart">
     <Node pos="8157 3295" rect="64 64" shape="0" />
@@ -74,6 +74,12 @@
 </Path>
 <Path name="warp b_hoehle_der_stroemung d">
     <Node pos="5854 6003" rect="484 64" shape="0" />
+</Path>
+<Path name="5_banter_gang">
+    <Node pos="4403 2990" rect="390 760" shape="0" />
+</Path>
+<Path name="5_nejl_pos">
+    <Node pos="4276 3194" rect="64 64" shape="0" />
 </Path>
 <Entities j="-1 3_nejl 9908 185 19 0 4 -1 5_aal 3818 5860 33 0 2 " />
 <SE k="41 5059 8561 0 3.39022 3.39022 0 0 0 -1 0 4 1352 7042 29 9.59949 9.59949 0 0 0 -1 0 4 792 6588 0 5.41 5.41 0 0 0 -1 0 " l="0" />

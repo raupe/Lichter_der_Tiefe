@@ -19,7 +19,7 @@ function init(me)
 	setupBasicEntity(
 	me,
 	"",						-- texture
-	6,						-- health
+	15,						-- health
 	1,						-- manaballamount
 	1,						-- exp
 	1,						-- money
