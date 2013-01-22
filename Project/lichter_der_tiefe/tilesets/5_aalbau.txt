@@ -13,6 +13,8 @@
 11 giantanemone-tentacle-back
 12 coral-0005
 13 plant-0011
+14 final-tentacles-0001
+15 final-tentacles-0002
 
 28 bg-light-0001
 29 bg-light-0002
