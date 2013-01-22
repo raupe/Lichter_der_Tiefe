@@ -6,6 +6,14 @@
 5 black_bg
 6 shadow_arc
 
+7 13-spikes-0001
+8 13-spikes-0002
+9 songleaf
+10 giantanemone-tentacle
+11 giantanemone-tentacle-back
+12 coral-0005
+13 plant-0011
+
 28 bg-light-0001
 29 bg-light-0002
 
