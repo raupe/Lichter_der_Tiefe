@@ -15,6 +15,12 @@
 13 plant-0011
 14 final-tentacles-0001
 15 final-tentacles-0002
+16 ldt-bg-rock-001
+
+17 darkness-0001
+18 darkness-0002
+19 darkness-0003
+20 darkness-0004
 
 28 bg-light-0001
 29 bg-light-0002
