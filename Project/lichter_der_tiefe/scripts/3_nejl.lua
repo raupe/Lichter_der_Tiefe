@@ -29,6 +29,7 @@ function postInit(me)
 	v.followDelay = 0.2
 	v.flagSleep = 802
 	v.flagWake = 803
+	v.flagAbschied = 308
 
     if isFlag(v.flag, 1) then
         v.x,v.y = entity_getPosition( v.n )
@@ -151,7 +152,9 @@ function enterState(me)
 		entity_clearVel(me)
 	elseif entity_isState(me, STATE_DISABLED) then
 		entity_clearVel(me)
-		setFlag(v.flag, 0)
+		if isFlag(v.flag, 1) then
+			setFlag(v.flag, 2)
+		end
 	elseif entity_isState(me, STATE_DELAY) then
 		v.time = 0
 	end
@@ -185,6 +188,10 @@ function song(me, song)
 		else
 			setControlHint("Nejl: Uhaaa ... fast haette mich das Lied eingeschlaefert!", 0, 0, 0, 4)
 		end
+	elseif song == 104 and isFlag(v.flagAbschied, 0) then
+		disableInput()
+		entity_swimToPosition(me, entity_getPosition(v.n))
+		setFlag(v.flagAbschied, 2)
 	end
 end
 

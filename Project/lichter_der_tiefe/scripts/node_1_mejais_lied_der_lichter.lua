@@ -11,6 +11,7 @@ function init(me)
 	v.flag = 106
 	v.time = 0
 	v.flagUntiefen = 701
+	v.dt = 0
 	
 	--debug:
 	--setFlag(v.flag, 0)

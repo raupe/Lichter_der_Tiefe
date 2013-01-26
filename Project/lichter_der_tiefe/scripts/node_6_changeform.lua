@@ -9,6 +9,7 @@ function init(me)
 	v.n = getNaija()
 	v.inNode = false
 	v.form = 0
+	v.flag = 704
 
 	v.crystal = node_getNearestNode(me, "save")
 end
@@ -34,6 +35,7 @@ function update(me, dt)
 		v.inNode = false
 		if v.form == 1 then
 			changeForm(0)
+			setFlag(v.flag, 0)
 		end
 	end
 

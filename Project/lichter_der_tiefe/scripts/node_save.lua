@@ -8,6 +8,7 @@ function init(me)
 
 	v.n = getNaija()
 	v.inNode = false
+	v.flag = 704
 	
 	if node_isFlag(me, 1) then
 		v.saved = true
@@ -39,6 +40,7 @@ function update(me, dt)
 			end
 
 			changeForm(1)
+			setFlag(v.flag, 1)
 		end
 
 	end

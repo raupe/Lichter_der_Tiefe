@@ -8,6 +8,7 @@ function init(me)
 
 	v.n = getNaija()
 	v.inNode = false
+	v.flag = 704
 end
 
 -- check trigger
@@ -20,6 +21,7 @@ function update(me, dt)
 
 		if isForm(1) then
 			changeForm(0)
+			setFlag(v.flag, 0)
 		end
 	end
 

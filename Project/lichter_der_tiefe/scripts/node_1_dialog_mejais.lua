@@ -10,6 +10,7 @@ function init(me)
 	v.mejais = getEntity("1_mejais")
 	v.flag = 104
 	v.time = 0
+	v.dt = 0
 end
 
 -- check trigger
@@ -33,8 +34,9 @@ function update(me, dt)
 		if v.time >= 4 then
 			v.dt = 4
 			entity_setState(v.mejais, STATE_DEATHSCENE)
-			v.ghost = createEntity("1_mejais_ghost", "", entity_getPosition(v.mejais))
-			entity_setState(v.ghost, STATE_WAIT)
+			local ghost = createEntity("1_mejais_ghost", "", entity_getPosition(v.mejais))
+			entity_setState(ghost, STATE_WAIT)
+			setFlag(100, 1)
 			setFlag(v.flag, 3)
 			v.time = 0
 		end
@@ -169,10 +171,10 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.mejaisStart = getNode("1_mejais_1")
+			local ghost = getEntity("1_mejais_ghost")
 			entity_swimToNode(v.ghost, v.mejaisStart, 4)
 			entity_setState(v.ghost, STATE_IDLE)
 			enableInput()
-			setFlag(100, 1)
 			setFlag(v.flag, 18)
 		end
 	end

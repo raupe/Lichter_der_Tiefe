@@ -4,11 +4,12 @@ if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 -- entity: rock, changing texture etc.
 function init(me)
-
+	
 	v.range = 750
 	
 	v.flag = 302
 	v.flagUntiefen = 701
+	v.flagCerajt = 702
 	-- v.nejl = 303
 	-- v.path = 306
 	
@@ -31,6 +32,10 @@ end
 function postInit(me)
 
 	v.n = getNaija()
+	if not isFlag(v.flagUntiefen, 0) and not isFlag(v.flagCerajt, 1) then
+		local nejl = getEntity("3_nejl")
+		entity_setPosition(nejl, 0,0)
+	end
 end
 
 
@@ -74,10 +79,21 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.duration then
 			setFlag(v.flag, 3)
+			v.time = 0
+			v.duration = 6
 			
+			setControlHint("Emily: Oh nein, Nejl! Wenn ich da jetzt runter schwimme, schaffe ich es nicht mehr rechtzeitig zurueck!", 0,0,0, 6)
 			setCameraLerpDelay(0)
+		end
+	
+	elseif isFlag(v.flag, 3) then
+		v.time = v.time + dt
+		if v.time >= v.duration then
+			setFlag(v.flag, 4)
+			
+			setControlHint("Emily: Was mache ich nur?", 0,0,0, 3)
 			enableInput()
-		end		
+		end
 	
 	end
 
