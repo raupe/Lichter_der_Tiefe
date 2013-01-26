@@ -17,7 +17,7 @@ darkness
 6_sphinx
 6_stroemung
 6_item
-7_ceraijt
+7_cerajt
 a_lichterqualle
 b_lichterqualle
 c_lichterqualle

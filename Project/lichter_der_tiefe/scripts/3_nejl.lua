@@ -142,12 +142,16 @@ function enterState(me)
 		
 		entity_setMaxSpeedLerp(me, 1, 0.1)
 		entity_animate(me, "swim", -1)
+		setFlag(v.flag, 1)
 	else
 		entity_animate(me, "idle", -1)
 	end
 	
-	if entity_isState(me, STATE_WAIT) or entity_isState(me, STATE_DISABLED) then
+	if entity_isState(me, STATE_WAIT) then
 		entity_clearVel(me)
+	elseif entity_isState(me, STATE_DISABLED) then
+		entity_clearVel(me)
+		setFlag(v.flag, 0)
 	elseif entity_isState(me, STATE_DELAY) then
 		v.time = 0
 	end

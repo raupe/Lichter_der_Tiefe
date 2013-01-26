@@ -32,7 +32,7 @@ function update(me, dt)
 		learnSong(v.song)
 		setFlag(v.flagLiedDerLichter, 1)
 		setFlag(v.flagSongs, 4)
-		setFlag(v.flagNejl, 0)
+		
 		local nejl = getEntity("3_nejl")
 		entity_setState(nejl, STATE_DISABLED)
 	
