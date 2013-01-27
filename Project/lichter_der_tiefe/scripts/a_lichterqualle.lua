@@ -25,12 +25,9 @@ function postInit(me)
 	v.songB = 901
     v.songC = 1001
     
-    if getFlag(v.song) == 1 then
-        entity_delete(me);
-    else
+    if isFlag(v.song, 0) then
         entity_setActivation(me, AT_CLICK, 200, 500)
     end
-	
 end
 
 function update(me, dt)
@@ -45,7 +42,7 @@ function update(me, dt)
 		setControlHint("Lichterqualle: Wie du willst, ich bringe dir den \"Klang der Ruhe\". Auf das du immer wachsam bleibst...", 0, 0, 0, 3)
 		
 		
-		if isFlag(v.songB, 1) and isFlag(v.songC, 1) then
+		if isFlag(v.songB, 2) and isFlag(v.songC, 2) then
 			local nejl = getEntity("3_nejl")
 			entity_setState(nejl, STATE_DELAY)
 			
@@ -68,7 +65,8 @@ function update(me, dt)
 			v.step = v.step + 1
 			v.time = 0
 			v.dt = 8
-			
+			setFlag(v.song, 2)
+			showInGameMenu()
 			setControlHint("Schau im Menue nach, welche Toene du fuer den Klang braust. Dann nutze die rechte Maustaste um zu singen.", 0, 0, 0, 8)
 		end
 	
@@ -117,6 +115,7 @@ end
 function activate(me)
 
 	setFlag(v.song, 1)
+	
 	learnSong(101)
 	setFlag(v.songs, getFlag(v.songs)+1 )
 	
@@ -124,5 +123,4 @@ function activate(me)
 	disableInput()
 	
 	entity_setActivation(me, AT_NONE , 200, 500)
-	entity_alpha(me, 0, 4)
 end

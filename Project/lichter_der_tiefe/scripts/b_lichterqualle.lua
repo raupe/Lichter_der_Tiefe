@@ -23,19 +23,24 @@ function postInit(me)
     
     v.songA = 801
     v.songC = 1001
-    
-    if getFlag(v.song) == 1 then
-        entity_delete(me);
-    else
+
+    v.time = 0
+    v.duration = 5
+
+    if isFlag(v.song, 0) then
         entity_setActivation(me, AT_CLICK, 200, 500)
     end
 end
 
 function update(me, dt)
 
-end
-
-function update(me, dt)
+    if isFlag(v.song, 1) then
+        v.time = v.time + dt
+        if v.time >= v.duration+1 then
+            setFlag(v.song, 2)
+            showInGameMenu()
+        end
+    end
 end
 
  function enterState(me)
@@ -74,12 +79,12 @@ function activate(me)
 
     learnSong(102)
     setFlag(v.songs, getFlag(v.songs)+1 )
-    setControlHint("Lichterqualle: Nagut, ich bringe dir den \"Klang der Stroemung\" bei. Moeges du immer einen Weg finden...", 0, 0, 0, 5)
+    setControlHint("Lichterqualle: Ich bringe dir hiermit den \"Klang der Stroemung\" bei. Moeges du immer einen Weg finden...", 0, 0, 0, v.duration)
 
     entity_setActivation(me, AT_NONE , 200, 500)
-    entity_alpha(me, 0, 4)
 
-    if isFlag(v.songA, 1) and isFlag(v.songC, 1) then
+    if isFlag(v.songA, 2) and isFlag(v.songC, 2) then
+        setFlag(v.song, 2)
         local nejl = getEntity("3_nejl")
         entity_setState(nejl, STATE_DELAY)
     end
