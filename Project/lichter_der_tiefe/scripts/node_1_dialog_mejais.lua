@@ -16,14 +16,16 @@ end
 -- check trigger
 function update(me, dt)	
 
-	if isFlag(v.flag, 0) then
-		v.triffMejaisNode = getNode("1_triff_mejais")
-		if node_isEntityIn(v.triffMejaisNode, v.n) then
-			disableInput()
-			entity_swimToNode(v.n, me, 4)
-			setFlag(v.flag, 1)
-		end
-	
+	if isFlag(v.flag, 0) and node_isEntityIn( getNode("1_triff_mejais"), v.n) then
+
+		setCutscene(1, 1)
+
+		watch(5)
+		disableInput()
+		entity_swimToNode(v.n, me, 4)
+		entity_flipToEntity(v.n, v.mejais)
+		setFlag(v.flag, 1)
+
 	elseif isFlag(v.flag, 1) and node_isEntityIn(me, v.n) then
 		disableInput()
 		setControlHint("Mejais: ...", 0, 0, 0, 3)
@@ -176,8 +178,9 @@ function update(me, dt)
 			entity_setState(v.ghost, STATE_IDLE)
 			enableInput()
 			setFlag(v.flag, 18)
+			setCutscene(0)
 		end
 	end
-	
+
 end
 
