@@ -18,11 +18,14 @@ function update(me, dt)
 	if getFlag(v.flag) > 4 then
 		-- early out
 	elseif isFlag(v.flag, 0) then
+
 		if node_isEntityIn(me, v.n) then
+
+			setCutscene(1,1)
+
 			v.dt = 4
 			v.time = 0
 			setFlag(v.flag, 1)
-			
 			disableInput()
 			showImage("0_cutscene/steg_01")
 		end
@@ -66,8 +69,7 @@ function update(me, dt)
 		if v.time >= v.dt then
 			v.dt = 3
 			v.time = 0
-			setFlag(v.flag, 5)
-			
+			-- setFlag(v.flag, 5)
 			enableInput()
 			loadMap("1_riff_der_erleuchtung")
 		end

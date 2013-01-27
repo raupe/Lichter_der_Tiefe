@@ -5,6 +5,9 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
+    -- if skipped
+    setCutscene(0)
+
     v.n = getNaija()
     v.flag = 100
     v.flagLichtblume = 105

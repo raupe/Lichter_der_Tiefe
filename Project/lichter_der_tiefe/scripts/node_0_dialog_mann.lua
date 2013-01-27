@@ -17,7 +17,11 @@ function update(me, dt)
 	if getFlag(v.flag) > 15 then
 		-- early out
 	elseif isFlag(v.flag, 0) then
+
 		if node_isEntityIn(me, v.n) then
+
+			setCutscene(1,1)
+
 			v.dt = 1
 			v.time = 0
 			setFlag(v.flag, 1)
@@ -27,6 +31,7 @@ function update(me, dt)
 		end
 		
 	elseif isFlag(v.flag, 1) then
+
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
@@ -177,6 +182,7 @@ function update(me, dt)
 			
 			hideImage()
 			enableInput()
+			setCutscene(0)
 		end
 		
 	end
