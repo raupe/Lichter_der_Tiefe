@@ -81,6 +81,13 @@ function activate(me)
     setFlag(v.songs, getFlag(v.songs)+1 )
     setControlHint("Lichterqualle: Ich bringe dir hiermit den \"Klang der Stroemung\" bei. Moeges du immer einen Weg finden...", 0, 0, 0, v.duration)
 
+    local perc = entity_getHealthPerc(v.n)
+    if perc ~= 1 then
+        entity_setHealth( v.n, math.floor( entity_getHealth(v.n) / perc + 0.5) )
+        playSfx("HealthUpgrade-Collect")
+        spawnParticleEffect("Heal", entity_getPosition(v.n))
+    end
+
     entity_setActivation(me, AT_NONE , 200, 500)
 
     if isFlag(v.songA, 2) and isFlag(v.songC, 2) then

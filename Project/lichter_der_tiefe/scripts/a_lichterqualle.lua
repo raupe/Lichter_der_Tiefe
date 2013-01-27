@@ -65,8 +65,6 @@ function update(me, dt)
 			v.step = v.step + 1
 			v.time = 0
 			v.dt = 8
-			setFlag(v.song, 2)
-			showInGameMenu()
 			setControlHint("Schau im Menue nach, welche Toene du fuer den Klang braust. Dann nutze die rechte Maustaste um zu singen.", 0, 0, 0, 8)
 		end
 	
@@ -74,7 +72,9 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.step = 0
-			enableInput()	
+			enableInput()
+			setFlag(v.song, 2)
+			showInGameMenu()
 		end
 		
 	end
@@ -118,7 +118,14 @@ function activate(me)
 	
 	learnSong(101)
 	setFlag(v.songs, getFlag(v.songs)+1 )
-	
+
+	local perc = entity_getHealthPerc(v.n)
+	if perc ~= 1 then
+    	entity_setHealth( v.n, math.floor( entity_getHealth(v.n) / perc + 0.5) )
+ 		playSfx("HealthUpgrade-Collect")
+    	spawnParticleEffect("Heal", entity_getPosition(v.n))
+    end
+
 	v.step = 1
 	disableInput()
 	
