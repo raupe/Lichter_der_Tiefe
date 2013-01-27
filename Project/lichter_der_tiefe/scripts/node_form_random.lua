@@ -6,7 +6,7 @@ if not v then v = {} end
 -- on creation
 function init(me)
 --debug:
-setFlag(702, 1)
+--setFlag(702, 1)
 
 	v.n = getNaija()
 	v.inNode = false
