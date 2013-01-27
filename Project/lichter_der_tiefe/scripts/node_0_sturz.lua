@@ -9,6 +9,7 @@ function init(me)
     v.n = getNaija()
 	v.flag = 003
 	v.time = 0
+	v.dt = 0
 	
 end
 
@@ -69,7 +70,8 @@ function update(me, dt)
 		if v.time >= v.dt then
 			v.dt = 3
 			v.time = 0
-			-- setFlag(v.flag, 5)
+			setFlag(v.flag, 5)
+			
 			enableInput()
 			loadMap("1_riff_der_erleuchtung")
 		end

@@ -12,6 +12,7 @@ function init(me)
     v.flag = 100
     v.flagLichtblume = 105
     v.flagSchacht = 101
+    v.flagMejaisWeg = 108
 
     setCostume("emily")
     
@@ -22,8 +23,10 @@ function init(me)
     if getFlag(v.flag) == 1 then
     	local mejais = getEntity("1_mejais")
 		entity_setState(mejais, STATE_DEATHSCENE)
-    	local mejaisStart = getNode("1_mejais_1")
-		createEntity("1_mejais_ghost", "", node_getPosition(mejaisStart))
+		if not isFlag(v.flagMejaisWeg, 1) then
+	    	local mejaisStart = getNode("1_mejais_1")
+			createEntity("1_mejais_ghost", "", node_getPosition(mejaisStart))
+		end
     end
     
     -- turn off glowing

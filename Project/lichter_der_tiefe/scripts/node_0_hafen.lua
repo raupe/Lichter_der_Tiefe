@@ -8,6 +8,8 @@ function init(me)
     v.n = getNaija()
     centerText("Hafen von Winumsund")
     entity_alpha(v.n, 0)
+    
+    changeForm(0)
 end
 
 -- check trigger

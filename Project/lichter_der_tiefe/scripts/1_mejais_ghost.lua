@@ -12,6 +12,9 @@ function init(me)
 	entity_setDeathParticleEffect(me, "TinyRedExplode")
 	
 	entity_setActivation(me, AT_CLICK, 32, 500)
+	
+	v.fade = false
+	v.schacht = getNode("1_banter_schacht")
 end
 
 -- after nodes have inited
@@ -39,6 +42,11 @@ function update(me, dt)
 			end
 
 		end
+	end
+	
+	if node_isEntityIn(v.schacht, me) and not v.fade then
+		v.fade = true
+		entity_alpha(me, 0, 10)
 	end
 end
 

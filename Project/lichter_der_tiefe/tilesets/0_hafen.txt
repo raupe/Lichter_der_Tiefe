@@ -1,0 +1,7 @@
+1 tile-rock-0001 128 128
+2 tile-rock-0002 128 128
+3 tile-rock-0003 128 128
+4 tile-rock-0004 128 128
+42 0_hafen
+43 0_mann
+49 black_fadeout

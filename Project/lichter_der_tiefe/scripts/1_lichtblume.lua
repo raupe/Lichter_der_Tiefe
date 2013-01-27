@@ -14,7 +14,9 @@ function init(me)
 	v.flag = 105
 	v.flagSongs = 307
 	v.flagUntiefen = 701
+	v.flagMejais = 108
 	
+	v.revived = false
 	v.glowing = false
 	v.r = randRange(50, 100) / 100
 	v.g = randRange(50, 100) / 100
@@ -42,10 +44,18 @@ function update(me, dt)
 		quad_alpha(v.glow, 1, 0.5)
 		quad_color(v.glow, r, g, b)	
 	end
+	
+	if v.revived == false and isFlag(v.flagMejais, 1) then
+		v.revived = true
+		entity_animate(me, "idle", -1)
+	end
 end
 
 function enterState(me)
-	if getFlag(v.flagUntiefen) >= 2 then
+	if isFlag(v.flagMejais, 1) then
+		entity_animate(me, "idle", -1)
+		v.revived = true
+	elseif getFlag(v.flagUntiefen) >= 2 then
 		entity_animate(me, "tot", -1)
 	elseif getFlag(v.flagSongs) >= 3 then
 		entity_animate(me, "welken", -1)
@@ -74,8 +84,10 @@ function songNoteDone(me, note)
 end
 
 function song(me, song)
-	if song == 104 and getFlag(v.flagUntiefen) < 2 then
-		setFlag(v.flag, 1)
+	if song == 104 then	
+		if getFlag(v.flagUntiefen) < 2 or isFlag(v.flagMejais, 1) then
+			setFlag(v.flag, 1)
+		end
 	end
 end
 

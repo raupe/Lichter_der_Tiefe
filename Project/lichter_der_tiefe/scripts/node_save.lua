@@ -12,7 +12,20 @@ function init(me)
 	
 	if node_isFlag(me, 1) then
 		v.saved = true
-		node_setFlag(me, 0)	
+		node_setFlag(me, 0)
+		
+		if isFlag(801, 1) then
+			learnSong(101)
+		end
+		if isFlag(901, 1) then
+			learnSong(102)
+		end
+		if isFlag(1001, 1) then
+			learnSong(103)
+		end
+		if isFlag(1100, 1) then
+			learnSong(104)
+		end
 	else
 		v.saved = false
 	end

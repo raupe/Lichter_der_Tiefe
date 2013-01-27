@@ -155,7 +155,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 8
-			setControlHint("Mejais: Nejl, mein Sohn, er hat das Lied der Lichter noch nicht gelernt. Begib dich auf die Suche nach den Lichterquallen, sie behueten jeweils einen Ton.", 0, 0, 0, v.dt)
+			setControlHint("Mejais: Nejl, mein Sohn, er hat das Lied der Lichter noch nicht gelernt. Begib dich auf die Suche nach den Lichterquallen, sie behueten jeweils einen Klang.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 16)
 			v.time = 0
 		end
@@ -174,8 +174,8 @@ function update(me, dt)
 		if v.time >= v.dt then
 			v.mejaisStart = getNode("1_mejais_1")
 			local ghost = getEntity("1_mejais_ghost")
-			entity_swimToNode(v.ghost, v.mejaisStart, 4)
-			entity_setState(v.ghost, STATE_IDLE)
+			entity_swimToNode(ghost, v.mejaisStart, 4)
+			entity_setState(ghost, STATE_IDLE)
 			enableInput()
 			setFlag(v.flag, 18)
 			setCutscene(0)
