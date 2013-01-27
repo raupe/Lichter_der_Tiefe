@@ -2,6 +2,7 @@ GROUP:LichterDerTiefe
 lichtblume
 lichtblume_welkend
 darkness
+rock_breakable
 0_emily_von_oben
 1_mejais
 1_mejais_ghost

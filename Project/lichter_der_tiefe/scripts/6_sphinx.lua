@@ -70,11 +70,7 @@ function update(me, dt)
 		
 	elseif entity_isState(me, STATE_ATTACK) then
 		if isForm(0) then
-		    if isFlag(v.flagPass, 1) then
-	    		entity_setState(me, STATE_OPEN)
-		    else
-			    entity_setState(me, STATE_IDLE)
-			end
+		    entity_setState(me, STATE_IDLE)
 		end
 		
 		v.time = v.time - dt		
