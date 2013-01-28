@@ -6,6 +6,10 @@
 5 black_bg
 6 shadow_arc
 
+7 songspore-plant
+8 bg-rock-0017
+9 coral-0009
+
 28 bg-light-0001
 29 bg-light-0002
 
