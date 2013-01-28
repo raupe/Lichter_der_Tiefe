@@ -6,6 +6,12 @@
 5 black_bg
 6 shadow_arc
 
+7 bg-rock-0019
+8 plant-0007
+9 coral-0003
+10 coral-0008
+
+
 28 bg-light-0001
 29 bg-light-0002
 

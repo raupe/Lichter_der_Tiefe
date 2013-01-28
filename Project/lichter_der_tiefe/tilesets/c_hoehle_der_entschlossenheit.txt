@@ -6,6 +6,10 @@
 5 black_bg
 6 shadow_arc
 
+7 bg-rock-0018_green
+8 veil-skyplant-0001
+9 grass-bed-0001
+
 28 bg-light-0001
 29 bg-light-0002
 
