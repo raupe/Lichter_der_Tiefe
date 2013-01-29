@@ -24,4 +24,9 @@ function init()
 	setFlag(901, 0)
 	setFlag(1100, 0)
 	loadMap("0_hafen")
+	
+	--debug:
+	-- setFlag(1100, 1)
+	-- setFlag(701, 2)
+	-- setFlag(702, 1)
 end
