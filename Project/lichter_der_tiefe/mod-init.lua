@@ -26,7 +26,9 @@ function init()
 	loadMap("0_hafen")
 	
 	--debug:
-	-- setFlag(1100, 1)
-	-- setFlag(701, 2)
-	-- setFlag(702, 1)
+	-- setFlag(307, 3) -- alle lieder gelernt -> dunkelheit aktiv
+	-- setFlag(1100, 1) -- flag, lied gelernt... (wahrscheinlich egal)
+	-- setFlag(701, 2) -- flag, untiefen betreten -> blumen komplett verwelkt
+	-- setFlag(702, 1) -- cerajt besiegt -> wahllose verwandlung + angriff
+	-- learnSong(104) -- lied lernen
 end
