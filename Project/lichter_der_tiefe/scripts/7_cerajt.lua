@@ -7,6 +7,9 @@ function init(me)
 		entity_delete(me)
 	end
 	
+	v.flagDie = 702
+	v.diff = 004
+	
 	setupEntity(me)
 	entity_initSkeletal(me, "anglerfish")
 	entity_scale(me, 3, 3)
@@ -18,9 +21,7 @@ function init(me)
 	
 	entity_setEntityType(me, ET_ENEMY)
 	entity_setState(me, STATE_IDLE)
-    entity_setHealth(me, 20)
-	
-	v.flagDie = 702
+    entity_setHealth(me, 15 * getFlag(v.diff))
 end
 
 -- after nodes have inited

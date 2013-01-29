@@ -31,6 +31,7 @@ function init(me)
     v.time = 0
     v.flagGutBoese = 602
     v.flagNejl = 605
+    v.diff = 004
     
     v.path = 306
 	
@@ -91,7 +92,7 @@ function enterState(me)
     	entity_setTarget(me, v.n)
     	v.time = 0
     else
-    	entity_setHealth(me, 50)
+    	entity_setHealth(me, 20 *  getFlag(v.diff) )
     end
     entity_animate(me, "idle", -1)
 end

@@ -14,12 +14,20 @@ function init(me)
 		entity_delete(me)
 	end
 	
+	
+	v.dir = 1
+	v.pos = 1
+	v.flagNejl = 504
+	v.flagGutBoese = 501
+	v.path = 306
+	v.diff = 004
+	
 	v.collisionSegs = 50
 
 	setupBasicEntity(
 	me,
 	"",						-- texture
-	15,						-- health
+	5 * getFlag(v.diff),						-- health
 	1,						-- manaballamount
 	1,						-- exp
 	1,						-- money
@@ -42,11 +50,6 @@ function init(me)
 	
 	entity_setMaxSpeed (me, 2000)
 	
-	v.dir = 1
-	v.pos = 1
-	v.flagNejl = 504
-	v.flagGutBoese = 501
-	v.path = 306
 end
 
 -- after nodes have inited

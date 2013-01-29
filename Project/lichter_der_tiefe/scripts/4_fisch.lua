@@ -22,6 +22,7 @@ function init(me)
 	v.kills = 401
 	v.flag = 404
 	v.path = 306
+	v.diff = 004
 
 	setupEntity( me )
 	entity_setTexture( me, "Crotoid" )
@@ -35,7 +36,7 @@ function init(me)
 	entity_setHeight( me, 128 )
 
 	entity_setCollideRadius( me, 64 )
-	entity_setHealth( me, 3 )
+	entity_setHealth( me, 1 * getFlag(v.diff) )
 end
 
 
