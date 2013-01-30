@@ -6,13 +6,21 @@ if not v then v = {} end
 -- on creation
 function init(me)
     v.n = getNaija()
-    centerText("Hafen von Winumsund")
     entity_alpha(v.n, 0)
-    
+
     changeForm(0)
+
+    v.diff = 004
 end
 
 -- check trigger
 function update(me, dt)
+
+    if isFlag(v.diff, 0) then
+
+        setFlag(v.diff, 1) -- prevent recalling
+
+        showImage("0_schwierigkeitsgrad")
+    end
 
 end

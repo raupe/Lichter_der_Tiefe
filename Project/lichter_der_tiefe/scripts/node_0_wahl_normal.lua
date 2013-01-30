@@ -9,10 +9,9 @@ function init(me)
     v.n = getNaija()
     v.flag = 004
 
-
-    -- if isFlag(v.flag,0) then
-        node_setCursorActivation( me, true )
-    -- end
+    if isFlag(v.flag, 0) then
+        node_setCursorActivation(me, true)
+    end
 end
 
 
@@ -20,6 +19,13 @@ end
 function activate(me)
 
     setFlag(v.flag, 2)
-    node_setCursorActivation( me, false )
-    setControlHint("Emily: Ein Tag wie jeder Andere...", 0, 0, 0, 3)
+
+    local schwer = node_getNearestNode("0_wahl_schwer")
+    node_setCursorActivation(me, false)
+    node_setActive(schwer, false)
+
+    hideImage()
+
+    -- spawnParticleEffect("TitleEffect1", me)
+    centerText("Hafen von Winumsund")
 end
