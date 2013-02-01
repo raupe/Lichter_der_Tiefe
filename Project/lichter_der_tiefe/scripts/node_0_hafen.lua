@@ -2,6 +2,31 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+--------------------------------------------------------------------------------
+-- see: title screen tutorial
+-- http://aquariawiki.ryanballantyne.name/wiki/index.php/Title_Screen_Tutorial
+
+local activateNodeDown = false
+local function activateNode ()
+    if (isLeftMouse () or isRightMouse ())
+    and not activateNodeDown then
+        activateNodeDown = true
+    elseif (not isLeftMouse () and not isRightMouse ())
+    and activateNodeDown then
+        activateNodeDown = false
+        local node = getNodeToActivate()
+        setNodeToActivate(0)
+        if node ~= 0 then
+            node_activate(node, 0)
+        end
+    end
+end
+
+--------------------------------------------------------------------------------
+
+
+
+
 
 -- on creation
 function init(me)
@@ -11,12 +36,14 @@ function init(me)
     changeForm(0)
 
     v.diff = 004
-    
+
     v.flagLdL = 1100
     v.step = 005
     v.time = 0
     v.dt = 0
 end
+
+
 
 -- check trigger
 function update(me, dt)
@@ -25,9 +52,13 @@ function update(me, dt)
 
         setFlag(v.diff, 1) -- prevent recalling
 
+        disableInput()
+        toggleCursor(true, 0.1)
         showImage("0_schwierigkeitsgrad")
     end
-    
+
+    if isFlag(v.diff, 1) then activateNode() end
+
     if isFlag(v.step, 5) then
     	-- nothing
     elseif isFlag(v.step, 0) then
@@ -88,3 +119,5 @@ function update(me, dt)
     end
 
 end
+
+

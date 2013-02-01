@@ -18,14 +18,18 @@ end
 
 function activate(me)
 
-    setFlag(v.flag, 2)
+    if isFlag(v.flag, 0 ) then
 
-    local schwer = node_getNearestNode("0_wahl_schwer")
-    node_setCursorActivation(me, false)
-    node_setActive(schwer, false)
+        setFlag(v.flag, 2)
 
-    hideImage()
+        local schwer = node_getNearestNode("0_wahl_schwer")
+        node_setCursorActivation(me, false)
+        node_setCursorActivation(schwer, false)
 
-    -- spawnParticleEffect("TitleEffect1", me)
-    centerText("Hafen von Winumsund")
+        hideImage()
+        enableInput()
+
+        -- spawnParticleEffect("TitleEffect1", me)
+        centerText("Hafen von Winumsund")
+    end
 end
