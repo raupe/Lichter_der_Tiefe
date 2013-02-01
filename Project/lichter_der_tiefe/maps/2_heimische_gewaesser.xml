@@ -15,14 +15,11 @@
 <Path name="warp 4_riskante_stroemung d">
     <Node pos="7998 9688" rect="924 104" shape="0" />
 </Path>
-<Path name="2_banter_weg">
-    <Node pos="1536 4026" rect="488 472" shape="0" />
-</Path>
 <Path name="2_banter_quest">
     <Node pos="8503 5291" rect="504 504" shape="0" />
 </Path>
 <Path name="2_banter_strom">
-    <Node pos="2252 6485" rect="592 220" shape="0" />
+    <Node pos="2252 6480" rect="662 274" shape="0" />
 </Path>
 <Path name="naijastart">
     <Node pos="870 4105" rect="64 64" shape="0" />
