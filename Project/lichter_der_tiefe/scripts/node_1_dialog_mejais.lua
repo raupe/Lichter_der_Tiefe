@@ -28,7 +28,7 @@ function update(me, dt)
 
 	elseif isFlag(v.flag, 1) and node_isEntityIn(me, v.n) then
 		disableInput()
-		setControlHint("Mejais: ...", 0, 0, 0, 3)
+		setControlHint("???: ...", 0, 0, 0, 3)
 		setFlag(v.flag, 2)
 	
 	elseif isFlag(v.flag, 2) then
@@ -47,7 +47,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("Mejais: Oh nein! Was soll jetzt nur werden?", 0, 0, 0, v.dt)
+			setControlHint("???: Oh nein! Was soll jetzt nur werden?", 0, 0, 0, v.dt)
 			setFlag(v.flag, 4)
 			v.time = 0
 		end
@@ -65,7 +65,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("Mejais: Du bist im Riff der Erleuchtung.", 0, 0, 0, v.dt)
+			setControlHint("???: Du bist im Riff der Erleuchtung.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 6)
 			v.time = 0
 		end
@@ -82,8 +82,8 @@ function update(me, dt)
 	elseif isFlag(v.flag, 7) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
-			v.dt = 6
-			setControlHint("Mejais: Wir wurden angegriffen. Kurz vor deiner Ankunft. Ich bin tot - aber ich kann noch nicht gehen!", 0, 0, 0, v.dt)
+			v.dt = 7
+			setControlHint("Mejais: Ich heisse Mejais und wurde kurz vor deiner Ankunft angegriffen. Nun bin ich tot - aber ich kann noch nicht gehen!", 0, 0, 0, v.dt)
 			setFlag(v.flag, 8)
 			v.time = 0
 		end

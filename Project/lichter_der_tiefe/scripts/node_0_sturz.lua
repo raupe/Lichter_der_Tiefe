@@ -57,7 +57,7 @@ function update(me, dt)
 	elseif isFlag(v.flag, 3) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
-			v.dt = 2
+			v.dt = 1
 			v.time = 0
 			setFlag(v.flag, 4)
 			
@@ -68,9 +68,9 @@ function update(me, dt)
 	elseif isFlag(v.flag, 4) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
-			v.dt = 3
-			v.time = 0
-			setFlag(v.flag, 5)
+			-- v.dt = 3
+			-- v.time = 0
+			-- setFlag(v.flag, 5)
 			
 			enableInput()
 			loadMap("1_riff_der_erleuchtung")
