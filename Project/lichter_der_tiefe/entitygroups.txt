@@ -4,6 +4,7 @@ lichtblume_welkend
 darkness
 rock_breakable
 0_emily_von_oben
+0_mann
 1_mejais
 1_mejais_ghost
 1_lichtblume
