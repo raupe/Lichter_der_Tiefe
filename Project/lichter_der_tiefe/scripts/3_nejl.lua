@@ -189,7 +189,6 @@ function song(me, song)
 			setControlHint("Nejl: Uhaaa ... fast haette mich das Lied eingeschlaefert!", 0, 0, 0, 4)
 		end
 	elseif song == 104 and isFlag(v.flagAbschied, 0) then
-		disableInput()
 		entity_swimToPosition(me, entity_getPosition(v.n))
 		setFlag(v.flagAbschied, 8)
 	end
