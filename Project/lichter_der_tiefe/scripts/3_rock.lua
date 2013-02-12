@@ -80,16 +80,36 @@ function update(me, dt)
 		if v.time >= v.duration then
 			setFlag(v.flag, 3)
 			v.time = 0
-			v.duration = 6
+			v.duration = 3
 			
-			setControlHint("Emily: Oh nein, Nejl! Wenn ich da jetzt runter schwimme, schaffe ich es nicht mehr rechtzeitig zurueck!", 0,0,0, 6)
-			setCameraLerpDelay(0)
+			setControlHint("Emily: Oh nein, Nejl!", 0,0,0, 3)
 		end
-	
+		
 	elseif isFlag(v.flag, 3) then
 		v.time = v.time + dt
 		if v.time >= v.duration then
 			setFlag(v.flag, 4)
+			v.time = 0
+			v.duration = 6
+			
+			setControlHint("Emily: Wenn ich da jetzt runter schwimme, schaffe ich es wahrscheinlich nicht mehr rechtzeitig zurueck!", 0,0,0, 6)
+			setCameraLerpDelay(0)
+		end
+		
+	elseif isFlag(v.flag, 4) then
+		v.time = v.time + dt
+		if v.time >= v.duration then
+			setFlag(v.flag, 5)
+			v.time = 0
+			v.duration = 6
+			
+			setControlHint("Emily: Aber ich kann Nejl auch nich allein zurueck lassen!", 0,0,0, 6)
+		end
+	
+	elseif isFlag(v.flag, 5) then
+		v.time = v.time + dt
+		if v.time >= v.duration then
+			setFlag(v.flag, 6)
 			
 			setControlHint("Emily: Was mache ich nur?", 0,0,0, 3)
 			enableInput()
