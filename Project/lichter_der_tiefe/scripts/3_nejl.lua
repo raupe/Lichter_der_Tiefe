@@ -191,7 +191,7 @@ function song(me, song)
 	elseif song == 104 and isFlag(v.flagAbschied, 0) then
 		disableInput()
 		entity_swimToPosition(me, entity_getPosition(v.n))
-		setFlag(v.flagAbschied, 2)
+		setFlag(v.flagAbschied, 8)
 	end
 end
 

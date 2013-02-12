@@ -78,6 +78,35 @@ function update(me, dt)
 			enableInput()
 		end
 	
+	
+	elseif isFlag(v.flag, 8) then
+		setFlag(v.flag, 9)
+		v.time = 0
+		v.dt = 3
+		
+		disableInput()
+		setControlHint("Nejl: Ja, du kannst es.", 0,0,0, v.dt)
+	
+	elseif isFlag(v.flag, 9) then
+		v.time = v.time + dt
+		if v.time > v.dt then
+			setFlag(v.flag, 10)
+			v.time = 0
+			v.dt = 3
+			
+			setControlHint("Nejl: Was wirst du jetzt tun?", 0,0,0, v.dt)
+		end
+	
+	elseif isFlag(v.flag, 10) then
+		v.time = v.time + dt
+		if v.time > v.dt then
+			setFlag(v.flag, 4)
+			v.time = 0
+			v.dt = 3
+			
+			setControlHint("Emily: Ich gehe nach Hause.", 0,0,0, v.dt)
+		end
+	
 	end
 end
 
