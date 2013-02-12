@@ -8,12 +8,7 @@ function init(me)
 
     v.n = getNaija()
 	v.inNode = false
-	v.flag = 101
 	v.flagNejl = 303
-
-	if node_isEntityIn(me, v.n) then
-		setFlag(v.flag, 0)
-	end
 
 end
 
