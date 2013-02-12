@@ -18,7 +18,7 @@ end
 
 function activate(me)
 
-    if isFlag(v.flag, 0 ) then
+    if isFlag(v.flag, 1 ) then
 
         setFlag(v.flag, 2)
 
