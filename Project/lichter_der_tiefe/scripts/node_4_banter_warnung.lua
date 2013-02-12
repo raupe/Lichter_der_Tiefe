@@ -21,7 +21,12 @@ function update(me, dt)
 
 		setFlag(v.flag, 1)
 
-		setControlHint("Nejl: O nein, die Energiekristalle...Das gefaellt mir nicht, wir sollten umkehren!", 0, 0, 0, 4 )
+		setControlHint("Nejl: O nein, die Energiekristalle... Komm, hier koennen wir ihnen entgehen.", 0, 0, 0, 5 )
+		
+		local weg = getNode("4_weg_gut")
+		local nejl = getEntity("3_nejl")
+		entity_setState(nejl, STATE_WAIT)
+		entity_swimToNode(nejl, weg)
 	end
 end
 
