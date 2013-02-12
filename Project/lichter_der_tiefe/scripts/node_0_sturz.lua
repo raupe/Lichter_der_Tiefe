@@ -70,7 +70,7 @@ function update(me, dt)
 		if v.time >= v.dt then
 			-- v.dt = 3
 			-- v.time = 0
-			-- setFlag(v.flag, 5)
+			setFlag(v.flag, 5)
 			
 			enableInput()
 			loadMap("1_riff_der_erleuchtung")
