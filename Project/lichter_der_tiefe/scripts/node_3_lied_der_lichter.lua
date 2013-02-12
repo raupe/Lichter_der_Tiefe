@@ -21,14 +21,14 @@ end
 -- check
 function update(me, dt)
 	
-	if v.step == 0 or v.step > 2 then
+	if v.step == 0 or v.step > 3 then
 		-- nothing
 	elseif v.step == 1 then
 		v.time = 0
 		v.dt = 4
 		v.step = v.step + 1
 	
-		setControlHint("Nejl: Fuer das Lied der Lichter muessen wir nur die Klaenge aneinander reihen." ,0,0,0, 4)
+		setControlHint("Nejl: Jetzt erinnere ich mich an das Lied, das Mejais immer gesungen hat!" ,0,0,0, 4)
 		learnSong(v.song)
 		setFlag(v.flagLiedDerLichter, 1)
 		setFlag(v.flagSongs, 4)
@@ -37,6 +37,16 @@ function update(me, dt)
 		entity_setState(nejl, STATE_DISABLED)
 	
 	elseif v.step == 2 then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			v.time = 0
+			v.dt = 4
+			v.step = v.step + 1
+			
+			setControlHint("Nejl: Wir muessen nur die Anfangstoene aneinander reihen.", 0,0,0, 4)
+		end
+	
+	elseif v.step == 3 then
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.time = 0
