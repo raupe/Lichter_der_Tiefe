@@ -2,6 +2,9 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
 
 function init(me)
 
@@ -39,7 +42,7 @@ function update(me, dt)
 		v.time = 0
 		v.dt = 4
 	
-		setControlHint("Lichterqualle: Wie du willst, ich bringe dir den \"Klang der Ruhe\". Auf das du immer wachsam bleibst...", 0, 0, 0, 3)
+		setControlHint("Lichterqualle"..nameLine.."Wie du willst, ich bringe dir den \"Klang der Ruhe\" bei.\nAuf das du immer wachsam bleibst...", 0, 0, 0, 3)
 		
 		
 		if isFlag(v.songB, 2) and isFlag(v.songC, 2) then
@@ -56,7 +59,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Nejl: Toll, du hast de ersten Klang gelernt. Probier ihn doch gleich mal aus.", 0, 0, 0, 4)
+			setControlHint("Nejl"..nameLine.."Toll, du hast de ersten Klang gelernt. Probier ihn doch gleich mal aus.", 0, 0, 0, 4)
 		end
 	
 	elseif v.step == 3 then
@@ -65,7 +68,7 @@ function update(me, dt)
 			v.step = v.step + 1
 			v.time = 0
 			v.dt = 8
-			setControlHint("Schau im Menue nach, welche Toene du fuer den Klang braust. Dann nutze die rechte Maustaste um zu singen.", 0, 0, 0, 8)
+			setControlHint("Schau im Menue nach, welche Toene du fuer den Klang brauchst. Dann nutze die rechte Maustaste um zu singen.", 0, 0, 0, 8)
 		end
 	
 	elseif v.step == 4 then

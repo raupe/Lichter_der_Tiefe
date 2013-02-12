@@ -2,6 +2,9 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
 
 -- on creation
 function init(me)
@@ -32,7 +35,7 @@ function update(me, dt)
 			disableInput()
 			setCutscene(1,1)
 			entity_swimToNode(v.n, me, 4)
-			setControlHint("Junge: Wer bist du?", 0,0,0, v.dt)
+			setControlHint("Junge"..nameLine.."Wer bist du?", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 1) then
@@ -42,7 +45,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily: Ich bin Emily. Bist du Nejl?", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Ich bin Emily. Bist du Nejl?", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 2) then
@@ -52,7 +55,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 2
 			
-			setControlHint("Junge: Ja.", 0,0,0, v.dt)
+			setControlHint("Junge"..nameLine.."Ja.", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 3) then
@@ -62,7 +65,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl: Woher weisst du das?", 0,0,0, v.dt)
+			setControlHint("Nejl"..nameLine.."Woher weisst du das?", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 4) then
@@ -72,7 +75,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily: Ich habe deine Mutter getroffen. Sie ... Sie ist tot.", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Ich habe deine Mutter getroffen. Sie ... Sie ist tot.", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 5) then
@@ -82,7 +85,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 2
 			
-			setControlHint("Nejl: ... ", 0,0,0, v.dt)
+			setControlHint("Nejl"..nameLine.."...", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 6) then
@@ -92,7 +95,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily: Ich werde dir helfen, das Lied der Lichter zu lernen.", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Ich werde dir helfen, das Lied der Lichter zu lernen.", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 7) then
@@ -102,7 +105,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl: Wirklich? Danke!", 0,0,0, v.dt)
+			setControlHint("Nejl"..nameLine.."Wirklich? Danke!", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 8) then
@@ -112,7 +115,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl: Wieso hilfst du mir?", 0,0,0, v.dt)
+			setControlHint("Nejl"..nameLine.."Aber wieso hilfst du mir?", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 9) then
@@ -122,7 +125,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily: Nur so kann ich wieder in meine Welt zurueck.", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Nur so kann ich wieder in meine Welt zurueckkehren.", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 10) then
@@ -132,7 +135,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl: Deine Welt?", 0,0,0, v.dt)
+			setControlHint("Nejl"..nameLine.."Deine Welt?", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 11) then
@@ -142,7 +145,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily: Ueber dem Wasser ... Komm, lass uns die Lichterquallen suchen.", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Ueber dem Wasser ... Komm, lass uns die Lichterquallen suchen.", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 12) then
@@ -152,7 +155,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl: Gut. Ich folge dir.", 0,0,0, v.dt)
+			setControlHint("Nejl"..nameLine.."Gut. Ich folge dir.", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 13) then
@@ -163,7 +166,7 @@ function update(me, dt)
 			v.dt = 4
 			
 			setFlag(v.nejl, 1)
-			setCutscene(0)		
+			setCutscene(0)
 			enableInput()
 		end
 	end

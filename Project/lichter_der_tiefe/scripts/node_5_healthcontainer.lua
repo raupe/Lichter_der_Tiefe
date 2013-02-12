@@ -2,6 +2,9 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
 
 -- on creation
 function init(me)
@@ -31,7 +34,7 @@ function activate(me)
         playSfx("HealthUpgrade-Collect")
         spawnParticleEffect("HealthUpgradeReceived", node_getPosition(me))
 
-        setControlHint("Emily: Ich fuehle mich auf einmal so stark....", 0, 0, 0, 4)
+        setControlHint("Emily"..nameLine.."Ich fuehle mich auf einmal so stark!", 0, 0, 0, 4)
     end
 
 end

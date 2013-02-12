@@ -2,6 +2,10 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
+
 --[[
 States:
 STATE_IDLE
@@ -55,17 +59,17 @@ function update(me, dt)
 	
 		if getFlag(v.flagPass) ~= 1 and entity_isEntityInRange(me, v.item, 600) then
 			setFlag(v.flagPass, 1)
-			setControlHint("Sphinx: Gut, du hast ihn mir gebracht, du darfst vorbei.", 0,0,0, 4)
+			setControlHint("Sphinx"..nameLine.."Gut, du hast ihn mir gebracht, du darfst vorbei.", 0,0,0, 4)
 			entity_delete(v.item)
 		end
 		
 		if getFlag(v.flagPass) ~= 1 and entity_isEntityInRange(me, v.n, 600) and v.quest == false then
 			v.quest = true
-			setControlHint("Sphinx: Bring mir den Stein aus der Mitte des Labyrinths. Dann lasse ich dich vorbei.", 0,0,0, 5)
+			setControlHint("Sphinx"..nameLine.."Bring mir den Stein aus der Mitte des Labyrinths. Dann lasse ich dich vorbei.", 0,0,0, 5)
 		end
 		
 		if getFlag(v.flagComment) ~= 1 and isForm(1) then
-			setControlHint("Nejl: Diese Energie der Kristalle.... \tBist du sicher, dass du das tuen willst?", 0,0,0, 4)
+			setControlHint("Nejl"..nameLine.."Diese Energie der Kristalle.... \tBist du sicher, dass du das tuen willst?", 0,0,0, 4)
 			setFlag(v.flagComment, 1)
 		end
 		
@@ -102,7 +106,7 @@ end
 
 function damage(me, attacker, bone, damageType, dmg)
     if getFlag(v.flagNejl) ~= 1 then
-        setControlHint("Sphinx: War das schon alles ? An mir kommst du nicht so einfach vorbei!", 0,0,0, 4)
+        setControlHint("Sphinx"..nameLine.."War das schon alles ? An mir kommst du nicht so einfach vorbei!", 0,0,0, 4)
         setFlag(v.flagNejl, 1)
     end
 	if entity_isState(me, STATE_IDLE) then
@@ -115,7 +119,7 @@ function dieNormal(me)
 	entity_setFlag(me, 1)
 	setFlag(v.flagGutBoese, 1) -- ?
     setFlag(v.path, getFlag(v.path)-1 )
-    setControlHint("Nejl: Was haette Mama nur dazu gesagt...", 0,0,0, 3)
+    setControlHint("Nejl"..nameLine.."Was haette Mama nur dazu gesagt...", 0,0,0, 3)
 end
 
 function animationKey(me, key)

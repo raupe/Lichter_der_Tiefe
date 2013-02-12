@@ -2,6 +2,10 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
+
 -- entity: rock, changing texture etc.
 function init(me)
 	
@@ -49,7 +53,7 @@ function update(me, dt)
 			v.time = 0
 			
 			disableInput()
-			setControlHint("Emily: Wo ist nur Nejl...", 0, 0, 0, 4 )
+			setControlHint("Emily"..nameLine.."Wo ist nur Nejl...", 0, 0, 0, 4 )
 			
 			setCameraLerpDelay(3)
 			cam_toEntity(me)
@@ -82,7 +86,7 @@ function update(me, dt)
 			v.time = 0
 			v.duration = 6
 			
-			setControlHint("Emily: Oh nein, Nejl! Wenn ich da jetzt runter schwimme, schaffe ich es nicht mehr rechtzeitig zurueck!", 0,0,0, 6)
+			setControlHint("Emily"..nameLine.."Oh nein, Nejl! Wenn ich da jetzt runter schwimme, schaffe ich es nicht mehr rechtzeitig zurueck!", 0,0,0, 6)
 			setCameraLerpDelay(0)
 		end
 	
@@ -91,7 +95,7 @@ function update(me, dt)
 		if v.time >= v.duration then
 			setFlag(v.flag, 4)
 			
-			setControlHint("Emily: Was mache ich nur?", 0,0,0, 3)
+			setControlHint("Emily"..nameLine.."Was mache ich nur?", 0,0,0, 3)
 			enableInput()
 		end
 	

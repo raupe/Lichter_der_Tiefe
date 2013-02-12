@@ -2,6 +2,10 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
+
 function init(me)
 	setupEntity(me)
 	entity_setEntityType(me, ET_NEUTRAL)
@@ -57,7 +61,7 @@ function update(me, dt)
     elseif entity_isState(me, STATE_DELAY) then
     	v.time = v.time + dt
     	if v.time > 4 then
-    		setControlHint("Nejl: Jetzt haben wir alle Klaenge gelernt. Lass uns in meine Hoehle schwimmen um das Lied der Lichter zu lernen.", 0,0,0, 6)
+    		setControlHint("Nejl"..nameLine.."Jetzt haben wir alle Klaenge gelernt. Lass uns in meine Hoehle schwimmen um das Lied der Lichter zu lernen.", 0,0,0, 6)
     		entity_setState(me, STATE_FOLLOW)
     	end
     elseif entity_isState(me, STATE_IDLE) then
@@ -184,9 +188,9 @@ function song(me, song)
 		setFlag(v.flagSleep, 1)
 		if getNode("a_hoehle_der_ruhe") ~= 0 then
 			entity_setState(me, STATE_SING)
-			setControlHint("Emily: Nejl? ... Er ist eingeschlafen.", 0, 0, 0, 4)
+			setControlHint("Emily"..nameLine.."Nejl? ... Er ist eingeschlafen.", 0, 0, 0, 4)
 		else
-			setControlHint("Nejl: Uhaaa ... fast haette mich das Lied eingeschlaefert!", 0, 0, 0, 4)
+			setControlHint("Nejl"..nameLine.."Uhaaa ... fast haette mich das Lied eingeschlaefert!", 0, 0, 0, 4)
 		end
 	elseif song == 104 and isFlag(v.flagAbschied, 0) then
 		entity_swimToPosition(me, entity_getPosition(v.n))
@@ -198,7 +202,7 @@ function activate(me)
 	if entity_isState(me, STATE_SING) then
 		setFlag(v.flagWake, 1)
 	elseif entity_isState(me, STATE_FOLLOW) or entity_isState(me, STATE_IDLE) then
-		setControlHint("Nejl: Schwimm vor, ich folge dir.", 0, 0, 0, 2)
+		setControlHint("Nejl"..nameLine.."Schwimm vor, ich folge dir.", 0, 0, 0, 2)
 	end
 
 end

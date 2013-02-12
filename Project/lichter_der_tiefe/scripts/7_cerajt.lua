@@ -2,6 +2,10 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
+
 function init(me)
 	if entity_isFlag(me, 1) then
 		entity_delete(me)
@@ -49,7 +53,7 @@ function dieNormal(me)
 	
 	local nejl = getEntity("3_Nejl")
 	entity_setState(nejl, STATE_FOLLOW)
-	setControlHint("Nejl: Emily! Du hast mich gerettet!", 0,0,0, 4)
+	setControlHint("Nejl"..nameLine.."Emily! Du hast mich gerettet!", 0,0,0, 4)
 end
 
 function exitState(me)
