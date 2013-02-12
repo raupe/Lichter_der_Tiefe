@@ -8,6 +8,10 @@ function init(me)
 
     v.n = getNaija()
     v.flag = 004
+    v.intro = 007
+
+    v.time = 0
+    v.dt = 1
 
     if isFlag(v.flag, 0) then
         node_setCursorActivation(me, true)
@@ -15,10 +19,9 @@ function init(me)
 end
 
 
-
 function activate(me)
 
-    if isFlag(v.flag, 0 ) then
+    if isFlag(v.flag, 1) then
 
         setFlag(v.flag, 2)
 
@@ -28,8 +31,22 @@ function activate(me)
 
         hideImage()
         enableInput()
+    end
+end
 
-        -- spawnParticleEffect("TitleEffect1", me)
-        centerText("Hafen von Winumsund")
+
+function update(me, dt)
+
+    if isFlag(v.flag, 2) and isFlag(v.intro, 0) then
+
+        v.time = v.time + dt
+        if v.time >= v.dt then
+
+            setFlag(v.intro, 1)
+
+            centerText("Hafen von Winumsund")
+
+            setControlHint("\nSchwierigkeit: Normal", 0,0,0, 5)
+        end
     end
 end

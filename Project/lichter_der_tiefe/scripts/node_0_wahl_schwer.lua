@@ -6,30 +6,47 @@ if not v then v = {} end
 -- on creation
 function init(me)
 
-    v.n = getNaija()
-    v.flag = 004
+	v.n = getNaija()
+	v.flag = 004
+	v.intro = 007
 
-    if isFlag(v.flag, 0) then
-        node_setCursorActivation(me, true)
-    end
+	v.time = 0
+	v.dt = 1
+
+	if isFlag(v.flag, 0) then
+		node_setCursorActivation(me, true)
+	end
 end
-
 
 
 function activate(me)
 
-    if isFlag(v.flag, 0 ) then
+	if isFlag(v.flag, 1) then
 
-        setFlag(v.flag, 3)
+		setFlag(v.flag, 3)
 
-        local normal = node_getNearestNode("0_wahl_normal")
-        node_setCursorActivation(me, false)
-        node_setCursorActivation(normal, false)
+		local normal = node_getNearestNode("0_wahl_normal")
+		node_setCursorActivation(me, false)
+		node_setCursorActivation(normal, false)
 
-        hideImage()
-        enableInput()
+		hideImage()
+		enableInput()
+	end
+end
 
-        -- spawnParticleEffect("TitleEffect1", me)
-        centerText("Hafen von Winumsund")
-    end
+
+function update(me, dt)
+
+	if isFlag(v.flag, 3) and isFlag(v.intro, 0) then
+
+		v.time = v.time + dt
+		if v.time >= v.dt then
+
+			setFlag(v.intro, 1)
+
+			centerText("Hafen von Winumsund")
+
+			setControlHint("Schwierigkeit: Schwer \n \n- du verursachst weniger Schaden an Gegnern\n- du hast weniger Lebensenergie", 0,0,0, 10)
+		end
+	end
 end

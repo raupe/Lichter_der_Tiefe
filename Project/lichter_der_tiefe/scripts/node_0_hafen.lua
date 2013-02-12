@@ -7,12 +7,11 @@ if not v then v = {} end
 -- http://aquariawiki.ryanballantyne.name/wiki/index.php/Title_Screen_Tutorial
 
 local activateNodeDown = false
-local function activateNode ()
-    if (isLeftMouse () or isRightMouse ())
-    and not activateNodeDown then
+local function activateNode()
+    
+    if (isLeftMouse () or isRightMouse ()) and not activateNodeDown then
         activateNodeDown = true
-    elseif (not isLeftMouse () and not isRightMouse ())
-    and activateNodeDown then
+    elseif (not isLeftMouse () and not isRightMouse ()) and activateNodeDown then
         activateNodeDown = false
         local node = getNodeToActivate()
         setNodeToActivate(0)
