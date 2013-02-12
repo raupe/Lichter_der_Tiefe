@@ -2,6 +2,9 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
 
 -- on creation
 function init(me)
@@ -51,7 +54,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily: Nejl, wach auf!", 0, 0, 0, 4)
+			setControlHint("Emily"..nameLine.."Nejl, wach auf!", 0, 0, 0, 4)
 		end
 		
 	elseif v.step == 2 then
@@ -62,7 +65,7 @@ function update(me, dt)
 			v.dt = 4
 			
 			entity_setState(v.nejl, STATE_FOLLOW)
-			setControlHint("Nejl: Oh, der Klang hat mich eingeschlaefert. Das passiert mir nicht nochmal!", 0, 0, 0, 4)
+			setControlHint("Nejl"..nameLine.."Oh, der Klang hat mich eingeschlaefert. Das passiert mir nicht nochmal!", 0, 0, 0, 4)
 			enableInput()
 		end
 	end

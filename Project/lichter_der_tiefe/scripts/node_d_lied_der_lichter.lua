@@ -2,6 +2,9 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
 
 -- on creation
 function init(me)
@@ -22,7 +25,7 @@ function update(me, dt)
 		setFlag(v.flag, 1)
 
 		learnSong(104)
-		setControlHint("Das klingt aber schoen.", 0, 0, 0, 4)
+		setControlHint("Nejl"..nameLine.."Das klingt aber schoen.", 0, 0, 0, 4)
 
 		-- stop following + progress tunnel
 		setFlag(v.nejl, 2)

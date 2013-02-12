@@ -2,6 +2,9 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
 
 -- on creation
 function init(me)
@@ -24,7 +27,7 @@ function update(me, dt)
         local nejl = getEntity("3_nejl")
         entity_swimToNode(nejl, v.posNode)
 
-        setControlHint("Nejl: Da unten scheint es einen Gang zu geben. Was wohl am Ende ist ?", 0, 0, 0, 5)
+        setControlHint("Nejl"..nameLine.."Da unten scheint es einen Gang zu geben. Was wohl am Ende ist ?", 0, 0, 0, 5)
 	end
 end
 

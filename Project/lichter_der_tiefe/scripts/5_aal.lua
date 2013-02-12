@@ -2,6 +2,10 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
+
 --[[
 Status:
 	STATUS_IDLE
@@ -126,7 +130,7 @@ end
 
 function damage(me, attacker, bone, damageType, dmg)
 	if getFlag(v.flagNejl) ~= 1 then
-		setControlHint("Nejl: Nicht Emily! Es muss einen anderen Weg geben.", 0,0,0, 4)
+		setControlHint("Nejl"..nameLine.."Nicht Emily! Es muss einen anderen Weg geben.", 0,0,0, 4)
 		setFlag(v.flagNejl, 1)
 	end
 	return true
@@ -136,7 +140,7 @@ function dieNormal(me)
 	entity_setFlag(me, 1)
 	setFlag(v.flagGutBoese, 1) -- ?
     setFlag(v.path, getFlag(v.path)-1 )
-    setControlHint("Nejl: Hoffentlich vermisst ihn keiner...", 0,0,0, 3)
+    setControlHint("Nejl"..nameLine.."Hoffentlich vermisst ihn keiner...", 0,0,0, 3)
 end
 
 function animationKey(me, key)

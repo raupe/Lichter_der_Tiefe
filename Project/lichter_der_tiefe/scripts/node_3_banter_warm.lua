@@ -3,6 +3,11 @@ if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
+
+
 -- on creation
 function init(me)
 
@@ -19,7 +24,7 @@ function update(me, dt)
 
 		setFlag(v.flag, 1)
 
-		setControlHint("Emily: Sieht ganz schoen gemuetlich aus...", 0, 0, 0, 4)
+		setControlHint("Emily"..nameLine.."Nejl ? Bist du hier ?", 0, 0, 0, 4)
 	end
 end
 

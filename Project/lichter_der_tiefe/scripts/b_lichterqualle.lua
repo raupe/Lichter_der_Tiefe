@@ -2,6 +2,9 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
 
 function init(me)
 
@@ -79,7 +82,7 @@ function activate(me)
 	
 	    learnSong(102)
 	    setFlag(v.songs, getFlag(v.songs)+1 )
-	    setControlHint("Lichterqualle: Ich bringe dir hiermit den \"Klang der Stroemung\" bei. Moeges du immer einen Weg finden...", 0, 0, 0, v.duration)
+	    setControlHint("Lichterqualle"..nameLine.."Ich bringe dir hiermit den \"Klang der Stroemung\" bei. Moeges du immer einen Weg finden...", 0, 0, 0, v.duration)
 	
 	    local perc = entity_getHealthPerc(v.n)
 	    if perc ~= 1 then
@@ -95,7 +98,7 @@ function activate(me)
 	    	v.step = 1
 	    end
 	else
-		setControlHint("Lichterqualle: Mehr kann ich dir nicht beibringen.", 0,0,0, 4)	
+		setControlHint("Lichterqualle"..nameLine.."Mehr kann ich dir nicht beibringen.", 0,0,0, 4)	
 	end
 
 end
