@@ -2,6 +2,10 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
+
 
 -- on creation
 function init(me)
@@ -28,7 +32,7 @@ function update(me, dt)
 
 	elseif isFlag(v.flag, 1) and node_isEntityIn(me, v.n) then
 		disableInput()
-		setControlHint("???: ...", 0, 0, 0, 3)
+		setControlHint("???"..nameLine.."...", 0, 0, 0, 3)
 		setFlag(v.flag, 2)
 	
 	elseif isFlag(v.flag, 2) then
@@ -47,7 +51,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("???: Oh nein! Was soll jetzt nur werden?", 0, 0, 0, v.dt)
+			setControlHint("???"..nameLine.."Oh nein! Was soll jetzt nur werden?", 0, 0, 0, v.dt)
 			setFlag(v.flag, 4)
 			v.time = 0
 		end
@@ -56,7 +60,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("Emily: Wo bin ich?", 0, 0, 0, v.dt)
+			setControlHint("Emily"..nameLine.."Wo bin ich?", 0, 0, 0, v.dt)
 			setFlag(v.flag, 5)
 			v.time = 0
 		end
@@ -65,7 +69,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("???: Du bist im Riff der Erleuchtung.", 0, 0, 0, v.dt)
+			setControlHint("???"..nameLine.."Du befindest dich im Riff der Erleuchtung.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 6)
 			v.time = 0
 		end
@@ -74,7 +78,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("Emily: Wie komme ich zurueck in meine Welt?", 0, 0, 0, v.dt)
+			setControlHint("Emily"..nameLine.."Wie komme ich zurueck in meine Welt?", 0, 0, 0, v.dt)
 			setFlag(v.flag, 7)
 			v.time = 0
 		end
@@ -83,7 +87,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 7
-			setControlHint("Mejais: Ich heisse Mejais und wurde kurz vor deiner Ankunft angegriffen. Nun bin ich tot - aber ich kann noch nicht gehen!", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Ich heisse Mejais und wurde kurz vor deiner Ankunft angegriffen.\nNun bin ich tot - aber ich kann noch nicht gehen!", 0, 0, 0, v.dt)
 			setFlag(v.flag, 8)
 			v.time = 0
 		end
@@ -92,7 +96,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("Mejais: Hilf mir und ich zeige dir den Weg zurueck.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Hilf mir und ich zeige dir den Weg zurueck.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 9)
 			v.time = 0
 		end
@@ -101,7 +105,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("Emily: Was muss ich tun?", 0, 0, 0, v.dt)
+			setControlHint("Emily"..nameLine.."Was muss ich tun?", 0, 0, 0, v.dt)
 			setFlag(v.flag, 10)
 			v.time = 0
 		end
@@ -110,7 +114,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 8
-			setControlHint("Mejais: Nejl, mein Sohn, er ist ganz allein. Seit meinem Tot ist er der letzte Waechter des Lichts.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Nejl, mein Sohn, er ist ganz allein. Seit meinem Tot ist er der letzte Waechter des Lichts.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 11)
 			v.time = 0
 		end
@@ -119,7 +123,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("Emily: Waechter des Lichts?", 0, 0, 0, v.dt)
+			setControlHint("Emily"..nameLine.."Waechter des Lichts?", 0, 0, 0, v.dt)
 			setFlag(v.flag, 12)
 			v.time = 0
 		end
@@ -128,7 +132,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 8
-			setControlHint("Mejais: Die Waechter des Lichts bringen durch ihren Gesang die Blumenfelder zum Leuchten.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Die Waechter des Lichts bringen durch ihren Gesang die Blumenfelder zum Leuchten.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 13)
 			v.time = 0
 		end
@@ -136,8 +140,8 @@ function update(me, dt)
 	elseif isFlag(v.flag, 13) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
-			v.dt = 6
-			setControlHint("Mejais: Cerajt, er hat unser Riff ueberfallen. Cerajt braucht die Dunkelheit, um zu jagen.", 0, 0, 0, v.dt)
+			v.dt = 7--6
+			setControlHint("Mejais"..nameLine.."Cerajt, er hat unser Riff ueberfallen. Cerajt braucht die Dunkelheit,\num jagen zu koennen.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 14)
 			v.time = 0
 		end
@@ -146,7 +150,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("Emily: Doch wie kann ich euch helfen?", 0, 0, 0, v.dt)
+			setControlHint("Emily"..nameLine.."Doch wie kann ich euch helfen?", 0, 0, 0, v.dt)
 			setFlag(v.flag, 15)
 			v.time = 0
 		end
@@ -155,7 +159,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 8
-			setControlHint("Mejais: Nejl, mein Sohn, er hat das Lied der Lichter noch nicht gelernt. Begib dich auf die Suche nach den Lichterquallen, sie behueten jeweils einen Klang.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Nejl, mein Sohn, er hat das Lied der Lichter noch nicht gelernt.\nBegib dich auf die Suche nach den Lichterquallen, sie behueten jeweils einen Klang.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 16)
 			v.time = 0
 		end
@@ -164,7 +168,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 8
-			setControlHint("Mejais: Wenn du alle Toene gefunden hast, lehre meinem Sohn Nejl das Lied der Lichter. Danach kannst du mit Hilfe der Lichter zurueck in deine Welt gelangen.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Wenn du alle Toene gefunden hast, lehre meinem Sohn Nejl das Lied der Lichter. Danach kannst du mit Hilfe der Lichter zurueck in deine Welt gelangen.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 17)
 			v.time = 0
 		end

@@ -21,6 +21,11 @@ local function activateNode()
     end
 end
 
+
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
+
 --------------------------------------------------------------------------------
 
 
@@ -78,7 +83,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 		
-			setControlHint("Fremder: Fraeulein, geht es Ihnen gut?", 0,0,0, v.dt)
+			setControlHint("Fremder"..nameLine.."Fraeulein, geht es Ihnen gut?", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.step, 2) then
@@ -88,7 +93,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 		
-			setControlHint("Emily: Was ist passiert?", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Was ist passiert?", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.step, 3) then
@@ -98,7 +103,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 		
-			setControlHint("Fremder: Sie sind ins Wasser gefallen. Hier, ich helfe Ihnen auf.", 0,0,0, v.dt)
+			setControlHint("Fremder"..nameLine.."Sie sind ins Wasser gefallen. Hier, ich helfe Ihnen auf.", 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.step, 4) then    	

@@ -46,7 +46,7 @@ function update(me, dt)
 
 			centerText("Hafen von Winumsund")
 
-			setControlHint("Schwierigkeit: Schwer \n \n- du verursachst weniger Schaden an Gegnern\n- du hast weniger Lebensenergie", 0,0,0, 10)
+			setControlHint("Schwierigkeit: Schwer \n \n- du verursachst weniger Schaden an Gegnern\n- du hast weniger Lebensenergie", 0,0,0, 8)
 		end
 	end
 end

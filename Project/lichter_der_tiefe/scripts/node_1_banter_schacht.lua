@@ -3,6 +3,11 @@ if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
+
+
 -- on creation
 function init(me)
 
@@ -42,7 +47,7 @@ function update(me, dt)
 		v.time = v.time + dt
 
 		if v.time >= 3 and getFlag(v.flagLichtblume) ~= 1 then
-			setControlHint("Emily: Es geht nicht, die Stroemung ist zu stark!", 0, 0, 0, 3)
+			setControlHint("Emily"..nameLine.."Es geht nicht, die Stroemung ist zu stark!", 0, 0, 0, 3)
 			v.time = 0
 			setFlag(v.flag, 0)
 		end

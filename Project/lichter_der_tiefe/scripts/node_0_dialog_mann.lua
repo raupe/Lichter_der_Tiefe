@@ -3,6 +3,11 @@ if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 
+-------------------------
+local nameLine = ":\n \n"
+-------------------------
+
+
 -- on creation
 function init(me)
 
@@ -38,13 +43,13 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 2)
 			
-			setControlHint("Emily: Ob er schon da ist? Mir ist unwohl...", 0, 0, 0, 4)
+			setControlHint("Emily"..nameLine.."Ob er schon da ist? Mir ist unwohl...", 0, 0, 0, 4)
 		end
 		
 	elseif isFlag(v.flag, 2) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
-			v.dt = 3
+			v.dt = 2--3
 			v.time = 0
 			setFlag(v.flag, 3)
 			
@@ -59,7 +64,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 4)
 			
-			setControlHint("Emily: huuuups", 0, 0, 0, 4)
+			setControlHint("Emily"..nameLine.."Huuuups", 0, 0, 0, 4)
 		end
 		
 	elseif isFlag(v.flag, 4) then
@@ -80,7 +85,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 6)
 			
-			setControlHint("Fremder: Junges Fraeulein, ihr Amulett... ", 0, 0, 0, 4)
+			setControlHint("Fremder"..nameLine.."Junges Fraeulein, ihr Amulett...", 0, 0, 0, 4)
 		end
 		
 	elseif isFlag(v.flag, 6) then
@@ -90,7 +95,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 7)
 			
-			setControlHint("Fremder: Rote Perlen, eine Seltenheit. Darf ich fragen? Woher stammt es?", 0, 0, 0, 4)
+			setControlHint("Fremder"..nameLine.."Rote Perlen, eine Seltenheit. Darf ich fragen? Woher stammt es?", 0, 0, 0, 4)
 		end
 		
 	elseif isFlag(v.flag, 7) then
@@ -100,7 +105,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 8)
 			
-			setControlHint("Emily: Mein Vater liess es zurueck... Ich war noch ein Baby, als er von uns fortging.", 0, 0, 0, 6)
+			setControlHint("Emily"..nameLine.."Mein Vater liess es zurueck...\nIch war noch ein Baby, als er von uns fortging.", 0, 0, 0, 6)
 		end
 		
 	elseif isFlag(v.flag, 8) then
@@ -110,7 +115,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 9)
 			
-			setControlHint("Fremder: Warum ging er hinfort?", 0, 0, 0, 4)
+			setControlHint("Fremder"..nameLine.."Warum ging er hinfort?", 0, 0, 0, 4)
 		end
 		
 	elseif isFlag(v.flag, 9) then
@@ -120,13 +125,13 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 10)
 			
-			setControlHint("Emily: Ich weiss es nicht, aber letzten Monat erhielt ich diesen Brief.", 0, 0, 0, 4)
+			setControlHint("Emily"..nameLine.."Ich weiss es nicht, aber letzten Monat erhielt ich diesen Brief.", 0, 0, 0, 4)
 		end
 		
 	elseif isFlag(v.flag, 10) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
-			v.dt = 20
+			v.dt = 16
 			v.time = 0
 			setFlag(v.flag, 11)
 			
@@ -137,7 +142,7 @@ function update(me, dt)
 	elseif isFlag(v.flag, 11) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
-			v.dt = 3
+			v.dt = 2--3
 			v.time = 0
 			setFlag(v.flag, 12)
 			
@@ -152,7 +157,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 13)
 			
-			setControlHint("Fremder: Ein wichtiger Grund... Ein Mann verlaesst seine Familie nicht grundlos... Er wird einen Grund gehabt haben.", 0, 0, 0, 8)
+			setControlHint("Fremder"..nameLine.."Ein wichtiger Grund... Ein Mann verlaesst seine Familie nicht einfach so.\nEr wird einen Grund gehabt haben.", 0, 0, 0, 8)
 		end
 		
 	elseif isFlag(v.flag, 13) then
@@ -162,7 +167,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 14)
 			
-			setControlHint("Emily: Nein... ich glaube nicht daran...  Wie soll ich diesem Fremden begegnen?", 0, 0, 0, 6)
+			setControlHint("Emily"..nameLine.."Nein - Ich glaube nicht daran...\nWie soll ich diesem Fremden nur begegnen?", 0, 0, 0, 6)
 		end
 		
 	elseif isFlag(v.flag, 14) then
@@ -172,7 +177,7 @@ function update(me, dt)
 			v.time = 0
 			setFlag(v.flag, 15)
 			
-			setControlHint("Fremder: Junges Fraeulein... so hoeren sie ihn doch erst einmal an...", 0, 0, 0, 4)
+			setControlHint("Fremder"..nameLine.."Junges Fraeulein, so hoeren sie ihn doch erst einmal an...", 0, 0, 0, 4)
 		end
 		
 	elseif isFlag(v.flag, 15) then
