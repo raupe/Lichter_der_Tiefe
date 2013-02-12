@@ -10,7 +10,7 @@
     <Node pos="4524 677" rect="164 82" shape="0" />
     <Node pos="4477 1445" rect="164 82" shape="0" />
 </Path>
-<Path name="current 400 0.5">
+<Path name="current 550 0.5">
     <Node pos="4495 1505" rect="192 70" shape="0" />
     <Node pos="4651 2152" rect="192 70" shape="0" />
 </Path>
@@ -43,7 +43,7 @@
     <Node pos="4630 1335" rect="700 2400" shape="0" />
 </Path>
 <Path name="1_banter_los">
-    <Node pos="3754 4305" rect="1164 64" shape="0" />
+    <Node pos="4679 3175" rect="1158 1082" shape="0" />
 </Path>
 <Path name="1_triff_mejais">
     <Node pos="3662 6049" rect="64 994" shape="0" />
