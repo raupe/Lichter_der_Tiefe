@@ -11,7 +11,7 @@ function init(me)
     v.flag = 300
     v.nejl = 303
 
-    if isFlag(v.nejl, 0) then v.text = "???" else v.text = "Nejls" end
+    if isFlag(v.nejl, 0) then v.text = "" else v.text = "Nejls" end
 
     centerText(v.text.." Hoehle")
 end

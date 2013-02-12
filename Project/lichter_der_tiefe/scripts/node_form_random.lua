@@ -12,6 +12,7 @@ function init(me)
 	v.inNode = false
 	v.flagCerajt = 702
 	v.flagForm = 704
+	v.flag = 310
 	
 	v.time = 0
 	v.dt = math.random() * 2 + 5
@@ -24,6 +25,14 @@ end
 function update(me, dt)
 
 	if isFlag(v.flagCerajt, 1) then
+		
+		if not isFlag(v.flag, 1) then
+			if node_isEntityIn(me, v.n) then
+				changeForm(1)
+				setFlag(v.flagForm, 1)
+				setFlag(v.flag, 1)
+			end
+		end
 		
 		if isFlag(v.flagForm, 0) then
 			v.time = v.time + dt

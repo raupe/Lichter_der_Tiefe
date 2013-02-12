@@ -27,20 +27,19 @@ function postInit(me)
     v.songA = 801
     v.songB = 901
 
+	v.step = 0
     v.time = 0
     v.duration = 5
 
-    if isFlag(v.song, 0) then
-        entity_setActivation(me, AT_CLICK, 200, 500)
-    end
+    entity_setActivation(me, AT_CLICK, 200, 500)
 end
 
 function update(me, dt)
 
-    if isFlag(v.song, 1) then
+    if v.step == 1 then
         v.time = v.time + dt
         if v.time >= v.duration+1 then
-            setFlag(v.song, 2)
+            v.step = 0
             showInGameMenu()
         end
     end
@@ -78,24 +77,27 @@ end
 
 function activate(me)
 
-	setFlag(v.song, 1)
-
-    learnSong(103)
-    setFlag(v.songs, getFlag(v.songs)+1 )
-    setControlHint("Lichterqualle"..nameLine.."So klingt der \"Klang der Entschlossenheit\".\nSei'est du dir stets bewusst was du tust...", 0, 0, 0, 5)
-
-    local perc = entity_getHealthPerc(v.n)
-    if perc ~= 1 then
-        entity_setHealth( v.n, math.floor( entity_getHealth(v.n) / perc + 0.5) )
-        playSfx("HealthUpgrade-Collect")
-        spawnParticleEffect("Heal", entity_getPosition(v.n))
-    end
-
-    entity_setActivation(me, AT_NONE , 200, 500)
-
-	if isFlag(v.songA, 2) and isFlag(v.songB, 2) then
-        setFlag(v.song, 2)
-		local nejl = getEntity("3_nejl")
-		entity_setState(nejl, STATE_DELAY)
+	if not isFlag(v.song, 1) then
+		setFlag(v.song, 1)
+	
+	    learnSong(103)
+	    setFlag(v.songs, getFlag(v.songs)+1 )
+	    setControlHint("Lichterqualle"..nameLine.."So klingt der \"Klang der Entschlossenheit\".\nSei'est du dir stets bewusst was du tust...", 0, 0, 0, 5)
+	
+	    local perc = entity_getHealthPerc(v.n)
+	    if perc ~= 1 then
+	        entity_setHealth( v.n, math.floor( entity_getHealth(v.n) / perc + 0.5) )
+	        playSfx("HealthUpgrade-Collect")
+	        spawnParticleEffect("Heal", entity_getPosition(v.n))
+	    end
+	
+		if isFlag(v.songA, 1) and isFlag(v.songB, 1) then
+			local nejl = getEntity("3_nejl")
+			entity_setState(nejl, STATE_DELAY)
+	    elseif isFlag(v.songA, 0) and isFlag(v.songB, 0) then
+	    	v.step = 1
+		end
+	else
+		setControlHint("Lichterqualle"..nameLine.."Das ist alles, was ich dir beibringen kann.", 0,0,0, 3)
 	end
 end
