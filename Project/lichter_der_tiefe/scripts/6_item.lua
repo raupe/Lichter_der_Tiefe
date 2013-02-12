@@ -8,7 +8,7 @@ function init(me)
     entity_initSkeletal(me, "6_item")
     entity_setState(me, STATE_IDLE)
     
-	entity_setActivation(me, AT_CLICK, 32, 200)
+	entity_setActivation(me, AT_CLICK, 32, 500)
 	v.follow = false
 	v.n = getNaija()
 end
