@@ -68,7 +68,7 @@ function update(me, dt)
 			v.step = v.step + 1
 			v.time = 0
 			v.dt = 8
-			setControlHint("Schau im Menue nach, welche Toene du fuer den Klang brauchst. Dann nutze die rechte Maustaste um zu singen.", 0, 0, 0, 8)
+			setControlHint("\nSchau im Menue nach, welche Toene du fuer den Klang brauchst.\nDann nutze die rechte Maustaste um zu singen.", 0, 0, 0, 8)
 		end
 	
 	elseif v.step == 4 then

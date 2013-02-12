@@ -25,7 +25,7 @@ function update(me, dt)
 
 		setFlag(v.flag, 1 )
 
-		setControlHint("Nejl"..nameLine.."Wow bist du geschickt, ohne dich haette ich das nicht geschaft.", 0, 0, 0, 4 )
+		setControlHint("Nejl"..nameLine.."Wow bist du geschickt, ohne dich haette ich das nicht geschafft.", 0, 0, 0, 4 )
     end
 end
 

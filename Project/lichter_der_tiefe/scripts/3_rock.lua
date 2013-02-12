@@ -86,7 +86,7 @@ function update(me, dt)
 			v.time = 0
 			v.duration = 6
 			
-			setControlHint("Emily"..nameLine.."Oh nein, Nejl! Wenn ich da jetzt runter schwimme, schaffe ich es nicht mehr rechtzeitig zurueck!", 0,0,0, 6)
+			setControlHint("Emily"..nameLine.."Oh nein, Nejl! Wenn ich da jetzt runter schwimme,\nschaffe ich es wahrscheinlich nicht mehr rechtzeitig zurueck!", 0,0,0, 6)
 			setCameraLerpDelay(0)
 		end
 	

@@ -132,7 +132,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 8
-			setControlHint("Mejais"..nameLine.."Die Waechter des Lichts bringen durch ihren Gesang die Blumenfelder zum Leuchten.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Die Waechter des Lichts bringen durch ihren Gesang die Blumenfelder zum Strahlen. Sie leuchten in der Dunkelheit.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 13)
 			v.time = 0
 		end
@@ -141,7 +141,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 7--6
-			setControlHint("Mejais"..nameLine.."Cerajt, er hat unser Riff ueberfallen. Cerajt braucht die Dunkelheit,\num jagen zu koennen.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Doch Cerajt hat das Riff ueberfallen. Er ist eine Kreatur der Finsternis \n- er braucht den Schatten um jagen zu koennen.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 14)
 			v.time = 0
 		end
@@ -150,7 +150,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 4
-			setControlHint("Emily"..nameLine.."Doch wie kann ich euch helfen?", 0, 0, 0, v.dt)
+			setControlHint("Emily"..nameLine.."Wie kann ich euch nun helfen?", 0, 0, 0, v.dt)
 			setFlag(v.flag, 15)
 			v.time = 0
 		end
@@ -159,7 +159,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 8
-			setControlHint("Mejais"..nameLine.."Nejl, mein Sohn, er hat das Lied der Lichter noch nicht gelernt.\nBegib dich auf die Suche nach den Lichterquallen, sie behueten jeweils einen Klang.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Nejl, mein Sohn, er hat das Lied der Lichter noch nicht gelernt.\nBegib dich auf die Suche nach den Lichterquallen,sie behueten\njeweils einen Klang den er braucht.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 16)
 			v.time = 0
 		end
@@ -168,7 +168,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 8
-			setControlHint("Mejais"..nameLine.."Wenn du alle Toene gefunden hast, lehre meinem Sohn Nejl das Lied der Lichter. Danach kannst du mit Hilfe der Lichter zurueck in deine Welt gelangen.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Wenn du alle Toene gefunden hast, lehre meinem Nejl das Lied der Lichter. Danach kannst du mit Hilfe der Lichter zurueck nach Hause gelangen.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 17)
 			v.time = 0
 		end

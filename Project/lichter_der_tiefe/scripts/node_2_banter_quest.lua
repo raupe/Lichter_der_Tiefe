@@ -13,13 +13,14 @@ function init(me)
 	v.inNode = false
 
 	v.flag = 203
-	v.song = 901
+	v.songB = 901
+    v.songC = 1001
 end
 
 -- check
 function update(me, dt)
 
-	if isFlag(v.song, 1) and isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
+	if isFlag(v.songB, 1) and not isFlag(v.songC, 1) and isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
 
 		setFlag(v.flag, 1)
 

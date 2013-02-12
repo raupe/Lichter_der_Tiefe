@@ -7,9 +7,13 @@ if not v then v = {} end
 function init(me)
 
     v.n = getNaija()
-    v.flag = 300
 
-    centerText("Nejls Hoehle")
+    v.flag = 300
+    v.nejl = 303
+
+    if isFlag(v.nejl, 0) then v.text = "???" else v.text = "Nejls" end
+
+    centerText(v.text.." Hoehle")
 end
 
 -- check

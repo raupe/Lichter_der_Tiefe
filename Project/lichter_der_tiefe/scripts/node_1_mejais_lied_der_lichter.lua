@@ -71,7 +71,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Bevor du gehst, bitte tu mir noch einen Gefallen:", 0,0,0, v.dt)
+			setControlHint("Mejais"..nameLine.."Bevor du gehst, bitte tu mir noch einen Gefallen.", 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 5) then
@@ -101,7 +101,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Aber beeil dich! Die Blumen haben angefangen zu welken.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Aber beeile dich! Die Blumen haben bereits angefangen zu welken.", 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 8) then
@@ -121,7 +121,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Dann beeil ich mich lieber.", 0, 0, 0, v.dt)
+			setControlHint("Emily"..nameLine.."Dann sollte ich wohl lieber keine Zeit verlieren!", 0, 0, 0, v.dt)
 			setFlag(v.flagUntiefen, 1)
 			enableInput()
 			entity_setState(v.mejais, STATE_IDLE)

@@ -65,11 +65,11 @@ function update(me, dt)
 		
 		if getFlag(v.flagPass) ~= 1 and entity_isEntityInRange(me, v.n, 600) and v.quest == false then
 			v.quest = true
-			setControlHint("Sphinx"..nameLine.."Bring mir den Stein aus der Mitte des Labyrinths. Dann lasse ich dich vorbei.", 0,0,0, 5)
+			setControlHint("Sphinx"..nameLine.."Bring mir den Stein aus der Mitte des Labyrinths.\nDann lasse ich dich vorbei.", 0,0,0, 5)
 		end
 		
 		if getFlag(v.flagComment) ~= 1 and isForm(1) then
-			setControlHint("Nejl"..nameLine.."Diese Energie der Kristalle.... \tBist du sicher, dass du das tuen willst?", 0,0,0, 4)
+			setControlHint("Nejl"..nameLine.."Die Energie der Kristalle.... \tBist du sicher, dass du das tun willst?", 0,0,0, 4)
 			setFlag(v.flagComment, 1)
 		end
 		
