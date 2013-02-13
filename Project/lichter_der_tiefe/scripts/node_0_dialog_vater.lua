@@ -162,6 +162,28 @@ function update(me, dt)
 	elseif isFlag(v.flag, 12) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
+			setFlag(v.flag, 13)
+			v.time = 0
+			v.dt = 3
+			
+			hideImage()
+			showImage("0_cutscene/madallion_go")
+		end
+		
+	elseif isFlag(v.flag, 13) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 14)
+			v.time = 0
+			v.dt = 3
+			
+			hideImage()
+			showImage("0_cutscene/madallion_go_nejl")
+		end
+			
+	elseif isFlag(v.flag, 14) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
 			setFlag(v.flag, 30)
 			v.time = 0
 			v.dt = 3

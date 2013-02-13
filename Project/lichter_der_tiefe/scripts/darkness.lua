@@ -8,6 +8,18 @@ function init(me)
 	
 	v.flagLiedDerLichter = 1100
 	v.flagSongs = 307
+	v.flagUntiefen = 701
+	
+	v.alpha = 0
+	if isFlag(v.flagUntiefen, 2) then
+		v.alpha = 0.75
+	elseif getFlag(v.flagSongs) >= 3 then
+		v.alpha = 0.65
+	elseif getFlag(v.flagSongs) == 2 then
+		v.alpha = 0.45
+	elseif getFlag(v.flagSongs) == 1 then
+		v.alpha = 0.25
+	end
 	
 end
 
@@ -18,8 +30,7 @@ function postInit(me)
 		v.dark = createQuad("lichtblume/lichtblume_darkness", 13)
 		quad_setPosition(v.dark, entity_getPosition(me))
 		quad_scale(v.dark, 64, 64)
-		quad_alpha(v.dark, 0)
-		quad_alpha(v.dark, 1, 0.5)
+		quad_alpha(v.dark, v.alpha)
 		quad_color(v.dark, 0, 0, 0)
 	end	
 
