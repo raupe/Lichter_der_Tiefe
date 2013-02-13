@@ -8,7 +8,7 @@ function init(me)
 	local texture = string.format("tile-rock-000%d", randRange(1,4))
 	entity_setTexture( me, texture )
 
-	entity_setCollideRadius( me, 64 )
+	entity_setCollideRadius( me, 128 )
 	entity_setHealth(me, 2)
     --entity_setDeathParticleEffect(me, "TinyRedExplode")
     
