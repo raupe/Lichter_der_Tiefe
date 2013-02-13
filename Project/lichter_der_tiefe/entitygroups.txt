@@ -20,6 +20,8 @@ rock_breakable
 6_stroemung
 6_item
 7_cerajt
+7_cerajt_fische
+7_cerajt_felsen
 a_lichterqualle
 b_lichterqualle
 c_lichterqualle
