@@ -20,8 +20,16 @@ end
 -- check trigger
 function update(me, dt)	
 
-	if getFlag(v.flag) >= 30 then
-		-- early out
+	if isFlag(1200, 1) then return end
+
+	if getFlag(v.flag) == 30 then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(1200, 1)
+			
+			goToTitle()
+		end
+		
 	elseif isFlag(v.flag, 0) then
 
 		if node_isEntityIn(me, v.n) then
@@ -151,32 +159,12 @@ function update(me, dt)
 			showImage("0_cutscene/leave_me_alone")
 		end
 		
-	elseif isFlag(v.flag, 11) then
-		v.time = v.time + dt
-		if v.time >= v.dt then
-			setFlag(v.flag, 12)
-			v.time = 0
-			v.dt = 3
-			
-			hideImage()
-			showImage("0_cutscene/leave_me_alone")
-		end
-		
-	elseif isFlag(v.flag, 11) then
-		v.time = v.time + dt
-		if v.time >= v.dt then
-			setFlag(v.flag, 12)
-			v.time = 0
-			v.dt = 3
-			
-			hideImage()
-			showImage("0_cutscene/leave_me_alone")
-		end
-		
 	elseif isFlag(v.flag, 12) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			setFlag(v.flag, 30)
+			v.time = 0
+			v.dt = 3
 			
 			hideImage()
 			setCutscene(0)
@@ -270,6 +258,8 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			setFlag(v.flag, 30)
+			v.time = 0
+			v.dt = 3
 			
 			hideImage()
 			setCutscene(0)

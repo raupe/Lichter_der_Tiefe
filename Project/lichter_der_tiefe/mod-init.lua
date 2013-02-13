@@ -21,10 +21,13 @@ if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 function init()
+	
 	setFlag(901, 0)
 	setFlag(1100, 0)
 	setFlag(306, 3) -- path
 	setFlag(307, 0) -- songs
+	setFlag(1200, 0)
+	
 	loadMap("0_hafen")
 	
 	--debug:

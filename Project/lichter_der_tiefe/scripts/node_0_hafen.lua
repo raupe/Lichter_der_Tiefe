@@ -52,6 +52,8 @@ end
 -- check trigger
 function update(me, dt)
 
+	if isFlag(1200, 1) then return end
+
     if isFlag(v.diff, 0) then
 
         setFlag(v.diff, 1) -- prevent recalling
