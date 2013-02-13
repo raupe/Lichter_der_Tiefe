@@ -9,6 +9,11 @@ if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 v.dir = 0
 
+-- entity specific
+local STATE_FIRE			= 1000
+local STATE_PULLBACK		= 1001
+-- local STATE_REGROUP			= 1002
+
 
 -------------------------
 local nameLine = ":\n \n"
@@ -20,29 +25,9 @@ local nameLine = ":\n \n"
 
 function init(me)
 
-	-- if entity_isFlag(me, 1) then
-	-- 	entity_delete(me)
-	-- end
-
-
-	-- setupEntity( me )
-	-- entity_setTexture( me, "Crotoid" )
-	-- entity_setDeathParticleEffect( me, "TinyRedExplode" )
-
-	-- entity_setEntityType(me, ET_ENEMY )
-	-- entity_setMaxSpeedLerp(me, 1, 1, -1, 1)
-
-	-- entity_setState( me, STATE_IDLE )
-	-- entity_setWidth( me, 128 )
-	-- entity_setHeight( me, 128 )
-
-	-- entity_setCollideRadius( me, 64 )
-	-- entity_setHealth( me, 1 * getFlag(v.diff) )
-	
-	
 	setupBasicEntity(
 	me,
-	"Nautilus",						-- texture
+	"piranha",						-- texture
 	4,								-- health
 	1,								-- manaballamount
 	1,								-- exp
@@ -59,12 +44,6 @@ function init(me)
 
 	entity_setDeathParticleEffect(me, "TinyBlueExplode")
 
-	entity_rotate(me, 360, 1, LOOP_INF)		-- make the nautilus spin 360 degrees endlessly over 1 second
-	v.lungeDelay = 1.0						-- prevent the nautilus from attacking right away
-	loadSound("Nautilus")
-
-	-- entity_setMaxSpeed(me, 450)
-
 	v.time = 0
 	v.lifeTime = math.random() * 4
 end
@@ -74,70 +53,107 @@ end
 function postInit(me)
 
 	v.n = getNaija()
-	entity_setTarget(me, v.n)
+	v.cerajt = 702
+	v.radius = 500
+	
+	v.diff = 004
+
 end
 
 
+function update(me, dt)	
 
-function update(me, dt)
-
-
-	v.time = v.time + dt
-	if v.time >= v.lifeTime then
-
-		v.time = 0
-		entity_delete(me)
+	if isFlag(v.cerajt, 1) then
+	 	entity_delete(me)
 		return
 	end
 
-	entity_handleShotCollisions(me)
-	entity_touchAvatarDamage(me, 32, 0.1, 1200)
+	if entity_isState(me, STATE_ATTACK) then
+		entity_moveTowardsTarget(me, dt, 1000)
+		entity_rotateToVel(me, 0.1)
+		entity_flipToVel(me)
+		entity_doCollisionAvoidance(me, dt, 8, 0.4)
+		entity_doEntityAvoidance(me, dt, 16, 0.8)
+	elseif entity_isState(me, STATE_PULLBACK) then
+		entity_moveTowardsTarget(me, dt, -4000)
+		entity_rotateToVel(me, 0.1)
+		entity_flipToVel(me)
+		entity_doCollisionAvoidance(me, dt, 8, 0.4)
+		entity_doEntityAvoidance(me, dt, 32, 0.8)
+	-- elseif entity_isState(me, STATE_REGROUP) then
+	-- 	entity_doEntityAvoidance(me, dt, 32, -2.0)
+	elseif entity_isState(me, STATE_IDLE) then
+		if v.dir == 0 then
+			entity_addVel(me, -1000, 0)
+		else
+			entity_addVel(me, 1000, 0)
+		end
+		entity_rotateToVel(me, 0.1)
+		entity_flipToVel(me)
+		entity_doEntityAvoidance(me, dt, 32, 0.8)
+	end
 
-	entity_moveTowardsTarget(me, 950, 1)
+	if entity_hasTarget(me) then
+		if not (entity_isState(me, STATE_ATTACK) or entity_isState(me, STATE_PULLBACK)) then
+			entity_setState(me, STATE_ATTACK)
+		else
+			entity_findTarget(me, v.radius)
+		end
+	else
+		if not entity_isState(me, STATE_IDLE) then
+			entity_setState(me, STATE_IDLE)
+		end
+		entity_findTarget(me, v.radius)
+	end
+
+	entity_updateCurrents(me, dt)
+
 	entity_updateMovement(me, dt)
+
+	entity_handleShotCollisions(me)
+	if entity_isState(me, STATE_ATTACK) then
+		if entity_touchAvatarDamage(me, entity_getCollideRadius(me), 0.2 , 200) then--* getFlag(v.diff), 200) then
+			entity_sound(me, "Bite", 1200+math.random(200))
+			entity_setState(me, STATE_PULLBACK, 1)
+		end
+	end
+
 end
 
 function enterState(me)
-
-	if entity_isState(me, STATE_IDLE) then
-		entity_animate(me, "idle", -1)
+	if entity_isState(me, STATE_ATTACK) then
+		entity_setMaxSpeedLerp(me, 2.25, 0.5)
+	elseif entity_isState(me, STATE_PULLBACK) then
+		entity_setMaxSpeedLerp(me, 2, 0.5)
+		entity_moveTowardsTarget(me, 1, -500)
+	elseif entity_isState(me, STATE_IDLE) then
+		entity_setMaxSpeedLerp(me, 0.5)
+		entity_setMaxSpeedLerp(me, 1, 1, -1, 1)
+		entity_rotate(me, 0, 1, 0, 0, 1)
 	end
-
-	if entity_isState(me, STATE_DEAD) then
-		entity_animate( me, "dead", -1 )
-	end
-
 end
 
 function exitState(me)
+	if entity_isState(me, STATE_PULLBACK) then
+		entity_setState(me, STATE_ATTACK)
+	-- elseif entity_isState(me, STATE_REGROUP) then
+		-- entity_setState(me, STATE_IDLE)
+	end
 end
 
 function hitSurface(me)
+	entity_flipHorizontal(me)
+	if v.dir == 0 then
+		v.dir = 1
+	elseif v.dir == 1 then 
+		v.dir = 0
+	end
 end
-
-function activate(me)
-end
-
 
 function damage(me, attacker, bone, damageType, dmg)
-	return true
-end
-
-
-function animationKey(me, key)
-end
-
-function songNote(me, note)
-end
-
-function songNoteDone(me, note)
-end
-
-function song(me, song)
+	return false
 end
 
 
 function dieNormal(me)
 end
-
-

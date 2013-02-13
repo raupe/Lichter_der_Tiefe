@@ -9,19 +9,13 @@ function init(me)
 	entity_setTexture( me, "7_cerajt/ice-rock-0001.png")
 
 	entity_setCollideRadius( me, 128 )
-	-- entity_generateCollisionMask(me)
+	entity_generateCollisionMask(me)
 	entity_setDeathParticleEffect(me, "TinyRedExplode") -- scherben ?
 	entity_setMaxSpeed(me, 500)
-	-- entity_scale(me, 1, 1)
-
 
 	entity_setState( me, STATE_IDLE )
 
-	-- entity_setBounceType(me, BOUNCE_REAL)
-	-- entity_setMaxSpeed(me, randRange(400, 500))
-
 	v.falling = false
-	-- v.x = 20
 end
 
 
@@ -29,20 +23,36 @@ end
 function postInit(me)
 
 	v.n = getNaija()
-	-- entity_applySurfaceNormalForce(me, 1000)
-	-- entity_applySurfaceNormalForce(me, 0)
-	-- entity_addVel(me, v.x * 10, 100)
+	v.cerajt = getEntity("7_cerajt")
 end
 
 
 
 function update(me, dt)
+
 	entity_handleShotCollisions(me)
 
 	if v.falling then
 
 		entity_addVel(me, 0, 10)
 		entity_updateMovement(me, dt)
+
+		v.nearest = entity_getNearestEntity(me)
+
+		if v.nearest == v.cerajt then
+
+
+			playSfx("mithalasurn-break", 0, 0.6)
+
+			for i=1,5 do
+				createEntity("7_cerajt_splitter", "", entity_x(me), entity_y(me))
+			end
+
+			-- cerajt dmg + splitter
+			entity_changeHealth(v.cerajt, -1)
+			entity_delete(me)
+		end
+
 	end
 end
 
@@ -53,7 +63,7 @@ function exitState(me)
 end
 
 function hitSurface(me)
-	v.falling = false
+	entity_delete(me)
 end
 
 function activate(me)
@@ -61,9 +71,7 @@ end
 
 
 function damage(me, attacker, bone, damageType, dmg)
-
 	v.falling = true
-	--setControlHint("debug: falling", 0,0,0, 4)
 	return false
 end
 

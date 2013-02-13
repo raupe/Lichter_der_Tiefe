@@ -21,7 +21,8 @@ rock_breakable
 6_item
 7_cerajt
 7_cerajt_fische
-7_cerajt_felsen
+7_cerajt_kristalle
+7_cerajt_splitter
 a_lichterqualle
 b_lichterqualle
 c_lichterqualle

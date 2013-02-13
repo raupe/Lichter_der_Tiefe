@@ -15,10 +15,10 @@ function init(me)
 	v.diff = 004
 	
 	v.inNode = false
-	v.spawn = true
-	
 	v.time = 0
-	v.dt = math.random() * 5
+	v.dt = 2
+	v.change = 0
+
 	
 	setupEntity(me)
 	entity_initSkeletal(me, "anglerfish")
@@ -31,7 +31,7 @@ function init(me)
 	
 	entity_setEntityType(me, ET_ENEMY)
 	entity_setState(me, STATE_IDLE)
-    entity_setHealth(me, 15 * getFlag(v.diff))
+    entity_setHealth(me, 1)--* getFlag(v.diff))
 end
 
 -- after nodes have inited
@@ -43,6 +43,12 @@ function postInit(me)
 end
 
 function update(me, dt)
+
+	if entity_getHealth(me) == 0 then
+
+		--dieNormal()
+		return
+	end
 
 	-- get damage
 	if entity_collideSkeletalVsCircle(me, v.n) ~= 0 then
@@ -56,31 +62,27 @@ function update(me, dt)
 		v.inNode = true
 	end
 
-
-	-- random spawn
-	if v.spawn and entity_isTargetInRange(me, 1600) then
-
-		v.time = v.time + dt
-		if v.time >= v.dt then
-
-			v.time = 0
-			v.dt =  math.random() * 5
+	entity_handleShotCollisionsSkeletal(me)
 
 
-			v.num = math.random() * 3
-	        v.x,v.y = entity_getPosition(me)
+	-- additional animate
+	v.time = v.time + dt
+	if v.time >= v.dt then
 
-	        while v.num >= 0 do
+		v.time = 0
 
-	        	v.num = v.num - 1
-				createEntity("7_cerajt_fische", "", v.x, v.y + math.random() * (v.num*50) )
-	        end
-    	end
+		if v.change > 0 then
+			v.change = -20
+		else
+			v.change = 20
+		end
+
+		entity_addVel(me, 0, v.change)
 	end
 
-	entity_handleShotCollisionsSkeletal(me)
+	entity_updateMovement(me, dt)
 end
--- in die n'he dann spawn !
+
 function enterState(me)
 
 	if entity_isState(me, STATE_IDLE) then
@@ -88,15 +90,13 @@ function enterState(me)
 	end
 
 	if entity_isState(me, STATE_PREP) then
-		v.spawn = false
 		entity_swimToNode(me, v.back)
 	end
 
-	if entity_isState(me, STATE_ATTACK) then
-		v.spawn = true
-	end
-
+	-- if entity_isState(me, STATE_DEAD) then
+	-- end
 end
+
 
 function dieNormal(me)
 	entity_setFlag(me, 1)
@@ -108,30 +108,14 @@ function dieNormal(me)
 end
 
 function exitState(me)
-
 end
 
 function damage(me, attacker, bone, damageType, dmg)
-	-- return true
-end
-
-function animationKey(me, key)
-end
-
-function hitSurface(me)
-end
-
-function songNote(me, note)
-end
-
-function songNoteDone(me, note)
+	return false
 end
 
 function song(me, song)
 	if song == 103 then
 		entity_setState(me, STATE_PREP)
 	end
-end
-
-function activate(me)
 end
