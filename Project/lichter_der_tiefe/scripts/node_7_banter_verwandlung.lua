@@ -13,7 +13,7 @@ function init(me)
 	v.inNode = false
 
 	v.time = 0
-	v.dt = 10
+	v.dt = 5
 
 	v.flag = 703
 end
@@ -32,7 +32,7 @@ function update(me, dt)
 	if v.time >= v.dt then
 
 		v.time = 0
-		v.dt = math.random() * 5 + 15
+		v.dt = math.random() * 10
 
 		if isForm(0) then
 			changeForm(1)

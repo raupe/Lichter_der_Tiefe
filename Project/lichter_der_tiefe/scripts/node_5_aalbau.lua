@@ -8,6 +8,7 @@ local function preventGameOverScreen()
     if entity_getHealth(v.n) == 0 then
         pause()
         doLoadMenu()
+        goToTitle()
     end
 end
 ----------------------------------------

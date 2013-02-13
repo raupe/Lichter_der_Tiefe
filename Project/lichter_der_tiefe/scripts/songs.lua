@@ -15,9 +15,9 @@ function castSong(songIdx)
         local pX,pY = entity_getScale(n)
 
 		-- setControlHint("\nKlang der Entschlossenheit", 0, 0, 0, 3)
-        entity_scale(n, 3, 3, 3)
+        entity_scale(n, 1, 1, 2)
 
-        watch(3)
+        watch(2)
         entity_scale(n, pX, pY, 20)
 
 	elseif songIdx == 104 then
