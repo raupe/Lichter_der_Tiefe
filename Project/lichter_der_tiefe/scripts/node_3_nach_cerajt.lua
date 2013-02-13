@@ -25,8 +25,10 @@ end
 
 -- check
 function update(me, dt)
+
+	if isFlag(1200, 1) then return end
 		
-	if isFlag(v.flag, 13) then
+	if isFlag(v.flag, 50) then
 		-- nothing
 	
 	elseif isFlag(v.flag, 0) then
@@ -40,7 +42,7 @@ function update(me, dt)
 			if getFlag(v.path) > 1 then
 				setFlag(v.flag, 1)
 			else
-			
+				setFlag(v.flag, 20)
 			end
 		end
 	
@@ -128,7 +130,7 @@ function update(me, dt)
 			v.dt = 3
 			setFlag(v.flag, 10)
 			
-			showImage("3_cutscene")
+			showImage("3_cutscene/madallion_nejl")
 		end
 	
 	elseif isFlag(v.flag, 10) then
@@ -156,12 +158,246 @@ function update(me, dt)
 		if v.time >= v.dt then
 			v.time = 0
 			v.dt = 4
-			setFlag(v.flag, 13)
+			setFlag(v.flag, 50)
 			
 			enableInput()
-			entity_setInvincible(v.n, false)
 			setFlag(v.flagForm, 0)
 		end
+		
+	elseif isFlag(v.flag, 20) then
+		v.time = 0
+		v.dt = 3
+		setFlag(v.flag, 21)
+		
+		setControlHint("Emily"..nameLine.."Nejl, bist du ok?", 0,0,0, v.dt)
+		
+	elseif isFlag(v.flag, 21) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 22)
+			v.time = 0
+			v.dt = 3
+			
+			setControlHint("Nejl"..nameLine.."Mir gehts gut. Was ist passiert?", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 22) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 23)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily"..nameLine.."Ich weiss es nicht. Ich hatte die Verwandlung nicht mehr unter Kontrolle.", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 23) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 24)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Nejl"..nameLine.."Du warst zu lange der Kraft der Kristalle ausgesetzt.", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 24) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 25)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily"..nameLine.."Nejl, schnell - schwimm fort. Wenn ich mich wieder verwand- ... ", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 25) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 26)
+			v.time = 0
+			v.dt = 4
+			
+			changeForm(1)
+			local nejl = getEntity("3_nejl")
+			entity_setState(nejl, STATE_MOVE)
+		end
+		
+	elseif isFlag(v.flag, 26) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 27)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily"..nameLine.."Nejl ist in Sicherheit.", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 27) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 28)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily"..nameLine.."Vielleicht finde ich noch einen Weg nach Hause ...", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 28) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 29)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily"..nameLine.."Aber was soll ich da schon?", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 29) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 30)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily"..nameLine.."Mir Ausreden anhoeren, warum mein Vater mich verlassen hat?", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 30) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 31)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily"..nameLine.."Nein! Ich bleibe hier!", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 31) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 32)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily"..nameLine.."Hier kann ich machen was ich will! Hier habe ich MACHT!", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 32) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 33)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily"..nameLine.."Und dafuer brauche ich noch nicht einmal die Kristalle.", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 33) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 34)
+			v.time = 0
+			v.dt = 3
+			
+			showImage("3_cutscene/bad_ending_00")
+		end
+		
+	elseif isFlag(v.flag, 34) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 35)
+			v.time = 0
+			v.dt = 3
+			
+			hideImage()
+			showImage("3_cutscene/bad_ending_01")
+		end
+		
+	elseif isFlag(v.flag, 35) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 36)
+			v.time = 0
+			v.dt = 3
+			
+			hideImage()
+			showImage("3_cutscene/bad_ending_02")
+		end
+		
+	elseif isFlag(v.flag, 36) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 37)
+			v.time = 0
+			v.dt = 3
+			
+			hideImage()
+			showImage("3_cutscene/bad_ending_03")
+		end
+		
+	elseif isFlag(v.flag, 37) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 38)
+			v.time = 0
+			v.dt = 3
+			
+			hideImage()
+			showImage("3_cutscene/bad_ending_04")
+		end
+		
+	elseif isFlag(v.flag, 38) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 39)
+			v.time = 0
+			v.dt = 3
+			
+			hideImage()
+			showImage("3_cutscene/bad_ending_05")
+		end
+		
+	elseif isFlag(v.flag, 39) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 40)
+			v.time = 0
+			v.dt = 3
+			
+			hideImage()
+			showImage("3_cutscene/bad_ending_06")
+		end
+		
+	elseif isFlag(v.flag, 40) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 41)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Fremder"..nameLine.."Fraeulein? ... Fraeulein?", 0,0,0, 3)
+		end
+		
+	elseif isFlag(v.flag, 41) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 42)
+			v.time = 0
+			v.dt = 3
+			
+			setControlHint("", 0,0,0, 2)
+		end
+		
+	elseif isFlag(v.flag, 42) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 50)
+			
+			hideImage()
+			goToTitle()
+		end
+	
 		
 	
 	end

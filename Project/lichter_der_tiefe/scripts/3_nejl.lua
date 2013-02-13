@@ -27,6 +27,7 @@ function postInit(me)
 	-- STATE_DISABLED: won't follow emily until flag 303 is set to 1
 	-- STATE_SING: falls asleep because of 'klang der ruhe'
 	-- STATE_DELAY: lied-der-lichter dialog after 4 sec
+	-- STATE_MOVE: flees from energyform
 
     v.n = getNaija()
     v.flag = 303
@@ -34,6 +35,7 @@ function postInit(me)
 	v.flagSleep = 802
 	v.flagWake = 803
 	v.flagAbschied = 308
+	v.step = 0
 
     if isFlag(v.flag, 1) then
         v.x,v.y = entity_getPosition( v.n )
@@ -58,6 +60,28 @@ function update(me, dt)
     	if isFlag(v.flag, 1) then
         	entity_setState(me, STATE_FOLLOW)
     	end
+    elseif entity_isState(me, STATE_MOVE) then
+    	if v.step == 0 then    	
+    		local x, y = node_getPathPosition(v.fleePath, 2)
+    		if entity_isPositionInRange(me, x, y, 128) then
+    			v.step = 1
+    			entity_swimToPosition(me, node_getPathPosition(v.fleePath, 1))
+    		end
+    	elseif v.step == 1 then
+    		local x, y = node_getPathPosition(v.fleePath, 1)
+    		if entity_isPositionInRange(me, x, y, 128) then
+    			v.step = 2
+    			entity_swimToPosition(me, node_getPathPosition(v.fleePath, 0))
+    		end
+    	elseif v.step == 2 then
+    		local x, y = node_getPathPosition(v.fleePath, 0)
+    		if entity_isPositionInRange(me, x, y, 128) then
+    			v.step = 3
+    			entity_setState(STATE_DISABLED)
+    		end
+    	end
+    
+    
     elseif entity_isState(me, STATE_DELAY) then
     	v.time = v.time + dt
     	if v.time > 4 then
@@ -161,6 +185,9 @@ function enterState(me)
 		end
 	elseif entity_isState(me, STATE_DELAY) then
 		v.time = 0
+	elseif entity_isState(me, STATE_MOVE) then
+		v.fleePath = getNode("3_nejl_flee")
+		entity_swimToPosition(me, node_getPathPosition(v.fleePath, 2))
 	end
 end
 
