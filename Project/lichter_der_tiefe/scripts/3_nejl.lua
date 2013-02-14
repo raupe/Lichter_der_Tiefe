@@ -226,78 +226,26 @@ function song(me, song)
 end
 
 function activate(me)
+
 	if entity_isState(me, STATE_SING) then
 		setFlag(v.flagWake, 1)
-	elseif entity_isState(me, STATE_FOLLOW) or entity_isState(me, STATE_IDLE) then
+	elseif isFlag(303, 0) then				-- Nejl noch nicht getroffen
+		-- nothing
+	elseif not isFlag(801, 1) then 		-- KLang der Ruhe noch nicht gelernt
 		setControlHint("Nejl"..nameLine.."Schwimm vor, ich folge dir.", 0, 0, 0, 2)
+	elseif not isFlag(901, 1) then 		-- KLang der Stroemung noch nicht gelernt
+		setControlHint("Nejl"..nameLine.."Na los. Auf zum nächsten Klang.", 0, 0, 0, 4)
+	elseif not isFlag(1001, 1) then 	-- KLang der Entschlossenheit noch nicht gelernt
+		setControlHint("Nejl"..nameLine.."Wow. Jetzt fehlt uns nur noch ein Klang", 0, 0, 0, 4)
+	elseif not isFlag(1100, 1) then 	-- Lied der Lichter noch nicht gelernt gelernt
+		setControlHint("Nejl"..nameLine.."Wir kennen alle Klaenge. Komm zurueck zur Hoehle.", 0, 0, 0, 4)
+	elseif isFlag(106, 1) then			-- dialog nach Lied der Lichter noch nicht gehalten
+		setControlHint("Nejl"..nameLine.."Jetzt koennen die Blumen wieder leuchten.", 0, 0, 0, 4)
+	elseif not isFlag(702, 1) then		-- Ceraijt noch nicht besiegt
+		setControlHint("Nejl"..nameLine.."Ich habe Angst.", 0, 0, 0, 3)
+	else
+		setControlHint("Mejais"..nameLine.."Danke, du hast mich gerettet.", 0, 0, 0, 3) -- sollte nicht auftreten
 	end
 
 end
-
-
-
-
-
--- function init(me)
-
--- 	setupEntity(me)
--- 	entity_setEntityType(me, ET_NEUTRAL)
--- 	entity_initSkeletal(me, "1_mejais_ghost")
--- 	entity_setState(me, STATE_IDLE)
--- 	entity_setCollideRadius(me, 32)
--- 	entity_setHealth(me, 5)
--- 	entity_setDeathParticleEffect(me, "TinyRedExplode")
-
--- 	setupBasicEntity( me,
--- 	  "", -- texture
--- 	  4, -- health
--- 	  2, -- manaballamount
--- 	  2, -- exp
--- 	  1, -- money
--- 	  48, -- collideRadius (for hitting entities and spells)
--- 	  STATE_IDLE, -- initState
--- 	  128,  -- sprite width
--- 	  128,  -- sprite height
--- 	  1, -- particle "explosion" type, maps to particleEffects.txt -1 = none
--- 	  1, -- 0/1 hit other entities off/on (uses collideRadius)
--- 	  400  -- updateCull -1: disabled, default: 4000 //
--- 	)
-
--- 	entity_setEntityType(me, ET_NEUTRAL)
-
--- 	-- setupEntity(me)
-
-
--- 	entity_initSkeletal(me, "00_starter")
--- 	entity_setState(me, STATE_IDLE)
--- end
-
-
-
-
--- -- after nodes have inited
--- function postInit(me)
-
--- 	v.n = getNaija()
--- end
-
-
--- function update(me, dt)
--- 	entity_followEntity(me, getEntity("Naija"))
--- end
-
--- function enterState(me)
--- 	if entity_isState(me, STATE_IDLE) then
--- 		entity_animate(me, "idle", -1)
--- 	end
--- end
-
-
-
--- function exitState(me)
--- end
-
--- function damage(me, attacker, bone, damageType, dmg)
--- 	return false
--- end
 

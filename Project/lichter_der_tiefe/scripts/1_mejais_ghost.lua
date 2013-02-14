@@ -19,6 +19,7 @@ function init(me)
 	
 	v.fade = false
 	v.schacht = getNode("1_banter_schacht")
+	v.path = 306
 end
 
 -- after nodes have inited
@@ -108,10 +109,15 @@ function activate(me)
 		setControlHint("Mejais"..nameLine.."Du musst dich entschieden, willst du zurueck in deine Welt, oder hilfst du Nejl?", 0,0,0, 4)
 	elseif not isFlag(702, 1) then		-- Ceraijt noch nicht besiegt
 		setControlHint("Mejais"..nameLine.."Die Blumen sind verwelkt. Hilf Nejl!", 0, 0, 0, 3)
+	elseif getFlag(v.path) > 1 then	
+		setFlag(107, 2)
+		disableInput()
+		setCutscene(1,1)
+			
+		entity_setState(v.mejais, STATE_WAIT)
+		setControlHint("Mejais"..nameLine.."Emily?", 0,0,0, 3)
+		entity_swimToPosition(v.mejais, entity_getPosition(v.n))
 	else
-		setControlHint("to be continued" ,0,0,0, 2)
-	
---	else
---		setControlHint("Mejais: Hallo Emily.", 0, 0, 0, 2)
+		setControlHint("Mejais"..nameLine.."Was tust du?", 0, 0, 0, 3) -- sollte nicht auftreten
 	end
 end
