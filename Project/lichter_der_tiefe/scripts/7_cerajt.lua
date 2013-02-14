@@ -31,7 +31,7 @@ function init(me)
 	
 	entity_setEntityType(me, ET_ENEMY)
 	entity_setState(me, STATE_IDLE)
-    entity_setHealth(me, 1)--* getFlag(v.diff))
+    entity_setHealth(me, getFlag(v.diff))
     
     v.wentBack = false
 end

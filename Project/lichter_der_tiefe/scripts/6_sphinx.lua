@@ -41,9 +41,12 @@ function init(me)
 
     if getFlag(v.diff) == 2 then
         v.shotDt = 1    -- normal
+    	v.shotName = "sphinx"
     else
         v.shotDt = 0.5  -- diff
+   		v.shotName = "sphinx_schwer"
     end
+    
 
 end
 
@@ -88,7 +91,7 @@ function update(me, dt)
 		if v.time < 0 and entity_isTargetInRange(me, 2000) then
 
             -- for i=1,v.num do -- verschiebung ?
-            local s = createShot("sphinx", me, getNaija(), node_x(v.startShot), node_y(v.startShot))
+            local s = createShot(v.shotName, me, getNaija(), node_x(v.startShot), node_y(v.startShot))
             local dx = entity_x(v.n) - node_x(v.startShot)
             local dy = entity_y(v.n) - node_y(v.startShot)
             shot_setAimVector(s, dx, dy)
