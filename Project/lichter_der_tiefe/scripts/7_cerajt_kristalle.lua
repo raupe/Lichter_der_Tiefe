@@ -50,7 +50,8 @@ function update(me, dt)
 			end
 
 			-- cerajt dmg + splitter
-			entity_changeHealth(v.cerajt, -1)
+			-- entity_changeHealth(v.cerajt, -1)
+			entity_damage(v.cerajt, me, 1)
 			entity_delete(me)
 		end
 

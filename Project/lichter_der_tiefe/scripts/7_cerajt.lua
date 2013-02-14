@@ -32,6 +32,8 @@ function init(me)
 	entity_setEntityType(me, ET_ENEMY)
 	entity_setState(me, STATE_IDLE)
     entity_setHealth(me, 1)--* getFlag(v.diff))
+    
+    v.wentBack = false
 end
 
 -- after nodes have inited
@@ -74,18 +76,20 @@ function update(me, dt)
 
 
 	-- additional animate
-	v.time = v.time + dt
-	if v.time >= v.dt then
-
-		v.time = 0
-
-		if v.change > 0 then
-			v.change = -20
-		else
-			v.change = 20
+	if v.wentBack then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+	
+			v.time = 0
+	
+			if v.change > 0 then
+				v.change = -20
+			else
+				v.change = 20
+			end
+	
+			entity_addVel(me, 0, v.change)
 		end
-
-		entity_addVel(me, 0, v.change)
 	end
 
 	entity_updateMovement(me, dt)
@@ -119,11 +123,16 @@ function exitState(me)
 end
 
 function damage(me, attacker, bone, damageType, dmg)
-	return false
+	if attacker == v.n then
+		return false
+	else
+		return true
+	end
 end
 
 function song(me, song)
 	if song == 103 then
 		entity_setState(me, STATE_PREP)
+		v.wentBack = true
 	end
 end
