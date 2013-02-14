@@ -29,7 +29,7 @@ function update(me, dt)
 			v.dt = 5
 			v.time = 0
 			setFlag(v.flag, 1)
-			setControlHint("Emily"..nameLine.."Was ist das hier ? Wie komme ich hierher ?", 0, 0, 0, v.dt)
+			setControlHint("Emily"..nameLine.."Was ist das hier? Wie komme ich hierher?", 0, 0, 0, v.dt)
 		end
 
 	elseif isFlag(v.flag, 1) then
@@ -52,7 +52,7 @@ function update(me, dt)
 			v.dt = 4
 			v.time = 0
 			setFlag(v.flag, 3)
-			setControlHint("Emily"..nameLine.."Ich kann reden, atmen und ... SCHWIMMEN ? Bin ich etwa unter Wasser ?", 0, 0, 0, v.dt)
+			setControlHint("Emily"..nameLine.."Ich schwimme, ich bin unter Wasser! Aber ich kann atmen und reden.", 0, 0, 0, v.dt)
 		end
 
 	elseif isFlag(v.flag, 3) then
