@@ -125,11 +125,11 @@ function dieNormal(me)
 
 			setControlHint( "Nejl"..nameLine.."Bitte hoere damit auf, du tust ihnen weh!", 0, 0, 0, 3)
 
-		elseif getFlag(v.kills) == 5 then
+		elseif getFlag(v.kills) == 4 then
 
 			setControlHint( "Nejl"..nameLine.."Komm schon, lass das sein!", 0, 0, 0, 3)
 
-		elseif getFlag(v.kills) == 8 then
+		elseif getFlag(v.kills) == 6 then
 
 			setFlag(v.flag, 1)
 			setFlag(v.path, getFlag(v.path)-1 )
