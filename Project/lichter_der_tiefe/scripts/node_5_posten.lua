@@ -47,6 +47,8 @@ function update(me, dt)
 
 	if v.inNode and not node_isEntityIn(me, v.n) then
 		v.inNode = false
+        setCameraLerpDelay(0)
+        cam_toEntity(v.n)
 	end
 
 end
