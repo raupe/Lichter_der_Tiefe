@@ -47,7 +47,7 @@ function update(me, dt)
 		v.time = v.time + dt
 
 		if v.time >= 3 and getFlag(v.flagLichtblume) ~= 1 then
-			setControlHint("Emily"..nameLine.."Es geht nicht, die Stroemung ist zu stark!", 0, 0, 0, 3)
+			setControlHint("Emily"..nameLine.."Nein, hier komme ich nicht durch. Ich sehe ja gar nichts.", 0, 0, 0, 4)
 			v.time = 0
 			setFlag(v.flag, 0)
 		end
