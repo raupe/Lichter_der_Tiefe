@@ -87,6 +87,7 @@ function init()
 	setFlag(703, 0)
 	setFlag(704, 0)
 	setFlag(705, 0)
+	setFlag(706, 0)
 	
 	setFlag(800, 0)
 	setFlag(801, 0)

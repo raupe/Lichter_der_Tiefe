@@ -24,6 +24,9 @@
 <Path name="7_cerajt_back">
     <Node pos="1660 8517" rect="1034 920" shape="0" />
 </Path>
+<Path name="7_banter_hint">
+    <Node pos="4462 7844" rect="64 2148" shape="0" />
+</Path>
 <Entities j="-1 7_cerajt 4118 7898 0 0 1 -1 3_nejl 703 9381 0 0 1 -1 c_lichterqualle 7291 5435 0 0 15 -1 7_cerajt_fische 1297 8639 -89 0 16 -1 7_cerajt_fische 1204 8937 45 0 17 -1 7_cerajt_fische 849 8617 45 0 18 -1 7_cerajt_fische 2519 8936 -89 0 19 -1 7_cerajt_fische 1502 9023 -89 0 20 -1 7_cerajt_fische 985 8311 0 0 21 -1 7_cerajt_fische 3284 8683 -89 0 22 -1 7_cerajt_fische 2878 8889 -89 0 23 -1 7_cerajt_fische 3052 9388 -89 0 24 -1 7_cerajt_fische 2683 9313 -89 0 25 -1 7_cerajt_fische 2335 9278 -89 0 26 -1 7_cerajt_fische 2057 8378 -89 0 27 -1 7_cerajt_fische 1935 8912 -89 0 28 -1 7_cerajt_kristalle 3054 6836 0 0 3 -1 7_cerajt_kristalle 1224 6941 0 0 4 -1 7_cerajt_kristalle 1554 6796 0 0 5 -1 7_cerajt_kristalle 1394 6861 0 0 6 -1 7_cerajt_kristalle 1714 6741 0 0 7 -1 7_cerajt_kristalle 1869 6711 0 0 8 -1 7_cerajt_kristalle 2324 6671 0 0 9 -1 7_cerajt_kristalle 2024 6666 0 0 10 -1 7_cerajt_kristalle 2184 6651 0 0 11 -1 7_cerajt_kristalle 2834 6916 0 0 12 -1 7_cerajt_kristalle 2464 6686 0 0 13 -1 7_cerajt_kristalle 2624 6691 0 0 14 -1 7_cerajt_kristalle 2724 6726 0 0 29 -1 7_cerajt_kristalle 2954 6871 0 0 30 -1 7_cerajt_kristalle 1104 6996 0 0 31 " />
 <SE k="6 5094 5373 0 21.0293 21.0293 0 0 0 -1 1 " l="0" />
 <SE k="31 5187 4928 0 74.8775 74.8775 0 0 0 -1 0 31 2470 8190 0 30.5969 30.5969 0 0 0 -1 0 " l="1" />
