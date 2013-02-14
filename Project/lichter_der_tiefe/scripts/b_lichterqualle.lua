@@ -29,7 +29,7 @@ function postInit(me)
 
 	v.step = 0
     v.time = 0
-    v.duration = 5
+    v.duration = 6
 
     entity_setActivation(me, AT_CLICK, 200, 500)
 end
@@ -37,6 +37,13 @@ end
 function update(me, dt)
 
     if v.step == 1 then
+        v.time = v.time + dt
+        if v.time >= v.duration then
+            v.step = 0
+            v.duration = 8
+			setControlHint("\nSchau im Menue nach, welche Toene du fuer den Klang brauchst.\nDann nutze die rechte Maustaste um zu singen.", 0, 0, 0, 8)
+        end
+    elseif v.step == 2 then
         v.time = v.time + dt
         if v.time >= v.duration+1 then
             v.step = 0
