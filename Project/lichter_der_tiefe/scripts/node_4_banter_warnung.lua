@@ -24,7 +24,7 @@ function update(me, dt)
 
 		setFlag(v.flag, 1)
 
-		setControlHint("Nejl"..nameLine.."O nein, die Energiekristalle... Komm, hier koennen wir ihnen entgehen.", 0, 0, 0, 5 )
+		setControlHint("Nejl"..nameLine.."O nein, die Energiekristalle... Komm, hier endet ihre Macht wieder.", 0, 0, 0, 5 )
 		
 		local weg = getNode("4_weg_gut")
 		local nejl = getEntity("3_nejl")
