@@ -37,8 +37,8 @@ function update(me, dt)
 			local nejl = getEntity("3_Nejl")
 			entity_setState(nejl, STATE_DISABLED)
 			
-			disableInput()
 			changeForm(0)
+			disableInput()
 			if getFlag(v.path) > 1 then
 				setFlag(v.flag, 1)
 			else
