@@ -220,6 +220,7 @@ function update(me, dt)
 			v.dt = 4
 			
 			changeForm(1)
+			disableInput()
 			local nejl = getEntity("3_nejl")
 			entity_setState(nejl, STATE_MOVE)
 		end

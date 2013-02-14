@@ -170,7 +170,7 @@ function update(me, dt)
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			v.dt = 8
-			setControlHint("Mejais"..nameLine.."Nejl, mein Sohn, er hat das Lied der Lichter noch nicht gelernt.\nBegib dich auf die Suche nach den Lichterquallen,sie behueten\njeweils einen Klang den er braucht.", 0, 0, 0, v.dt)
+			setControlHint("Mejais"..nameLine.."Nejl, mein Sohn, er hat das Lied der Lichter noch nicht gelernt.\nBegib dich auf die Suche nach den drei Lichterquallen,sie behueten\njeweils einen Klang den er braucht.", 0, 0, 0, v.dt)
 			setFlag(v.flag, 16)
 			v.time = 0
 		end
