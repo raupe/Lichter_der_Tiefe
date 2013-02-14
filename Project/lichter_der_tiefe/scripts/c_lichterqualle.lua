@@ -31,7 +31,7 @@ function postInit(me)
     v.time = 0
     v.duration = 5
 
-    entity_setActivation(me, AT_CLICK, 200, 500)
+    entity_setActivation(me, AT_CLICK, 400, 500)
 end
 
 function update(me, dt)

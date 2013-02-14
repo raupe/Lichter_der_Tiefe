@@ -28,7 +28,7 @@ function postInit(me)
 	v.songB = 901
     v.songC = 1001
     
-    entity_setActivation(me, AT_CLICK, 200, 500)
+    entity_setActivation(me, AT_CLICK, 400, 500)
 end
 
 function update(me, dt)
