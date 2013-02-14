@@ -12,6 +12,7 @@ function init(me)
 	entity_generateCollisionMask(me)
 	entity_setDeathParticleEffect(me, "TinyRedExplode") -- scherben ?
 	entity_setMaxSpeed(me, 500)
+	entity_scale(me, 2, 2)
 
 	entity_setState( me, STATE_IDLE )
 
