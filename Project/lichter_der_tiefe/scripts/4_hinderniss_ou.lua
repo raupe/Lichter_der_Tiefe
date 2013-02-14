@@ -38,6 +38,7 @@ end
 function postInit(me)
 
     v.n = getNaija()
+    v.diff = 004
 end
 
 
@@ -45,7 +46,7 @@ end
 function update(me, dt)
 
     entity_handleShotCollisions(me)
-    entity_touchAvatarDamage(me, 32, 1, 1200)
+    entity_touchAvatarDamage(me, 32, 0.3 * getFlag(v.diff), 1200)
 
     if v.dir == 0 then
         entity_addVel(me, 0, -1000)

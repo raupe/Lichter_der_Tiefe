@@ -123,13 +123,17 @@ function dieNormal(me)
 
 		if getFlag(v.kills) == 2 then
 
-			setControlHint( "Nejl"..nameLine.."Bitte hoere damit auf, du tust ihnen weh !", 0, 0, 0, 3 )
+			setControlHint( "Nejl"..nameLine.."Bitte hoere damit auf, du tust ihnen weh!", 0, 0, 0, 3)
 
-		elseif getFlag(v.kills) == 4 then
+		elseif getFlag(v.kills) == 5 then
+
+			setControlHint( "Nejl"..nameLine.."Komm schon, lass das sein!", 0, 0, 0, 3)
+
+		elseif getFlag(v.kills) == 8 then
 
 			setFlag(v.flag, 1)
 			setFlag(v.path, getFlag(v.path)-1 )
-			setControlHint( "Nejl"..nameLine.."Ich hoffe sie erholen sich irgendwann...", 0, 0, 0, 3 )
+			setControlHint( "Nejl"..nameLine.."Ich verstehe nicht wieso du das getan hast...", 0, 0, 0, 3)
 		end
 	end
 

@@ -9,6 +9,7 @@ if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 v.dir = 0
 
+
 -- ================================================================================================
 -- FUNCTIONS
 -- ================================================================================================
@@ -36,6 +37,7 @@ end
 function postInit(me)
 
     v.n = getNaija()
+    v.diff = 004
 end
 
 
@@ -43,7 +45,7 @@ end
 function update(me, dt)
 
     entity_handleShotCollisions(me)
-    entity_touchAvatarDamage(me, 32, 1, 1200)
+    entity_touchAvatarDamage(me, 32, 0.3 * getFlag(v.diff), 1200)
 
     if v.dir == 0 then
         entity_addVel(me, -1000, 0)
