@@ -18,6 +18,7 @@ function init(me)
 	v.path = 306
 	v.time = 0
 	v.dt = 0
+	v.flagDisable = 705
 	
 	--debug:
 	--setFlag(v.flag, 0)
@@ -42,6 +43,7 @@ function update(me, dt)
 		if node_isEntityIn(me, v.n) then
 			setFlag(v.flag, 2)
 			
+			setFlag(v.flagDisable, 1)
 			disableInput()
 			setCutscene(1,1)
 			
@@ -148,6 +150,7 @@ function update(me, dt)
 			setFlag(v.flagBeleben, 1)
 			
 			setCutscene(0)
+			setFlag(v.flagDisable, 0)
 			enableInput()
 			entity_swimToNode(v.mejais, v.schacht)
 		end

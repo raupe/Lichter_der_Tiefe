@@ -13,6 +13,7 @@ function init(me)
 	v.flagCerajt = 702
 	v.flagForm = 704
 	v.flag = 310
+	v.flagDisable = 705
 	
 	v.time = 0
 	v.dt = math.random() * 2 + 5
@@ -47,6 +48,9 @@ function update(me, dt)
 					changeForm(0)
 				end
 				
+				if isFlag(v.flagDisable, 1) then
+					disableInput()
+				end
 			end
 		end
 		
