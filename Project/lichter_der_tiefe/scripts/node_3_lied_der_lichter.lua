@@ -30,9 +30,14 @@ function update(me, dt)
 		v.time = 0
 		v.dt = 4
 		v.step = v.step + 1
-	
+
+		disableInput()
 		setControlHint("Nejl"..nameLine.."Jetzt erinnere ich mich an das Lied, das hat Mama immer gesungen!" ,0,0,0, 4)
+
+		unlearnSong(101)
+		unlearnSong(102)
 		learnSong(v.song)
+
 		setFlag(v.flagLiedDerLichter, 1)
 		setFlag(v.flagSongs, 4)
 		
@@ -55,7 +60,8 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			v.step = v.step + 1
-			
+
+			enableInput()
 			setControlHint("Nejl"..nameLine.."Komm, du kannst das. Bring die Blumen zum leuchten!", 0,0,0, 4)
 		end
 	

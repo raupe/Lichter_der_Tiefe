@@ -22,6 +22,8 @@ function update(me, dt)
 
 	if isFlag(v.flag, 0) and node_isEntityIn( getNode("1_triff_mejais"), v.n) then
 
+		clearControlHint() -- prevent overlapping boxes
+
 		setCutscene(1, 1)
 
 		watch(5)

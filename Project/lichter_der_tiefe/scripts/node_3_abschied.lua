@@ -107,6 +107,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
+			enableInput()
 			setControlHint("Emily"..nameLine.."Ich gehe nach Hause.", 0,0,0, v.dt)
 		end
 	

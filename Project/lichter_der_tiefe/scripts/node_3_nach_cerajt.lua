@@ -169,6 +169,7 @@ function update(me, dt)
 		v.dt = 3
 		setFlag(v.flag, 21)
 		
+		disableInput() -- or stay enabled ?
 		setControlHint("Emily"..nameLine.."Nejl, bist du ok?", 0,0,0, v.dt)
 		
 	elseif isFlag(v.flag, 21) then
@@ -289,7 +290,7 @@ function update(me, dt)
 			setFlag(v.flag, 33)
 			v.time = 0
 			v.dt = 4
-			
+
 			setControlHint("Emily"..nameLine.."Und dafuer brauche ich noch nicht einmal die Kristalle.", 0,0,0, v.dt)
 		end
 		
