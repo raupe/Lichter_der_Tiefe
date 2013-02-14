@@ -23,16 +23,13 @@ end
 -- check trigger
 function update(me, dt)	
 
-
-	if not isFlag(v.los, 5) then
-        setFlag(v.los, 5)
-       	clearControlHint()
-	end
-
-
 	if isFlag(v.flag, 0) and node_isEntityIn( getNode("1_triff_mejais"), v.n) then
 
 		setCutscene(1, 1)
+		if not isFlag(v.los, 5) then
+	        setFlag(v.los, 5)
+	       	clearControlHint()
+		end
 
 		watch(5)
 		disableInput()
