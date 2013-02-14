@@ -46,6 +46,18 @@ end
 -- check
 function update(me, dt)
 
+	-- hit node
+	if isFlag(v.flagUntiefen, 0) and entity_isEntityInRange(me, v.n, v.range) then
+
+		-- entity_doCollisionAvoidance(v.n, dt, 12, 0.5)
+		entity_touchAvatarDamage(me, v.range, 0, 300)
+	end
+	
+	if not isFlag(v.flag, 0) and not isFlag(v.flag, 6) then
+		disableInput()
+	end
+	
+	
 	-- loose focus first time
 	if isFlag(v.flag, 0) then
 		if isFlag(v.flagUntiefen, 1) then
@@ -108,13 +120,6 @@ function update(me, dt)
 			enableInput()
 		end
 	
-	end
-
-	-- hit node
-	if isFlag(v.flagUntiefen, 0) and entity_isEntityInRange(me, v.n, v.range) then
-
-		-- entity_doCollisionAvoidance(v.n, dt, 12, 0.5)
-		entity_touchAvatarDamage(me, v.range, 0, 300)
 	end
 
 end
