@@ -25,7 +25,7 @@ function init(me)
 	entity_scale(me, 3, 3)
 	entity_flipHorizontal(me)
 	
-    entity_setCollideRadius(me, 32)
+    entity_setCollideRadius(me, 256)
     entity_generateCollisionMask(me)
     entity_setDeathParticleEffect(me, "TinyRedExplode")
 	
@@ -62,7 +62,8 @@ function update(me, dt)
 
 	-- get damage
 	if entity_collideSkeletalVsCircle(me, v.n) ~= 0 then
-		entity_touchAvatarDamage(me, 0, 1, 500)
+		--entity_touchAvatarDamage(me, 0, 1, 500)
+		entity_touchAvatarDamage(me, 0, 0, 500)
 	end
 
 	if not v.inNode and node_isEntityIn(v.back, me) then
