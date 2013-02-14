@@ -13,12 +13,22 @@ function init(me)
     v.n = getNaija()
 	v.mejais = getEntity("1_mejais")
 	v.flag = 104
+	
+	v.los = 102
+	
 	v.time = 0
 	v.dt = 0
 end
 
 -- check trigger
 function update(me, dt)	
+
+
+	if not isFlag(v.los, 5) then
+        setFlag(v.los, 5)
+       	clearControlHint()
+	end
+
 
 	if isFlag(v.flag, 0) and node_isEntityIn( getNode("1_triff_mejais"), v.n) then
 
