@@ -22,12 +22,11 @@ function update(me, dt)
 
 	if isFlag(v.flag, 0) and node_isEntityIn( getNode("1_triff_mejais"), v.n) then
 
-		clearControlHint() -- prevent overlapping boxes
-
 		setCutscene(1, 1)
 
 		watch(5)
 		disableInput()
+
 		entity_swimToNode(v.n, me, 4)
 		entity_flipToEntity(v.n, v.mejais)
 		setFlag(v.flag, 1)

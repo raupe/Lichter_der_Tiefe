@@ -14,6 +14,8 @@ function init(me)
 	v.n = getNaija()
 	v.flag = 102
 
+	v.inNode = false
+
 	v.time = 0
 	v.dt = 1
 end
@@ -22,6 +24,8 @@ end
 function update(me, dt)
 
 	if isFlag(v.flag, 0) and node_isEntityIn(me, v.n) then
+
+		v.inNode = true
 
 		v.time = v.time + dt
 		if v.time >= v.dt then
@@ -77,5 +81,14 @@ function update(me, dt)
 			setControlHint("Emily"..nameLine.."Irgendwo muss es wieder nach oben gehen !", 0, 0, 0, v.dt)
 		end
 	end
+
+
+    -- leave node
+    if v.inNode and not node_isEntityIn(me, v.n) then
+        setFlag(v.flag, 5)
+       	clearControlHint()
+        v.inNode = false
+    end
+
 
 end
