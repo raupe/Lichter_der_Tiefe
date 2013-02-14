@@ -10,13 +10,13 @@
     <Node pos="6889 3153" rect="64 64" shape="0" />
 </Path>
 <Path name="form_boese">
-    <Node pos="5747 6901" rect="64 1352" shape="0" />
+    <Node pos="3511 8086" rect="64 1352" shape="0" />
 </Path>
 <Path name="save">
-    <Node pos="5747 6856" rect="64 64" shape="0" />
+    <Node pos="3511 8077" rect="64 64" shape="0" />
 </Path>
 <Path name="7_banter_verwandlung">
-    <Node pos="5692 6926" rect="228 1532" shape="0" />
+    <Node pos="3483 8021" rect="228 1532" shape="0" />
 </Path>
 <Path name="form_gut">
     <Node pos="7860 1455" rect="64 850" shape="0" />
