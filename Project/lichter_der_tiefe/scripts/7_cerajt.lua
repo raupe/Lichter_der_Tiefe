@@ -46,6 +46,14 @@ function update(me, dt)
 
 	if entity_getHealth(me) == 0 then
 
+		-- should be on dieNormal() -> e.g. death animation
+		entity_setFlag(me, 1)
+		setFlag(v.flagDie, 1)
+
+		local nejl = getEntity("3_Nejl")
+		entity_setState(nejl, STATE_FOLLOW)
+		setControlHint("Nejl"..nameLine.."Emily! Du hast mich gerettet!", 0,0,0, 4)
+
 		--dieNormal()
 		return
 	end
