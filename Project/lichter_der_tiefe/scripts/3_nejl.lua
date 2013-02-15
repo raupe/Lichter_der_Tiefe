@@ -234,7 +234,7 @@ function activate(me)
 	elseif not isFlag(801, 1) then 		-- KLang der Ruhe noch nicht gelernt
 		setControlHint("Nejl"..nameLine.."Schwimm vor, ich folge dir.", 0, 0, 0, 2)
 	elseif not isFlag(901, 1) then 		-- KLang der Stroemung noch nicht gelernt
-		setControlHint("Nejl"..nameLine.."Na los. Auf zum nächsten Klang.", 0, 0, 0, 4)
+		setControlHint("Nejl"..nameLine.."Na los. Auf zum naechsten Klang.", 0, 0, 0, 4)
 	elseif not isFlag(1001, 1) then 	-- KLang der Entschlossenheit noch nicht gelernt
 		setControlHint("Nejl"..nameLine.."Wow. Jetzt fehlt uns nur noch ein Klang", 0, 0, 0, 4)
 	elseif not isFlag(1100, 1) then 	-- Lied der Lichter noch nicht gelernt gelernt
