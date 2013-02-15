@@ -170,16 +170,16 @@ function update(me, dt)
 		setFlag(v.flag, 21)
 		
 		disableInput() -- or stay enabled ?
-		setControlHint("Emily"..nameLine.."Nejl, bist du ok?", 0,0,0, v.dt)
+		setControlHint("Nejl"..nameLine.."Emily, was war das?", 0,0,0, v.dt)
 		
 	elseif isFlag(v.flag, 21) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			setFlag(v.flag, 22)
 			v.time = 0
-			v.dt = 3
+			v.dt = 4
 			
-			setControlHint("Nejl"..nameLine.."Mir gehts gut. Was ist passiert?", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Ich brauche nicht mehr die Kristalle um mich zu verwandeln!", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 22) then
@@ -189,7 +189,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ich weiss es nicht. Ich hatte die Verwandlung nicht mehr unter Kontrolle.", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Jetzt kann mich nichts mehr aufhalten!", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 23) then
@@ -199,17 +199,27 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Nejl"..nameLine.."Du warst zu lange der Kraft der Kristalle ausgesetzt.", 0,0,0, v.dt)
+			setControlHint("Nejl"..nameLine.."Du warst zu lange der Kraft der Kristalle ausgesetzt!", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 24) then
+		v.time = v.time + dt
+		if v.time >= v.dt then
+			setFlag(v.flag, 30)
+			v.time = 0
+			v.dt = 4
+			
+			setControlHint("Emily"..nameLine.."Was? Das ist doch ein gutes Gefuehl!", 0,0,0, v.dt)
+		end
+		
+	elseif isFlag(v.flag, 30) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
 			setFlag(v.flag, 25)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Nejl, schnell - schwimm fort. Wenn ich mich wieder verwand- ... ", 0,0,0, v.dt)
+			setControlHint("Nejl"..nameLine.."Du machst mir Angst. Du hast dich veraendert.\nIch gehe.", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 25) then
@@ -232,7 +242,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Nejl ist in Sicherheit.", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Wo willst du denn hin? Jetzt kann ich fuer immer bei dir bleiben.", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 27) then
@@ -242,7 +252,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Vielleicht finde ich noch einen Weg nach Hause ...", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Ich gehe nie wieder nach Hause.", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 28) then
@@ -252,47 +262,17 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Aber was soll ich da schon?", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Ich werde mir keine Ausreden anhören, warum mich mein Vater verlassen hat!", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 29) then
 		v.time = v.time + dt
 		if v.time >= v.dt then
-			setFlag(v.flag, 30)
-			v.time = 0
-			v.dt = 4
-			
-			setControlHint("Emily"..nameLine.."Mir Ausreden anhoeren, warum mein Vater mich verlassen hat?", 0,0,0, v.dt)
-		end
-		
-	elseif isFlag(v.flag, 30) then
-		v.time = v.time + dt
-		if v.time >= v.dt then
-			setFlag(v.flag, 31)
-			v.time = 0
-			v.dt = 4
-			
-			setControlHint("Emily"..nameLine.."Nein! Ich bleibe hier!", 0,0,0, v.dt)
-		end
-		
-	elseif isFlag(v.flag, 31) then
-		v.time = v.time + dt
-		if v.time >= v.dt then
-			setFlag(v.flag, 32)
-			v.time = 0
-			v.dt = 4
-			
-			setControlHint("Emily"..nameLine.."Hier kann ich machen was ich will! Hier habe ich MACHT!", 0,0,0, v.dt)
-		end
-		
-	elseif isFlag(v.flag, 32) then
-		v.time = v.time + dt
-		if v.time >= v.dt then
 			setFlag(v.flag, 33)
 			v.time = 0
 			v.dt = 4
-
-			setControlHint("Emily"..nameLine.."Und dafuer brauche ich noch nicht einmal die Kristalle.", 0,0,0, v.dt)
+			
+			setControlHint("Emily"..nameLine.."Hier kann ich machen was ich will!", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 33) then
