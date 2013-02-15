@@ -262,7 +262,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ich werde mir keine Ausreden anhören, warum mich mein Vater verlassen hat!", 0,0,0, v.dt)
+			setControlHint("Emily"..nameLine.."Ich werde mir keine Ausreden anhoeren, warum mich mein Vater verlassen hat!", 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 29) then
