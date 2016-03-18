@@ -17,7 +17,7 @@ end
 function init(me)
 
     v.n = getNaija()
-    centerText("Palast der Sphinx")
+    centerText(DATA_TEXTS.sphinx_palace_name)
     -- v.flag = 600
 
     --debug:

@@ -2,11 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
-
 
 -- on creation
 function init(me)
@@ -29,7 +24,7 @@ function update(me, dt)
 			v.dt = 5
 			v.time = 0
 			setFlag(v.flag, 1)
-			setControlHint("Emily"..nameLine.."Was ist das hier? Wie komme ich hierher?", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.inwater_1, 0, 0, 0, v.dt)
 		end
 
 	elseif isFlag(v.flag, 1) then
@@ -40,7 +35,7 @@ function update(me, dt)
 			v.dt = 5
 			v.time = 0
 			setFlag(v.flag, 2)
-			setControlHint("Emily"..nameLine.."Es fuehlt sich so seltsam vertraut an, aber irgendwas ist anders.", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.inwater_2, 0, 0, 0, v.dt)
 		end
 
 
@@ -52,7 +47,7 @@ function update(me, dt)
 			v.dt = 4
 			v.time = 0
 			setFlag(v.flag, 3)
-			setControlHint("Emily"..nameLine.."Ich schwimme, ich bin unter Wasser! Aber ich kann atmen und reden.", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.inwater_3, 0, 0, 0, v.dt)
 		end
 
 	elseif isFlag(v.flag, 3) then
@@ -63,7 +58,7 @@ function update(me, dt)
 			v.dt = 5
 			v.time = 0
 			setFlag(v.flag, 4)
-			setControlHint("Emily"..nameLine.."Vorhin muss ich wohl vom Steg gefallen sein.", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.inwater_4, 0, 0, 0, v.dt)
 		end
 
 	elseif isFlag(v.flag, 4) then
@@ -74,7 +69,7 @@ function update(me, dt)
 			v.dt = 4
 			v.time = 0
 			setFlag(v.flag, 5)
-			setControlHint("Emily"..nameLine.."Irgendwo muss es wieder nach oben gehen !", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.inwater_5, 0, 0, 0, v.dt)
 		end
 	end
 

@@ -17,7 +17,7 @@ function init(me)
     setCostume("emily")
     
     if getFlag(v.flagSchacht) == 1 then
-	    centerText("Riff der Erleuchtung")
+	    centerText(DATA_TEXTS.reef_enlightenment_name)
 	end
 
     if getFlag(v.flag) == 1 then

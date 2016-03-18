@@ -2,12 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
-
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
-
 -- on creation
 function init(me)
 
@@ -39,7 +33,7 @@ function update(me, dt)
 			
 			disableInput()
 			entity_setState(v.mejais, STATE_WAIT)
-			setControlHint("Mejais"..nameLine.."Emily!", 0,0,0, 3)
+			setControlHint(DATA_TEXTS.mejais_lied_1, 0,0,0, 3)
 			entity_swimToPosition(v.mejais, entity_getPosition(v.n))
 		end
 	
@@ -50,7 +44,7 @@ function update(me, dt)
 			v.dt = 4
 			
 			entity_swimToPosition(v.mejais, entity_getPosition(v.mejais))
-			setControlHint("Emily"..nameLine.."Nejl und ich haben das Lied der Lichter gelernt.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_lied_2, 0,0,0, v.dt)
 		end
 
 	
@@ -61,7 +55,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Gut! Nun wird es dir moeglich sein durch den Schacht zurueck in deine Welt zu kommen.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_lied_3, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 4) then
@@ -71,7 +65,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Bevor du gehst, bitte tu mir noch einen Gefallen.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_lied_4, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 5) then
@@ -81,7 +75,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Sag Nejl, dass ich ihn liebe und ueber ihn wachen werde.", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_lied_5, 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 6) then
@@ -91,7 +85,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Emily"..nameLine.."Natuerlich.", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_lied_6, 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 7) then
@@ -101,7 +95,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Aber beeile dich! Die Blumen haben bereits angefangen zu welken.", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_lied_7, 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 8) then
@@ -111,7 +105,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Wenn du zu lange brauchst werden sie dir nicht mehr den Weg nach oben leuchten koennen!", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_lied_8, 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 9) then
@@ -121,7 +115,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Dann sollte ich wohl lieber keine Zeit verlieren!", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_lied_9, 0, 0, 0, v.dt)
 			setFlag(v.flagUntiefen, 1)
 			enableInput()
 			entity_setState(v.mejais, STATE_IDLE)

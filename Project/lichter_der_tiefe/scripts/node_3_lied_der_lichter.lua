@@ -2,10 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -32,7 +28,7 @@ function update(me, dt)
 		v.step = v.step + 1
 
 		disableInput()
-		setControlHint("Nejl"..nameLine.."Jetzt erinnere ich mich an das Lied, das hat Mama immer gesungen!" ,0,0,0, 4)
+		setControlHint(DATA_TEXTS.lichter_lied_1 ,0,0,0, 4)
 
 		unlearnSong(101)
 		unlearnSong(102)
@@ -51,7 +47,7 @@ function update(me, dt)
 			v.dt = 4
 			v.step = v.step + 1
 			
-			setControlHint("Nejl"..nameLine.."Wir muessen nur die Anfangstoene der Klaenge aneinander reihen.", 0,0,0, 4)
+			setControlHint(DATA_TEXTS.lichter_lied_2, 0,0,0, 4)
 		end
 	
 	elseif v.step == 3 then
@@ -62,7 +58,7 @@ function update(me, dt)
 			v.step = v.step + 1
 
 			enableInput()
-			setControlHint("Nejl"..nameLine.."Komm, du kannst das. Bring die Blumen zum leuchten!", 0,0,0, 4)
+			setControlHint(DATA_TEXTS.lichter_lied_3, 0,0,0, 4)
 		end
 	
 	end

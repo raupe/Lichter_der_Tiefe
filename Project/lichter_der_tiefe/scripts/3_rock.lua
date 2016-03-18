@@ -2,10 +2,6 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- entity: rock, changing texture etc.
 function init(me)
 	
@@ -65,7 +61,7 @@ function update(me, dt)
 			v.time = 0
 			
 			disableInput()
-			setControlHint("Emily"..nameLine.."Wo ist nur Nejl...", 0, 0, 0, 4 )
+			setControlHint(DATA_TEXTS.rock_diag_1, 0, 0, 0, 4 )
 			
 			setCameraLerpDelay(3)
 			cam_toEntity(me)
@@ -87,7 +83,7 @@ function update(me, dt)
 			v.time = 0
 			v.duration = 3
 			
-			setControlHint("Emily"..nameLine.."Oh nein, Nejl!", 0,0,0, 3)
+			setControlHint(DATA_TEXTS.rock_diag_2, 0,0,0, 3)
 		end
 		
 	elseif isFlag(v.flag, 3) then
@@ -97,7 +93,7 @@ function update(me, dt)
 			v.time = 0
 			v.duration = 6
 
-			setControlHint("Emily"..nameLine.."Wenn ich da jetzt runter schwimme, schaffe ich es wahrscheinlich nicht mehr rechtzeitig zurueck!", 0,0,0, 6)
+			setControlHint(DATA_TEXTS.rock_diag_3, 0,0,0, 6)
 			setCameraLerpDelay(0)
 		end
 		
@@ -108,7 +104,7 @@ function update(me, dt)
 			v.time = 0
 			v.duration = 6
 			
-			setControlHint("Emily"..nameLine.."Aber ich kann Nejl auch nich allein zurueck lassen!", 0,0,0, 6)
+			setControlHint(DATA_TEXTS.rock_diag_4, 0,0,0, 6)
 		end
 	
 	elseif isFlag(v.flag, 5) then
@@ -116,7 +112,7 @@ function update(me, dt)
 		if v.time >= v.duration then
 			setFlag(v.flag, 6)
 			
-			setControlHint("Emily"..nameLine.."Was mache ich nur?", 0,0,0, 3)
+			setControlHint(DATA_TEXTS.rock_diag_5, 0,0,0, 3)
 			enableInput()
 		end
 	

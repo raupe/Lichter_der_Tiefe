@@ -2,10 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -30,7 +26,7 @@ function update(me, dt)
 				v.step = 1
 				disableInput()
 				entity_swimToPosition(v.n, entity_getPosition(v.n))
-				setControlHint("Nejl"..nameLine.."Willst du wirklich da lang? Warte, ich komme mit.", 0,0,0, 5)
+				setControlHint(DATA_TEXTS.weg_schlect_1, 0,0,0, 5)
 				entity_swimToPosition(v.nejl, node_getPathPosition(me, 1))
 			end
 		end

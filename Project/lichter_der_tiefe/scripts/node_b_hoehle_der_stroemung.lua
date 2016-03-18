@@ -9,7 +9,7 @@ function init(me)
 	v.n = getNaija()
 	v.flag = 900
 
-	centerText("Hoehle der Stroemung")
+	centerText(DATA_TEXTS.current_cave_name)
 
 end
 

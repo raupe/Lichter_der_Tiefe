@@ -104,6 +104,9 @@ function init()
 	setFlag(1100, 0)
 	setFlag(1200, 0)
 	
+	--Daxar: HACK Load our li script
+	setFlag(1000, 100)
+	
 	loadMap("0_hafen")
 	
 	--debug:

@@ -9,7 +9,7 @@ function init(me)
     v.n = getNaija()
     v.flag = 200
 
-    centerText("Heimische Gewaesser")
+    centerText(DATA_TEXTS.home_waters_name)
 end
 
 -- check

@@ -3,18 +3,18 @@ function castSong(songIdx)
 
 	if songIdx == 101 then
 
-		setControlHint("\nKlang der Ruhe", 0, 0, 0, 2)
+		setControlHint(DATA_TEXTS.silence_song_name, 0, 0, 0, 2)
 
 	elseif songIdx == 102 then
 
-		setControlHint("\nKlang der Stroemung", 0, 0, 0, 2)
+		setControlHint(DATA_TEXTS.currents_song_name, 0, 0, 0, 2)
 
 	elseif songIdx == 103 then
 
         local n = getNaija()
         local pX,pY = entity_getScale(n)
 
-		-- setControlHint("\nKlang der Entschlossenheit", 0, 0, 0, 3)
+		-- setControlHint("\nSong of Enlightenment", 0, 0, 0, 3)
         entity_scale(n, 1, 1, 2)
 
         watch(2)
@@ -22,7 +22,7 @@ function castSong(songIdx)
 
 	elseif songIdx == 104 then
 
-		setControlHint("\nLied der Lichter", 0, 0, 0, 2)
+		setControlHint(DATA_TEXTS.light_song_name, 0, 0, 0, 2)
 	end
 
 end

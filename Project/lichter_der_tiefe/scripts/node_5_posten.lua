@@ -33,7 +33,7 @@ function update(me, dt)
             setCameraLerpDelay(2)
             cam_toEntity(v.n)
             setFlag(v.flag, 0)
-            --setControlHint("Emily:\n \nEr bewegt sich so schnell. Wenn er doch nur zur Ruhe kommen koennte...", 0, 0, 0, 5)
+            --setControlHint("Emily:\n \nHe moves so quickly. If he only stopped to rest...", 0, 0, 0, 5)
         end
 
 		return

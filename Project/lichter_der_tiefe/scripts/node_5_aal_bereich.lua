@@ -2,10 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -31,7 +27,7 @@ function update(me, dt)
 				entity_setState(v.nejl, STATE_WAIT)
 				
 				if getFlag(v.flagNejl) ~= 1 then
-					setControlHint("Nejl"..nameLine.."Emily, sei vorsichtig!", 0,0,0, 3)
+					setControlHint(DATA_TEXTS.aal_bereich_1, 0,0,0, 3)
 					setFlag(v.flagNejl, 1)
 				end
 			end

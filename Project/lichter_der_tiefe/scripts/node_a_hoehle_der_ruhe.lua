@@ -2,10 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -14,7 +10,7 @@ function init(me)
 	v.flag = 800
 	v.flagWake = 803
 
-	centerText("Hoehle der Ruhe")
+	centerText(DATA_TEXTS.silence_cave_name)
 	
 	-- debug:
 	-- setFlag(303, 1)
@@ -54,7 +50,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Nejl, wach auf!", 0, 0, 0, 4)
+			setControlHint(DATA_TEXTS.silence_cave_1, 0, 0, 0, 4)
 		end
 		
 	elseif v.step == 2 then
@@ -65,7 +61,7 @@ function update(me, dt)
 			v.dt = 4
 			
 			entity_setState(v.nejl, STATE_FOLLOW)
-			setControlHint("Nejl"..nameLine.."Oh, der Klang hat mich eingeschlaefert. Das passiert mir nicht nochmal!", 0, 0, 0, 4)
+			setControlHint(DATA_TEXTS.silence_cave_2, 0, 0, 0, 4)
 			enableInput()
 		end
 	end
