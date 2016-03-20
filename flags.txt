@@ -1,6 +1,9 @@
 # Flags
 
-Folgende Flags wurden in den Scripten verwendet um den Zustand von Ereignissen z.b. dem Fortschritt der Handlung zu beschreiben. Die original Dokumentation ist hier verfügbar: https://docs.google.com/a/rau.pe/document/d/1YPNRuXiz-8NVE0mOsIPrdU3_N-uWduXAjrujhIpbJLg/edit
+Folgende Flags wurden in den Scripten verwendet um den Zustand von Ereignissen z.b. dem Fortschritt
+der Handlung zu beschreiben. Die original Dokumentation ist hier verfügbar:
+
+> https://docs.google.com/a/rau.pe/document/d/1YPNRuXiz-8NVE0mOsIPrdU3_N-uWduXAjrujhIpbJLg/edit
 
 
 ID    Entity/Node/Intro/Banter/Values
@@ -215,7 +218,7 @@ _____________________________________________________________________
         1 - zugang frei
         2 - betreten
 
-702    
+702
         0 - default
         1 - cerajt besiegt
 
