@@ -1,4 +1,3 @@
-Lichter der Tiefe
-=================
+# Lichter der Tiefe
 
-Eine Aquaria Mod mit Heldenreise
+Eine Aquaria Mod zum Thema `Heldenreise`.
