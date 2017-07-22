@@ -2,10 +2,6 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 function init(me)
 
     setupEntity(me)
@@ -42,7 +38,7 @@ function update(me, dt)
             v.step = 2
             v.duration = 8
             v.time = 0
-			setControlHint("\nSchau im Menue nach, welche Toene du fuer den Klang brauchst.\nDann nutze die rechte Maustaste um zu singen.", 0, 0, 0, 8)
+			setControlHint(DATA_TEXTS.lichterqualle_sing_instr, 0, 0, 0, 8)
         end
     elseif v.step == 2 then
         v.time = v.time + dt
@@ -90,7 +86,7 @@ function activate(me)
 	
 	    learnSong(102)
 	    setFlag(v.songs, getFlag(v.songs)+1 )
-	    setControlHint("Lichterqualle"..nameLine.."Ich bringe dir hiermit den \"Klang der Stroemung\" bei. Moeges du immer einen Weg finden...", 0, 0, 0, v.duration)
+	    setControlHint(DATA_TEXTS.lichterqualle_b_01, 0, 0, 0, v.duration)
 	
 	    local perc = entity_getHealthPerc(v.n)
 	    if perc ~= 1 then
@@ -106,7 +102,7 @@ function activate(me)
 	    	v.step = 1
 	    end
 	else
-		setControlHint("Lichterqualle"..nameLine.."Mehr kann ich dir nicht beibringen.", 0,0,0, 4)	
+		setControlHint(DATA_TEXTS.lichterqualle_b_02, 0,0,0, 4)	
 	end
 
 end

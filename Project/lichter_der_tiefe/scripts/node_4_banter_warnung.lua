@@ -2,10 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -24,7 +20,7 @@ function update(me, dt)
 
 		setFlag(v.flag, 1)
 
-		setControlHint("Nejl"..nameLine.."O nein, die Energiekristalle... Komm, hier endet ihre Macht wieder.", 0, 0, 0, 5 )
+		setControlHint(DATA_TEXTS.banter_warnung_1, 0, 0, 0, 5 )
 		
 		local weg = getNode("4_weg_gut")
 		local nejl = getEntity("3_nejl")

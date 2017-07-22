@@ -2,10 +2,6 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 function init(me)
 
     setupEntity(me)
@@ -40,7 +36,7 @@ function update(me, dt)
 		v.time = 0
 		v.dt = 4
 	
-		setControlHint("Lichterqualle"..nameLine.."Wie du willst, ich bringe dir den \"Klang der Ruhe\" bei.\nAuf das du immer wachsam bleibst...", 0, 0, 0, 3)
+		setControlHint(DATA_TEXTS.lichterqualle_a_01, 0, 0, 0, 3)
 		
 		
 		if isFlag(v.songB, 1) and isFlag(v.songC, 1) then
@@ -58,10 +54,10 @@ function update(me, dt)
 			v.dt = 4
 			
 			if isFlag(v.songB, 1) or isFlag(v.songC, 1) then
-				setControlHint("Nejl"..nameLine.."Toll, du hast de naechsten Klang gelernt. Probier ihn doch gleich mal aus.", 0, 0, 0, 4)
+				setControlHint(DATA_TEXTS.lichterqualle_a_02, 0, 0, 0, 4)
 				v.step = 5
 			else
-				setControlHint("Nejl"..nameLine.."Toll, du hast de ersten Klang gelernt. Probier ihn doch gleich mal aus.", 0, 0, 0, 4)
+				setControlHint(DATA_TEXTS.lichterqualle_a_03, 0, 0, 0, 4)
 				v.step = 3
 			end
 		end
@@ -72,7 +68,7 @@ function update(me, dt)
 			v.step = v.step + 1
 			v.time = 0
 			v.dt = 8
-			setControlHint("\nSchau im Menue nach, welche Toene du fuer den Klang brauchst.\nDann nutze die rechte Maustaste um zu singen.", 0, 0, 0, 8)
+			setControlHint(DATA_TEXTS.lichterqualle_sing_instr, 0, 0, 0, 8)
 		end
 	
 	elseif v.step == 4 then
@@ -143,6 +139,6 @@ function activate(me)
 		v.step = 1
 		disableInput()
 	else	
-		setControlHint("Lichterqualle"..nameLine.."Ich habe dich alles gelehrt, was ich weiss.", 0, 0, 0, 3)
+		setControlHint(DATA_TEXTS.lichterqualle_a_04, 0, 0, 0, 3)
 	end
 end

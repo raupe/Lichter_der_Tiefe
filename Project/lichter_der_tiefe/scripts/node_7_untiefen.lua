@@ -20,7 +20,7 @@ function init(me)
     v.n = getNaija()
     v.flag = 701
 
-    centerText("Untiefen")
+    centerText(DATA_TEXTS.shallows_name)
     setFlag(v.flag, 2)
 end
 

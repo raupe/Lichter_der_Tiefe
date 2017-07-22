@@ -2,11 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
-
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -55,7 +50,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Vater, bist du es?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_1, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 2) then
@@ -65,7 +60,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Vater"..nameLine.."Ja, Emily, mein Kind!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_2, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 3) then
@@ -75,7 +70,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Vater"..nameLine.."Emily, ich musste dich verlassen, ich ...", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_3, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 4) then
@@ -85,7 +80,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Schon gut, ich weiss warum du es getan hast ...", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_4, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 5) then
@@ -105,7 +100,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Emily"..nameLine.."Du wolltest dein eigenes Leben fuehren.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_5, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 7) then
@@ -115,7 +110,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 2
 			
-			setControlHint("Vater"..nameLine.."Aber Emily ...", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_6, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 8) then
@@ -125,7 +120,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 2
 			
-			setControlHint("Emily"..nameLine.."Ich verstehe das.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_7, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 9) then
@@ -135,7 +130,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Emily"..nameLine.."Auch ich fuehre mein eigenes Leben ...", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_8, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 10) then
@@ -145,7 +140,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."... und das werde ich weiterhin tun. Leb' wohl.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_9, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 11) then
@@ -202,7 +197,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Vater, bist du es?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_1, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 21) then
@@ -212,7 +207,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Vater"..nameLine.."Ja, Emily, mein Kind!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_2, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 22) then
@@ -222,7 +217,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Vater"..nameLine.."Emily, ich musste dich verlassen, ich ...", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_3, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 23) then
@@ -232,7 +227,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Du hattest deine Gruende richtig?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_10, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 24) then
@@ -252,7 +247,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ich kann das verstehen. Ich musste auch jemanden verlassen ... ", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_11, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 26) then
@@ -262,7 +257,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Vater"..nameLine.."Wir haben uns eine Menge zu erzaehlen.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.father_diag_12, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 27) then

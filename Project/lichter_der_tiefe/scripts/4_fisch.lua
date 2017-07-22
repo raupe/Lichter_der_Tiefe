@@ -9,11 +9,6 @@ if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
 v.dir = 0
 
-
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- ================================================================================================
 -- FUNCTIONS
 -- ================================================================================================
@@ -123,17 +118,17 @@ function dieNormal(me)
 
 		if getFlag(v.kills) == 2 then
 
-			setControlHint( "Nejl"..nameLine.."Bitte hoere damit auf, du tust ihnen weh!", 0, 0, 0, 3)
+			setControlHint(DATA_TEXTS.fish_diag_1, 0, 0, 0, 3)
 
 		elseif getFlag(v.kills) == 4 then
 
-			setControlHint( "Nejl"..nameLine.."Komm schon, lass das sein!", 0, 0, 0, 3)
+			setControlHint(DATA_TEXTS.fish_diag_2, 0, 0, 0, 3)
 
 		elseif getFlag(v.kills) == 6 then
 
 			setFlag(v.flag, 1)
 			setFlag(v.path, getFlag(v.path)-1 )
-			setControlHint( "Nejl"..nameLine.."Ich verstehe nicht wieso du das getan hast...", 0, 0, 0, 3)
+			setControlHint(DATA_TEXTS.fish_diag_3, 0, 0, 0, 3)
 		end
 	end
 

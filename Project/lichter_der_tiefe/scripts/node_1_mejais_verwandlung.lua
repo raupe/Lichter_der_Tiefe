@@ -2,10 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -48,7 +44,7 @@ function update(me, dt)
 			setCutscene(1,1)
 			
 			entity_setState(v.mejais, STATE_WAIT)
-			setControlHint("Mejais"..nameLine.."Emily?", 0,0,0, 3)
+			setControlHint(DATA_TEXTS.mejais_verwandlung_1, 0,0,0, 3)
 			entity_swimToPosition(v.mejais, entity_getPosition(v.n))
 		end
 	
@@ -59,7 +55,7 @@ function update(me, dt)
 			v.dt = 4
 			
 			entity_swimToPosition(v.mejais, entity_getPosition(v.mejais))
-			setControlHint("Emily"..nameLine.."Die Verwandlungen - ich kann sie nicht mehr aufhalten.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_verwandlung_2, 0,0,0, v.dt)
 		end
 
 	
@@ -70,7 +66,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Du warst zu lange der Macht der Kristalle ausgesetzt.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_verwandlung_3, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 4) then
@@ -80,7 +76,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ich habe Angst! Ich koennte Nejl verletzen!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_verwandlung_4, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 5) then
@@ -90,7 +86,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Du musst zurueck in deine Welt.", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_verwandlung_5, 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 6) then
@@ -100,7 +96,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Emily"..nameLine.."Dann waere Nejl ausser Gefahr!", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_verwandlung_6, 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 7) then
@@ -110,7 +106,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Aber die Blumen sind verwelkt, wie soll ich hier weg kommen?", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_verwandlung_7, 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 8) then
@@ -120,7 +116,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Mejais"..nameLine.."Ich kann dir eine letzte Chance geben.", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_verwandlung_8, 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 9) then
@@ -130,7 +126,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Ich werde ins Jenseits uebergehen. Ich geben meine letzte Kraft in die Blumen.", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_verwandlung_9, 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 10) then
@@ -140,7 +136,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Mejais"..nameLine.."Dann werden sie noch einmal aufleben. Komm!", 0, 0, 0, v.dt)
+			setControlHint(DATA_TEXTS.mejais_verwandlung_10, 0, 0, 0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 11) then

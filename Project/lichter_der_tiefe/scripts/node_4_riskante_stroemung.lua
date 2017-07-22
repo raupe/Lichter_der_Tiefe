@@ -21,7 +21,7 @@ function init(me)
 	v.n = getNaija()
 	v.flag = 400
 
-	centerText("Riskante Stroemung")
+	centerText(DATA_TEXTS.dangerous_currents_name)
 end
 
 -- check trigger

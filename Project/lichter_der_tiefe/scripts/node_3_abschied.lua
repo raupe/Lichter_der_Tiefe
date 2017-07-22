@@ -2,10 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -28,7 +24,7 @@ function update(me, dt)
 		setFlag(v.flag, 2)
 	
 		disableInput()
-		setControlHint("Nejl"..nameLine.."Emily, warte!", 0,0,0, 3)
+		setControlHint(DATA_TEXTS.abschied_1, 0,0,0, 3)
 		entity_swimToPosition(v.nejl, entity_getPosition(v.n))
 	
 	elseif isFlag(v.flag, 2) then
@@ -38,7 +34,7 @@ function update(me, dt)
 			v.dt = 4
 	
 			entity_swimToPosition(v.nejl, entity_getPosition(v.nejl))
-			setControlHint("Nejl"..nameLine.."Wo willst du hin? Gehst du wieder nach Hause?", 0,0,0, 4)
+			setControlHint(DATA_TEXTS.abschied_2, 0,0,0, 4)
 		end
 	
 	elseif isFlag(v.flag, 3) then
@@ -48,7 +44,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Emily"..nameLine.."Ich kann nicht bei dir bleiben, ich muss gehen ...", 0,0,0, 3)
+			setControlHint(DATA_TEXTS.abschied_3, 0,0,0, 3)
 		end
 	
 	elseif isFlag(v.flag, 4) then
@@ -58,7 +54,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Nejl"..nameLine.."Nagut, ich werd dich vermissen.", 0,0,0, 4)
+			setControlHint(DATA_TEXTS.abschied_4, 0,0,0, 4)
 		end
 	
 	elseif isFlag(v.flag, 5) then
@@ -68,7 +64,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Wir sehen uns wieder, bestimmt.", 0,0,0, 4)
+			setControlHint(DATA_TEXTS.abschied_5, 0,0,0, 4)
 		end
 	
 	elseif isFlag(v.flag, 6) then
@@ -88,7 +84,7 @@ function update(me, dt)
 		v.dt = 3
 		
 		disableInput()
-		setControlHint("Nejl"..nameLine.."Ja, du kannst es.", 0,0,0, v.dt)
+		setControlHint(DATA_TEXTS.abschied_6, 0,0,0, v.dt)
 	
 	elseif isFlag(v.flag, 9) then
 		v.time = v.time + dt
@@ -97,7 +93,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl"..nameLine.."Was wirst du jetzt tun?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.abschied_7, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 10) then
@@ -108,7 +104,7 @@ function update(me, dt)
 			v.dt = 3
 			
 			enableInput()
-			setControlHint("Emily"..nameLine.."Ich gehe nach Hause.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.abschied_8, 0,0,0, v.dt)
 		end
 	
 	end

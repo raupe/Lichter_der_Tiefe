@@ -2,10 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -22,7 +18,7 @@ function update(me, dt)
 
 		setFlag( v.flag, 1 )
 
-		setControlHint("Nejl"..nameLine.."Die Stroemung ist wieder launisch, hier gehts wohl gerade nicht weiter...", 0, 0, 0, 4)
+		setControlHint(DATA_TEXTS.banter_currents_2, 0, 0, 0, 4)
 	end
 end
 

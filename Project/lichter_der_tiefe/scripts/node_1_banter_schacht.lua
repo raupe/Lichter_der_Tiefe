@@ -2,12 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
-
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
-
 -- on creation
 function init(me)
 
@@ -39,7 +33,7 @@ function update(me, dt)
 		v.time = 0
 		if getFlag(v.flag) ~= 1 then
 			setFlag(v.flag, 1)
-	    	centerText("Riff der Erleuchtung")
+	    	centerText(DATA_TEXTS.reef_enlightenment_name)
 		end
 	end
 
@@ -47,7 +41,7 @@ function update(me, dt)
 		v.time = v.time + dt
 
 		if v.time >= 3 and getFlag(v.flagLichtblume) ~= 1 then
-			setControlHint("Emily"..nameLine.."Nein, hier komme ich nicht durch. Ich sehe ja gar nichts.", 0, 0, 0, 4)
+			setControlHint(DATA_TEXTS.reef_toodark_1, 0, 0, 0, 4)
 			v.time = 0
 			setFlag(v.flag, 0)
 		end

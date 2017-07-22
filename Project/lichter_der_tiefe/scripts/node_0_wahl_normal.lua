@@ -44,9 +44,9 @@ function update(me, dt)
 
             setFlag(v.intro, 1)
 
-            centerText("Hafen von Winumsund")
+            centerText(DATA_TEXTS.port_name)
 
-            setControlHint("\nSchwierigkeit: Normal", 0,0,0, 5)
+            setControlHint(DATA_TEXTS.difficulty_normal, 0,0,0, 5)
         end
     end
 end

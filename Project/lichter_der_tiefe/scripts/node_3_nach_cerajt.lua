@@ -2,10 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -51,7 +47,7 @@ function update(me, dt)
 		v.dt = 3
 		setFlag(v.flag, 2)
 		
-		setControlHint("Emily"..nameLine.."Nejl? Bist du ok?", 0,0,0, v.dt)
+		setControlHint(DATA_TEXTS.nach_cerajit_1, 0,0,0, v.dt)
 	
 	elseif isFlag(v.flag, 2) then
 		v.time = v.time + dt
@@ -60,7 +56,7 @@ function update(me, dt)
 			v.dt = 3
 			setFlag(v.flag, 3)
 			
-			setControlHint("Nejl"..nameLine.."Mir geht es gut. Was war das?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_2, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 3) then
@@ -70,7 +66,7 @@ function update(me, dt)
 			v.dt = 5
 			setFlag(v.flag, 4)
 			
-			setControlHint("Emily"..nameLine.."Ich weiss es nicht. Ich konnte die Verwandlung nicht mehr kontrollieren!", 0,0,0, 4)
+			setControlHint(DATA_TEXTS.nach_cerajit_3, 0,0,0, 4)
 		end
 	
 	elseif isFlag(v.flag, 4) then
@@ -80,7 +76,7 @@ function update(me, dt)
 			v.dt = 3
 			setFlag(v.flag, 5)
 			
-			setControlHint("Nejl"..nameLine.."Was willst du jetzt machen?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_4, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 5) then
@@ -90,7 +86,7 @@ function update(me, dt)
 			v.dt = 4
 			setFlag(v.flag, 6)
 			
-			setControlHint("Emily"..nameLine.."Ich muss hier weg, sonst bist du in staendiger Gefahr.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_5, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 6) then
@@ -100,7 +96,7 @@ function update(me, dt)
 			v.dt = 4
 			setFlag(v.flag, 7)
 			
-			setControlHint("Nejl"..nameLine.."Wo willst du hin? - Die Blumen sind verwelkt.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_6, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 7) then
@@ -110,7 +106,7 @@ function update(me, dt)
 			v.dt = 3
 			setFlag(v.flag, 8)
 			
-			setControlHint("Emily"..nameLine.."Ich finde schon einen Weg.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_7, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 8) then
@@ -120,7 +116,7 @@ function update(me, dt)
 			v.dt = 3
 			setFlag(v.flag, 9)
 			
-			setControlHint("Emily"..nameLine.."Hier, nimm das - als Erinnerung.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_8, 0,0,0, v.dt)
 		end
 	
 	elseif isFlag(v.flag, 9) then
@@ -150,7 +146,7 @@ function update(me, dt)
 			v.dt = 4
 			setFlag(v.flag, 12)
 			
-			setControlHint("Emily"..nameLine.."Pass auf dich auf!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_9, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 12) then
@@ -170,7 +166,7 @@ function update(me, dt)
 		setFlag(v.flag, 21)
 		
 		disableInput() -- or stay enabled ?
-		setControlHint("Nejl"..nameLine.."Emily, was war das?", 0,0,0, v.dt)
+		setControlHint(DATA_TEXTS.nach_cerajit_10, 0,0,0, v.dt)
 		
 	elseif isFlag(v.flag, 21) then
 		v.time = v.time + dt
@@ -179,7 +175,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ich brauche nicht mehr die Kristalle um mich zu verwandeln!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_11, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 22) then
@@ -189,7 +185,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Jetzt kann mich nichts mehr aufhalten!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_12, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 23) then
@@ -199,7 +195,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Nejl"..nameLine.."Du warst zu lange der Kraft der Kristalle ausgesetzt!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_13, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 24) then
@@ -209,7 +205,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Was? Das ist doch ein gutes Gefuehl!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_14, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 30) then
@@ -219,7 +215,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Nejl"..nameLine.."Du machst mir Angst. Du hast dich veraendert.\nIch gehe.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_15, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 25) then
@@ -242,7 +238,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Wo willst du denn hin? Jetzt kann ich fuer immer bei dir bleiben.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_16, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 27) then
@@ -252,7 +248,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ich gehe nie wieder nach Hause.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_17, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 28) then
@@ -262,7 +258,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ich werde mir keine Ausreden anhoeren, warum mich mein Vater verlassen hat!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_18, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 29) then
@@ -272,7 +268,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Hier kann ich machen was ich will!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nach_cerajit_19, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 33) then
@@ -358,7 +354,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Fremder"..nameLine.."Fraeulein? ... Fraeulein?", 0,0,0, 3)
+			setControlHint(DATA_TEXTS.nach_cerajit_20, 0,0,0, 3)
 		end
 		
 	elseif isFlag(v.flag, 41) then

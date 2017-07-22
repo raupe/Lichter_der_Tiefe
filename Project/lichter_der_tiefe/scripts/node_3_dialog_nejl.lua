@@ -2,10 +2,6 @@
 if not v then v = {} end
 -- if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 -- on creation
 function init(me)
 
@@ -35,7 +31,7 @@ function update(me, dt)
 			disableInput()
 			setCutscene(1,1)
 			entity_swimToNode(v.n, me, 4)
-			setControlHint("Junge"..nameLine.."Wer bist du?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_1, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 1) then
@@ -45,7 +41,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ich bin Emily. Bist du Nejl?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_2, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 2) then
@@ -55,7 +51,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 2
 			
-			setControlHint("Junge"..nameLine.."Ja.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_3, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 3) then
@@ -65,7 +61,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl"..nameLine.."Woher weisst du das?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_4, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 4) then
@@ -75,7 +71,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ich habe deine Mutter getroffen. Sie ... Sie ist tot.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_5, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 5) then
@@ -85,7 +81,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 2
 			
-			setControlHint("Nejl"..nameLine.."...", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_6, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 6) then
@@ -95,7 +91,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ich werde dir helfen, das Lied der Lichter zu lernen.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_7, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 7) then
@@ -105,7 +101,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl"..nameLine.."Wirklich? Danke!", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_8, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 8) then
@@ -115,7 +111,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl"..nameLine.."Aber wieso hilfst du mir?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_9, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 9) then
@@ -125,7 +121,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Nur so kann ich wieder in meine Welt zurueckkehren.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_10, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 10) then
@@ -135,7 +131,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl"..nameLine.."Deine Welt?", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_11, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 11) then
@@ -145,7 +141,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 4
 			
-			setControlHint("Emily"..nameLine.."Ueber dem Wasser ... Komm, lass uns die Lichterquallen suchen.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_12, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 12) then
@@ -155,7 +151,7 @@ function update(me, dt)
 			v.time = 0
 			v.dt = 3
 			
-			setControlHint("Nejl"..nameLine.."Gut. Ich folge dir.", 0,0,0, v.dt)
+			setControlHint(DATA_TEXTS.nejl_dialogue_13, 0,0,0, v.dt)
 		end
 		
 	elseif isFlag(v.flag, 13) then

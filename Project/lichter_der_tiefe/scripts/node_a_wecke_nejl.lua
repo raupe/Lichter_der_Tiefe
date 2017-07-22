@@ -11,7 +11,7 @@ function init(me)
 	v.flag = 803
 	v.inNode = false
 
-	centerText("Hoehle der Ruhe")
+	centerText(DATA_TEXTS.silence_cave_name)
 end
 
 -- trigger

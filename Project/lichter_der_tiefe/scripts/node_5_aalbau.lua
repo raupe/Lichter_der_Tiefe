@@ -20,7 +20,7 @@ function init(me)
 	v.n = getNaija()
 	v.flag = 500
 
-	centerText("Aalbau")
+	centerText(DATA_TEXTS.eel_home_name)
 
 	-- debug:
 	-- learnSong(101)

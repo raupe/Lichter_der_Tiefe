@@ -9,7 +9,7 @@ function init(me)
 	v.n = getNaija()
 	v.flag = 1000
 
-	centerText("Hoehle der Entschlossenheit")
+	centerText(DATA_TEXTS.enlighten_cave_name)
 
 end
 

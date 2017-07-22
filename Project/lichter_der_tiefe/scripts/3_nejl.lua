@@ -2,10 +2,6 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 function init(me)
 	setupEntity(me)
 	entity_setEntityType(me, ET_NEUTRAL)
@@ -85,7 +81,7 @@ function update(me, dt)
     elseif entity_isState(me, STATE_DELAY) then
     	v.time = v.time + dt
     	if v.time > 4 then
-    		setControlHint("Nejl"..nameLine.."Jetzt haben wir alle Klaenge gelernt. Lass uns in meine Hoehle schwimmen um das Lied der Lichter zu lernen.", 0,0,0, 6)
+    		setControlHint(DATA_TEXTS.nejl_blather_1, 0,0,0, 6)
     		entity_setState(me, STATE_FOLLOW)
     	end
     elseif entity_isState(me, STATE_IDLE) then
@@ -215,9 +211,9 @@ function song(me, song)
 		setFlag(v.flagSleep, 1)
 		if getNode("a_hoehle_der_ruhe") ~= 0 then
 			entity_setState(me, STATE_SING)
-			setControlHint("Emily"..nameLine.."Nejl? ... Er ist eingeschlafen.", 0, 0, 0, 4)
+			setControlHint(DATA_TEXTS.nejl_blather_2, 0, 0, 0, 4)
 		else
-			setControlHint("Nejl"..nameLine.."Uhaaa ... fast haette mich das Lied eingeschlaefert!", 0, 0, 0, 4)
+			setControlHint(DATA_TEXTS.nejl_blather_3, 0, 0, 0, 4)
 		end
 	elseif song == 104 and isFlag(v.flagAbschied, 0) then
 		entity_swimToPosition(me, entity_getPosition(v.n))
@@ -232,19 +228,19 @@ function activate(me)
 	elseif isFlag(303, 0) then				-- Nejl noch nicht getroffen
 		-- nothing
 	elseif not isFlag(801, 1) then 		-- KLang der Ruhe noch nicht gelernt
-		setControlHint("Nejl"..nameLine.."Schwimm vor, ich folge dir.", 0, 0, 0, 2)
+		setControlHint(DATA_TEXTS.nejl_blather_4, 0, 0, 0, 2)
 	elseif not isFlag(901, 1) then 		-- KLang der Stroemung noch nicht gelernt
-		setControlHint("Nejl"..nameLine.."Na los. Auf zum naechsten Klang.", 0, 0, 0, 4)
+		setControlHint(DATA_TEXTS.nejl_blather_5, 0, 0, 0, 4)
 	elseif not isFlag(1001, 1) then 	-- KLang der Entschlossenheit noch nicht gelernt
-		setControlHint("Nejl"..nameLine.."Wow. Jetzt fehlt uns nur noch ein Klang", 0, 0, 0, 4)
+		setControlHint(DATA_TEXTS.nejl_blather_6, 0, 0, 0, 4)
 	elseif not isFlag(1100, 1) then 	-- Lied der Lichter noch nicht gelernt gelernt
-		setControlHint("Nejl"..nameLine.."Wir kennen alle Klaenge. Komm zurueck zur Hoehle.", 0, 0, 0, 4)
+		setControlHint(DATA_TEXTS.nejl_blather_7, 0, 0, 0, 4)
 	elseif isFlag(106, 1) then			-- dialog nach Lied der Lichter noch nicht gehalten
-		setControlHint("Nejl"..nameLine.."Jetzt koennen die Blumen wieder leuchten.", 0, 0, 0, 4)
+		setControlHint(DATA_TEXTS.nejl_blather_8, 0, 0, 0, 4)
 	elseif not isFlag(702, 1) then		-- Ceraijt noch nicht besiegt
-		setControlHint("Nejl"..nameLine.."Ich habe Angst.", 0, 0, 0, 3)
+		setControlHint(DATA_TEXTS.nejl_blather_9, 0, 0, 0, 3)
 	else
-		setControlHint("Mejais"..nameLine.."Danke, du hast mich gerettet.", 0, 0, 0, 3) -- sollte nicht auftreten
+		setControlHint(DATA_TEXTS.nejl_blather_10, 0, 0, 0, 3) -- sollte nicht auftreten
 	end
 
 end

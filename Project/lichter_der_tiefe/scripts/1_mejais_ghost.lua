@@ -2,10 +2,6 @@
 if not v then v = {} end
 if not AQUARIA_VERSION then dofile("scripts/entities/entityinclude.lua") end
 
--------------------------
-local nameLine = ":\n \n"
--------------------------
-
 function init(me)
 	setupEntity(me)
 	entity_setEntityType(me, ET_NEUTRAL)
@@ -89,35 +85,35 @@ end
 function activate(me)
 	
 	if isFlag(303, 0) then				-- Nejl noch nicht getroffen
-		setControlHint("Mejais"..nameLine.."Emily, bitte, suche Nejl.", 0, 0, 0, 3)
+		setControlHint(DATA_TEXTS.mejais_ghost_01, 0, 0, 0, 3)
 	elseif not isFlag(801, 1) then 		-- KLang der Ruhe noch nicht gelernt
-		setControlHint("Mejais"..nameLine.."Schwimm nach Sueden. Dort lernst du den Klang der Ruhe.", 0, 0, 0, 4)
+		setControlHint(DATA_TEXTS.mejais_ghost_02, 0, 0, 0, 4)
 	elseif not isFlag(901, 1) then 		-- KLang der Stroemung noch nicht gelernt
-		setControlHint("Mejais"..nameLine.."Du musst weiter, vorbei am Aal. Dort lebt die Qualle der Stroemung.", 0, 0, 0, 4)
+		setControlHint(DATA_TEXTS.mejais_ghost_03, 0, 0, 0, 4)
 	elseif not isFlag(1001, 1) then 	-- KLang der Entschlossenheit noch nicht gelernt
-		setControlHint("Mejais"..nameLine.."Bitte die Sphinx dich passieren zu lassen. Sie bewacht die letzte Qualle.", 0, 0, 0, 4)
+		setControlHint(DATA_TEXTS.mejais_ghost_04, 0, 0, 0, 4)
 	elseif not isFlag(1100, 1) then 	-- Lied der Lichter noch nicht gelernt gelernt
-		setControlHint("Mejais"..nameLine.."Ihr kennt jetzt alle Klaenge. Nun wird Nejl sich an das Lied erinnern.", 0, 0, 0, 4)
+		setControlHint(DATA_TEXTS.mejais_ghost_05, 0, 0, 0, 4)
 	elseif isFlag(106, 1) then			-- dialog nach Lied der Lichter noch nicht gehalten
 		disableInput()
 		entity_setState(me, STATE_WAIT)
 		entity_swimToPosition(me, entity_getPosition(v.n))
 		setFlag(106, 2)
 	elseif isFlag(302, 0) then 			-- Nejl ist noch nicht verschwunden
-		setControlHint("Mejais"..nameLine.."Beeil dich, sonst verwelken die Blumen.", 0, 0, 0, 3)
+		setControlHint(DATA_TEXTS.mejais_ghost_06, 0, 0, 0, 3)
 	elseif not isFlag(701, 2) then		-- untiefen noch nicht betreten
-		setControlHint("Mejais"..nameLine.."Du musst dich entschieden, willst du zurueck in deine Welt, oder hilfst du Nejl?", 0,0,0, 4)
+		setControlHint(DATA_TEXTS.mejais_ghost_07, 0,0,0, 4)
 	elseif not isFlag(702, 1) then		-- Ceraijt noch nicht besiegt
-		setControlHint("Mejais"..nameLine.."Die Blumen sind verwelkt. Hilf Nejl!", 0, 0, 0, 3)
+		setControlHint(DATA_TEXTS.mejais_ghost_08, 0, 0, 0, 3)
 	elseif getFlag(v.path) > 1 then	
 		setFlag(107, 2)
 		disableInput()
 		setCutscene(1,1)
 			
 		entity_setState(v.mejais, STATE_WAIT)
-		setControlHint("Mejais"..nameLine.."Emily?", 0,0,0, 3)
+		setControlHint(DATA_TEXTS.mejais_ghost_09, 0,0,0, 3)
 		entity_swimToPosition(v.mejais, entity_getPosition(v.n))
 	else
-		setControlHint("Mejais"..nameLine.."Was tust du?", 0, 0, 0, 3) -- sollte nicht auftreten
+		setControlHint(DATA_TEXTS.mejais_ghost_10, 0, 0, 0, 3) -- sollte nicht auftreten
 	end
 end
