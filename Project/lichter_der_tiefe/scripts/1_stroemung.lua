@@ -11,6 +11,7 @@ end
 
 -- after nodes have inited
 function postInit(me)
+    entity_alpha(me, 0) -- fg: prevent white dot from showing up
 end
 
 function update(me, dt)

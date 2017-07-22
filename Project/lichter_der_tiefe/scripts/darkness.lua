@@ -20,7 +20,7 @@ function init(me)
 	elseif getFlag(v.flagSongs) == 1 then
 		v.alpha = 0.25
 	end
-	
+	entity_alpha(me, 0) -- fg: prevent white dot from showing up
 end
 
 -- after nodes have inited
